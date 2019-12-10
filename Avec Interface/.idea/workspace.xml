@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="" />
+    <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/super_admin/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Modifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/super_admin/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/login.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1UlpcxsqdWxKZigUIWw56bnDmFS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,7 +25,28 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="super_admin.Main" />
+      <module name="Login Screen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="super_admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -47,13 +78,41 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="620" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1575941149942" />
-    <state x="549" y="149" key="FileChooserDialogImpl" timestamp="1575941179904">
+    <state x="549" y="149" key="FileChooserDialogImpl" timestamp="1576001498637">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="149" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1575941179904" />
+    <state x="549" y="149" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576001498637" />
+    <state width="1493" height="81" key="GridCell.Tab.0.bottom" timestamp="1576002257759">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="81" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576002257759" />
+    <state width="1493" height="81" key="GridCell.Tab.0.center" timestamp="1576002257759">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="81" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576002257759" />
+    <state width="1493" height="81" key="GridCell.Tab.0.left" timestamp="1576002257759">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="81" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576002257759" />
+    <state width="1493" height="81" key="GridCell.Tab.0.right" timestamp="1576002257759">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="81" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576002257759" />
     <state x="439" y="131" key="NewModule_or_Project.wizard" timestamp="1575941194961">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="439" y="131" key="NewModule_or_Project.wizard/0.0.1536.864@0.0.1536.864" timestamp="1575941194961" />
+    <state x="304" y="149" key="SettingsEditor" timestamp="1576001947405">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="304" y="149" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1576001947405" />
+    <state x="93" y="93" width="1350" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576002257990">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="93" y="93" width="1350" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1576002257990" />
+    <state x="376" y="436" key="com.intellij.ide.util.TipDialog" timestamp="1576001477777">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="376" y="436" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1576001477777" />
   </component>
 </project>
