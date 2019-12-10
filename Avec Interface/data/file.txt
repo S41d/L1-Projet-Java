@@ -1,0 +1,11 @@
+1 Username : Sophie, Role : Medecin$R Password : aaaa
+2 Username : Lilian, Role : Technicien$R Password : gnegne
+3 Username : Matthieu, Role : Agent$R Password : hehe
+4 Username : Thomas, Role : Agent$R Password : wow
+5 Username : Said, Role : Agent$R Password : blabla
+6 Username : Adrien, Role : Technicien$R TechPassword : cool
+7 Username : Alex, Role : Technicien$R Password : bg
+8 Username : Enzo, Role : Medecin$R Password : meow
+9 Username : Hoda, Role : Technicien$R Password : hoda
+11 Username : wilfreid, Role : Medecin$R Password : mot
+12 Username : Lucas, Role : Agent$R Password : jkl
