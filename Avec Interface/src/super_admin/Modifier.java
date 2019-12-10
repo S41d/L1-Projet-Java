@@ -16,29 +16,29 @@ public class Modifier {
         JTextField numField = new JTextField();
         numField.setBounds(110, 20, 100, 30);
 
-        JLabel numLabel = new JLabel();
+        JLabel numLabel = new JLabel("Numero ID :");
         numLabel.setBounds(15, 20, 100, 30);
 
         JTextField userField = new JTextField();
-        userField.setBounds(110, 20, 100, 30);
+        userField.setBounds(110, 75, 100, 30);
 
         JPasswordField passwordField = new JPasswordField();
-        passwordField.setBounds(110, 75, 100, 30);
+        passwordField.setBounds(110, 130, 100, 30);
 
         JTextField roleField = new JTextField();
-        roleField.setBounds(110, 130, 100, 30);
+        roleField.setBounds(110, 185, 100, 30);
 
         JLabel login_Label = new JLabel("Username :");
-        login_Label.setBounds(15, 20, 100, 30);
+        login_Label.setBounds(15, 75, 100, 30);
 
         JLabel pass_Label = new JLabel("Password :");
-        pass_Label.setBounds(15, 75, 100, 30);
+        pass_Label.setBounds(15, 130, 100, 30);
 
         JLabel role_label = new JLabel("Role :");
-        role_label.setBounds(15, 130, 100, 30);
+        role_label.setBounds(15, 185, 100, 30);
 
         JLabel label = new JLabel();
-        label.setBounds(20, 235, 270, 150);
+        label.setBounds(20, 290, 270, 150);
 
         Timer timer = new Timer(2000, new ActionListener() {
             @Override
@@ -55,7 +55,7 @@ public class Modifier {
         });
         
         JButton button = new JButton("Modifier");
-        button.setBounds(70, 185, 150, 30);
+        button.setBounds(70, 235, 150, 30);
         button.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -149,7 +149,7 @@ public class Modifier {
         while (scanner.hasNextLine()) {
             string = scanner.nextLine();
             if (Integer.parseInt(string.substring(0, string.indexOf(" ")))== num) {
-            fileWriter.println(num + " Username : " + user + ", Role : " + role + "*R Password : " + pass);
+            fileWriter.println(num + " Username : " + user + ", Role : " + role + "$R Password : " + pass);
             } else {
             fileWriter.println(string);
             }
