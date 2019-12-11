@@ -115,7 +115,7 @@ public class Create_an_account {
 
     static void write_temporary() throws FileNotFoundException {
         File temporary = new File("data/temporary.txt");
-        File file = new File("data/file.txt");
+        File file = new File("data/Roles.txt");
 
         PrintWriter tempWriter = new PrintWriter(temporary);
         InputStream inputStream = new FileInputStream(file);
@@ -133,7 +133,7 @@ public class Create_an_account {
     }
     static void write_file(String username, String password, String role) throws FileNotFoundException {
         File temporary = new File("data/temporary.txt");
-        File file = new File("data/file.txt");
+        File file = new File("data/Roles.txt");
         
         PrintWriter fileWriter = new PrintWriter(file);
         InputStream inputStream = new FileInputStream(temporary);

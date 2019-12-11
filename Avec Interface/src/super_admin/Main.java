@@ -46,11 +46,12 @@ public class Main {
                 String username = textField.getText();
                 String password = new String(passwordField.getPassword());
 
-                File passwords_file = new File("data/file.txt");
+                File passwords_file = new File("data/Roles.txt");
                 FileReader reader;
                 try {
                     reader = new FileReader(passwords_file);
                     Scanner scanner = new Scanner(reader);
+                    boolean exist = true;
 
                     while (scanner.hasNextLine()) {
                         String string = scanner.nextLine();
@@ -75,14 +76,13 @@ public class Main {
                             break;
                         }   else {
                             label.setHorizontalAlignment(SwingConstants.CENTER);
-                            JOptionPane.showMessageDialog(frame, "Mot de passe ou pseudo incorrect", "Error", JOptionPane.ERROR_MESSAGE);
-                            break;
+                            exist = false;
+                            label.setText("exist pas");
                         }
-
                     }
                     scanner.close();
                 } catch (FileNotFoundException e) {
-                    System.out.println("file not found");
+                    JOptionPane.showMessageDialog(frame, "File not found", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }); // Logging in button
