@@ -145,7 +145,6 @@ public class Modifier {
         Scanner scanner = new Scanner(reader);
         
         String string = new String();
-        
         while (scanner.hasNextLine()) {
             string = scanner.nextLine();
             if (Integer.parseInt(string.substring(0, string.indexOf(" ")))== num) {
