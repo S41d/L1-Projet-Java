@@ -4,15 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.*;
 
-public class RoundJTextField extends JTextField {
+public class RoundTextField extends JTextField {
     private static final long serialVersionUID = 1L;
     
     private Shape shape;
-    public RoundJTextField(int size) {
+    public RoundTextField(int size) {
         super(size);
         setOpaque(false); // As suggested by @AVD in comment.
     }
-    public RoundJTextField(){
+    public RoundTextField(){
         setOpaque(false);
     }
     protected void paintComponent(Graphics g) {

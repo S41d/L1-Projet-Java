@@ -9,3 +9,4 @@
 9 Username : Hoda, Role : Technicien$R Password : hoda
 11 Username : Wilfreid, Role : Medecin$R Password : mot
 12 Username : Lucas, Role : Agent$R Password : jkl
+12 Username : Mimi, Role : Medecin$R Password : Damn

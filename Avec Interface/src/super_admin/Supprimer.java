@@ -5,49 +5,38 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
 import java.io.*;
+import java.awt.Color;
+import RoundFields.*;
 
 public class Supprimer {
     public static void ui() {
         JFrame frame = new JFrame("Supprimer");
-        frame.setSize(300, 300);
+        frame.setSize(350, 100);
         
         JTextField numField = new JTextField();
         numField.setBounds(110, 20, 100, 30);
         
         JLabel num_label = new JLabel("Numero ID :");
         num_label.setBounds(15, 20, 100, 30);
+        num_label.setForeground(Color.lightGray);
         
-        JLabel label = new JLabel();
-        label.setBounds(20, 50, 270, 30);
-        
-        Timer timer = new Timer(2000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                label.setText("");
-            }
-        });
-        Timer timer1 = new Timer(2000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                label.setText("Compte supprimé");
-                frame.dispose();
-            }
-        });
-        
-        JButton create_Button = new JButton("Supprimer");
-        create_Button.setBounds(75, 75, 150, 30);
-        
-        create_Button.addActionListener(new ActionListener() {
+        JButton supprime_Button = new JButton("Supprimer");
+        supprime_Button.setBounds(230, 20, 100, 30);
+        supprime_Button.setBackground(new Color(244, 72, 72));
+        supprime_Button.setForeground(Color.darkGray);
+        supprime_Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
                     if (check(Integer.parseInt(numField.getText())))  {
-                        label.setText("marche");
-                        supprime_compte(Integer.parseInt(numField.getText()));
-                        timer1.start();
+                        int ans = JOptionPane.showConfirmDialog(frame, "Vous etes sur de supprimer ce compte?", "", JOptionPane.YES_NO_OPTION);
+                        if (ans == 1) {
+                        } else {
+                            supprime_compte(Integer.parseInt(numField.getText()));
+                            frame.dispose();
+                        }
                     } else {
-                        label.setText("Ce compte n'existe pas");
-                        timer.start();
+                        JOptionPane.showMessageDialog(frame, "Ce compte n'existe pas", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } catch (FileNotFoundException e) {
                     System.out.println("file not found exception");
@@ -55,10 +44,11 @@ public class Supprimer {
             }
         });
 
+        frame.getContentPane().setBackground(Color.DARK_GRAY);
+        frame.setResizable(false);
         frame.add(num_label);
         frame.add(numField);
-        frame.add(label);
-        frame.add(create_Button);
+        frame.add(supprime_Button);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);

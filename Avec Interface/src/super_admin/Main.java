@@ -12,7 +12,7 @@ public class Main {
         JFrame frame = new JFrame("Login");
         frame.setSize(600, 300);
 
-        JTextField textField = new RoundJTextField();
+        JTextField textField = new RoundTextField();
         textField.setBounds(110, 30, 380, 30);
 
         JPasswordField passwordField = new RoundPasswordField();
@@ -110,7 +110,7 @@ public class Main {
             }
         });
 
-        JButton supprimer_Button = new JButton("supprimer");
+        JButton supprimer_Button = new JButton("Supprimer");
         supprimer_Button.setBounds(370, 130, 120, 30);
         supprimer_Button.setBackground(new Color(244, 72, 72));
         supprimer_Button.setForeground(Color.darkGray);
@@ -123,7 +123,7 @@ public class Main {
         
         frame.add(textField);   frame.add(passwordField);   frame.add(login_Label);    frame.add(pass_Label);     frame.add(label);     frame.add(login_button);
         frame.add(create_an_account_Button); frame.add(modifier_Button);    frame.add(supprimer_Button);
-        frame.getContentPane().setBackground(Color.DARK_GRAY); frame.setResizable(false);
+        frame.getContentPane().setBackground(Color.DARK_GRAY);  frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   frame.setLocationRelativeTo(null);      frame.setLayout(null);  frame.setVisible(true); 
     }
 }
