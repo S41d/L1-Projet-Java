@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - medecin",
+            "request": "launch",
+            "mainClass": "Medecin.medecin",
+            "projectName": "Java (sans interface)"
+        }
+    ]
+}

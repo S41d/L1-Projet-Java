@@ -1,42 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="ajouté les classes d'agent et de medecin dans la partie sans interface">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/dictionaries/mmaso.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/Java (sans interface).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/src/Agent/agent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/src/Medecin/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Create_an_account$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Create_an_account$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Create_an_account$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Create_an_account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Supprimer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Supprimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Roles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Roles.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Create_an_account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Create_an_account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Supprimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Supprimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/Java (sans interface)/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/Java (sans interface)/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/Java (sans interface)/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/Java (sans interface)/bin/app/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/Java (sans interface)/src/app/App.java" beforeDir="false" />
-    </list>
-    <list id="3a0341d7-1491-4337-8664-3a33e2fd7148" name="Default Changelistc" comment="">
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="" />
+    <list id="3a0341d7-1491-4337-8664-3a33e2fd7148" name="Default Changelistc" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,16 +21,13 @@
         <option value="Saïd Mohammad Zuhair &lt;m.masoud247@gmail.com&gt;" />
       </list>
     </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/super_admin/Main.java">
-      <ranges>
-        <range start1="22" end1="23" start2="22" end2="23" changelist="0dd9974d-0244-4671-8e84-0497f6b0438a" />
-        <range start1="53" end1="54" start2="53" end2="53" changelist="3a0341d7-1491-4337-8664-3a33e2fd7148" />
-        <range start1="78" end1="79" start2="77" end2="77" changelist="0dd9974d-0244-4671-8e84-0497f6b0438a" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1UlpcxsqdWxKZigUIWw56bnDmFS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -123,6 +86,14 @@
       <option name="presentableId" value="Default" />
       <updated>1575941118561</updated>
     </task>
+    <task id="LOCAL-00001" summary="ajouté les classes d'agent et de medecin dans la partie sans interface">
+      <created>1576202350168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576202350168</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,30 +105,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="620" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1575941149942" />
-    <state x="320" y="53" key="CommitChangelistDialog2" timestamp="1576202287966">
+    <state x="320" y="53" key="CommitChangelistDialog2" timestamp="1576202348527">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="320" y="53" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576202287966" />
+    <state x="320" y="53" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576202348527" />
     <state x="549" y="149" key="FileChooserDialogImpl" timestamp="1576198468324">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="149" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576198468324" />
-    <state width="1495" height="89" key="GridCell.Tab.0.bottom" timestamp="1576202004729">
+    <state width="1495" height="89" key="GridCell.Tab.0.bottom" timestamp="1576202473629">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1495" height="89" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576202004729" />
-    <state width="1495" height="89" key="GridCell.Tab.0.center" timestamp="1576202004729">
+    <state width="1495" height="89" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
+    <state width="1495" height="89" key="GridCell.Tab.0.center" timestamp="1576202473629">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1495" height="89" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576202004729" />
-    <state width="1495" height="89" key="GridCell.Tab.0.left" timestamp="1576202004729">
+    <state width="1495" height="89" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
+    <state width="1495" height="89" key="GridCell.Tab.0.left" timestamp="1576202473629">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1495" height="89" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576202004729" />
-    <state width="1495" height="89" key="GridCell.Tab.0.right" timestamp="1576202004729">
+    <state width="1495" height="89" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
+    <state width="1495" height="89" key="GridCell.Tab.0.right" timestamp="1576202473629">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1495" height="89" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576202004729" />
+    <state width="1495" height="89" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
     <state x="439" y="131" key="NewModule_or_Project.wizard" timestamp="1575941194961">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -170,6 +141,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="608" y="349" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1576200648357" />
+    <state x="361" y="167" key="Vcs.Push.Dialog.v2" timestamp="1576202456093">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="167" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576202456093" />
     <state x="93" y="93" width="1350" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576002257990">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

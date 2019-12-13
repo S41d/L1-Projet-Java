@@ -1,0 +1,2 @@
+1 Nom: nom$N       Prenom: prenom$Pn          Adresse: 37000$A       Date de naissance: 21/03/1999$Date
+2 Nom: said$N	   Prenom: password$Pn        Adresse: 37000$A		 Date de Naissance: 21/03/1999$Date
