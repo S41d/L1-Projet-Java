@@ -20,7 +20,7 @@ public class Main {
 
         JLabel login_Label = new JLabel("Username :");
         login_Label.setForeground(Color.LIGHT_GRAY);
-        login_Label.setBounds(35, 30, 380, 30);
+        login_Label.setBounds(35, 30, 380, 30); 
 
         JLabel pass_Label = new JLabel("Password  :");
         pass_Label.setForeground(Color.lightGray);
@@ -29,61 +29,51 @@ public class Main {
         JLabel label = new JLabel();
         label.setForeground(Color.lightGray);
         label.setBounds(0, 210, 600, 30);
-        Timer timer = new Timer(2000, new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                label.setText("");
-            }            
-        });
+        Timer timer = new Timer(2000, arg0 -> label.setText(""));
 
         JButton login_button = new JButton("Login"); // Logging in button
         login_button.setBounds(110, 130, 120, 30);
         login_button.setBackground(new Color(51, 208, 240));
         login_button.setForeground(Color.darkGray);
-        login_button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                String username = textField.getText();
-                String password = new String(passwordField.getPassword());
+        login_button.addActionListener(arg0 -> {
+            String username = textField.getText();
+            String password = new String(passwordField.getPassword());
 
-                File passwords_file = new File("data/Roles.txt");
-                FileReader reader;
-                try {
-                    reader = new FileReader(passwords_file);
-                    Scanner scanner = new Scanner(reader);
-                    boolean exist = true;
+            File passwords_file = new File("data/Roles.txt");
+            FileReader reader;
+            try {
+                reader = new FileReader(passwords_file);
+                Scanner scanner = new Scanner(reader);
 
-                    while (scanner.hasNextLine()) {
-                        String string = scanner.nextLine();
-                        String usernames = string.substring(string.indexOf("Username : "), string.indexOf(","));
-                        String passwords = string.substring(string.indexOf("Password : "));
-                        String roles = string.substring(string.indexOf("Role : "), string.indexOf("$R"));
+                while (scanner.hasNextLine()) {
+                    String string = scanner.nextLine();
+                    String usernames = string.substring(string.indexOf("Username : "), string.indexOf(","));
+                    String passwords = string.substring(string.indexOf("Password : "));
+                    String roles = string.substring(string.indexOf("Role : "), string.indexOf("$R"));
 
-                        if (usernames.contains(username) && passwords.equals("Password : " + password) && roles.equals("Role : " + "Medecin")) {
-                            label.setHorizontalAlignment(SwingConstants.CENTER);
-                            label.setText("loggin in as medecin");
-                            timer.start();
-                            break;
-                        } else if (usernames.contains(username) && passwords.equals("Password : " + password) && roles.equals("Role : " + "Agent")) {
-                            label.setHorizontalAlignment(SwingConstants.CENTER);
-                            label.setText("loggin in as agent");
-                            timer.start();
-                            break;
-                        }   else if (usernames.contains(username) && passwords.equals("Password : " + password) && roles.equals("Role : " + "Technicien")) {
-                            label.setHorizontalAlignment(SwingConstants.CENTER);
-                            label.setText("loggin in as IT");
-                            timer.start();
-                            break;
-                        }   else {
-                            label.setHorizontalAlignment(SwingConstants.CENTER);
-                            exist = false;
-                            label.setText("exist pas");
-                        }
+                    if (usernames.contains(username) && passwords.equals("Password : " + password) && roles.equals("Role : " + "Medecin")) {
+                        label.setHorizontalAlignment(SwingConstants.CENTER);
+                        label.setText("loggin in as medecin");
+                        timer.start();
+                        break;
+                    } else if (usernames.contains(username) && passwords.equals("Password : " + password) && roles.equals("Role : " + "Agent")) {
+                        label.setHorizontalAlignment(SwingConstants.CENTER);
+                        label.setText("loggin in as agent");
+                        timer.start();
+                        break;
+                    }   else if (usernames.contains(username) && passwords.equals("Password : " + password) && roles.equals("Role : " + "Technicien")) {
+                        label.setHorizontalAlignment(SwingConstants.CENTER);
+                        label.setText("loggin in as IT");
+                        timer.start();
+                        break;
+                    }   else {
+                        label.setHorizontalAlignment(SwingConstants.CENTER);
+                        label.setText("exist pas");
                     }
-                    scanner.close();
-                } catch (FileNotFoundException e) {
-                    JOptionPane.showMessageDialog(frame, "File not found", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+                scanner.close();
+            } catch (FileNotFoundException e) {
+                JOptionPane.showMessageDialog(frame, "File not found", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }); // Logging in button
 
@@ -91,35 +81,20 @@ public class Main {
         create_an_account_Button.setBackground(Color.darkGray);
         create_an_account_Button.setForeground(Color.lightGray);
         create_an_account_Button.setBounds(110, 170, 380, 30);
-        create_an_account_Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                Create_an_account.ui();
-            }
-        });
+        create_an_account_Button.addActionListener(arg0 -> Create_an_account.ui());
 
 
         JButton modifier_Button = new JButton("Modifier");
         modifier_Button.setBounds(240, 130, 120, 30);
         modifier_Button.setBackground(new Color(243, 144, 57));
         modifier_Button.setForeground(Color.darkGray);
-        modifier_Button.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Modifier.ui();
-            }
-        });
+        modifier_Button.addActionListener(e -> Modifier.ui());
 
         JButton supprimer_Button = new JButton("Supprimer");
         supprimer_Button.setBounds(370, 130, 120, 30);
         supprimer_Button.setBackground(new Color(244, 72, 72));
         supprimer_Button.setForeground(Color.darkGray);
-        supprimer_Button.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Supprimer.ui();
-            }
-        });
+        supprimer_Button.addActionListener(e -> Supprimer.ui());
         
         frame.add(textField);   frame.add(passwordField);   frame.add(login_Label);    frame.add(pass_Label);     frame.add(label);     frame.add(login_button);
         frame.add(create_an_account_Button); frame.add(modifier_Button);    frame.add(supprimer_Button);

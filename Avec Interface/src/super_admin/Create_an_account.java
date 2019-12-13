@@ -32,39 +32,28 @@ public class Create_an_account {
         JLabel label = new JLabel();
         label.setBounds(20, 235, 270, 150);
 
-        Timer timer = new Timer(2000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                label.setText("");
-            }
-        });
-        Timer timer1 = new Timer(2000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                label.setText("account created");
-                frame.dispose();
-            }
+        Timer timer = new Timer(2000, arg0 -> label.setText(""));
+        Timer timer1 = new Timer(2000, arg0 -> {
+            label.setText("account created");
+            frame.dispose();
         });
 
         JButton create_Button = new JButton("Créer compte");
         create_Button.setBounds(75, 185, 150, 30);
 
-        create_Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                try {
-                    if (check(userField.getText())) {
-                        label.setText("Username already exists");
-                        timer.start();
-                    } else {
-                        String password = new String(passwordField.getPassword());
-                        new_account(userField.getText(), password, roleField.getText());
-                        label.setText("Account created");
-                        timer1.start();
-                    }
-                } catch (FileNotFoundException e) {
-                    System.out.println("file not found exception");
+        create_Button.addActionListener(arg0 -> {
+            try {
+                if (check(userField.getText())) {
+                    label.setText("Username already exists");
+                    timer.start();
+                } else {
+                    String password = new String(passwordField.getPassword());
+                    new_account(userField.getText(), password, roleField.getText());
+                    label.setText("Account created");
+                    timer1.start();
                 }
+            } catch (FileNotFoundException e) {
+                System.out.println("file not found exception");
             }
         });
 
@@ -87,7 +76,7 @@ public class Create_an_account {
 
     public static boolean check(String username) throws FileNotFoundException {
         boolean account_exists = false;
-        FileReader reader = new FileReader("data/file.txt");
+        FileReader reader = new FileReader("data/Roles.txt");
         Scanner scanner = new Scanner(reader);
         while (scanner.hasNextLine()) {
             String string = scanner.nextLine();
@@ -122,9 +111,8 @@ public class Create_an_account {
         InputStreamReader reader = new InputStreamReader(inputStream);
         Scanner scanner = new Scanner(reader);
 
-        String string = new String();
         while (scanner.hasNextLine()) {
-            string = scanner.nextLine();
+            String string = scanner.nextLine();
             tempWriter.println(string);
         }
         
@@ -141,16 +129,17 @@ public class Create_an_account {
         Scanner scanner = new Scanner(reader);
         
         String string1 = "Username : " + username + ", Role : " + role + "$R Password : " + password;
-        String string = new String();
         
         int counter = 1;
         
         while (scanner.hasNextLine()) {
-            string = scanner.nextLine();
+            String string = scanner.nextLine();
             fileWriter.println(string);
-            counter++;
+            counter = Integer.parseInt(string.substring(0,string.indexOf(" ")));
+            counter ++;
+
         }
-        fileWriter.write(Integer.toString(counter) + " " + string1);
+        fileWriter.write(counter + " " + string1);
 
         fileWriter.close();
         scanner.close();
