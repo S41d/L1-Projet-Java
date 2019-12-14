@@ -1,0 +1,3 @@
+1 ID: 1$ID Consultation pour le patient 1 test
+2 ID: 1$ID Consultation pour le patient 1 test 2
+3 ID: 2$ID Consultation pour le patient 2

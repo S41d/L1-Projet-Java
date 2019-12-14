@@ -143,6 +143,6 @@ public class Create_an_account {
 
         fileWriter.close();
         scanner.close();
-        temporary.delete();
+        boolean bool = temporary.delete();
     }
 }

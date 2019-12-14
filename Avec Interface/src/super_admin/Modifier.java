@@ -56,9 +56,7 @@ public class Modifier {
         
         JButton button = new JButton("Modifier");
         button.setBounds(70, 235, 150, 30);
-        button.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        button.addActionListener(action ->{
                 try {
                     String pass = new String(passwordField.getPassword());
                     if (check(Integer.parseInt(numField.getText()))) {
@@ -68,10 +66,10 @@ public class Modifier {
                         label.setText("Ce compte n'existe pas");
                         timer.start();
                     }
-                } catch (Exception i) {
+                } catch (FileNotFoundException i) {
                     System.out.println("Exception i");
                 }
-            }
+
         });
 
         panel.add(button);        
@@ -95,7 +93,7 @@ public class Modifier {
 
     public static boolean check(int num) throws FileNotFoundException {
         boolean account_exists = false;
-        FileReader reader = new FileReader("data/file.txt");
+        FileReader reader = new FileReader("data/Roles.txt");
         Scanner scanner = new Scanner(reader);
         while (scanner.hasNextLine()) {
             String string = scanner.nextLine();
@@ -118,16 +116,15 @@ public class Modifier {
 
     static void write_temporary() throws FileNotFoundException {
         File temporary = new File("data/temporary.txt");
-        File file = new File("data/file.txt");
+        File file = new File("data/Roles.txt");
 
         PrintWriter tempWriter = new PrintWriter(temporary);
         InputStream inputStream = new FileInputStream(file);
         InputStreamReader reader = new InputStreamReader(inputStream);
         Scanner scanner = new Scanner(reader);
 
-        String string = new String();
         while (scanner.hasNextLine()) {
-            string = scanner.nextLine();
+            String string = scanner.nextLine();
             tempWriter.println(string);
         }
 
@@ -137,16 +134,15 @@ public class Modifier {
 
     static void write_file(int num, String user, String pass, String role) throws FileNotFoundException {
         File temporary = new File("data/temporary.txt");
-        File file = new File("data/file.txt");
+        File file = new File("data/Roles.txt");
         
         PrintWriter fileWriter = new PrintWriter(file);
         InputStream inputStream = new FileInputStream(temporary);
         InputStreamReader reader = new InputStreamReader(inputStream);
         Scanner scanner = new Scanner(reader);
-        
-        String string = new String();
+
         while (scanner.hasNextLine()) {
-            string = scanner.nextLine();
+            String string = scanner.nextLine();
             if (Integer.parseInt(string.substring(0, string.indexOf(" ")))== num) {
             fileWriter.println(num + " Username : " + user + ", Role : " + role + "$R Password : " + pass);
             } else {
@@ -155,7 +151,7 @@ public class Modifier {
         }
         fileWriter.close();
         scanner.close();
-        temporary.delete();
+        boolean bool = temporary.delete();
     }
 
 }

@@ -112,6 +112,6 @@ public class Supprimer {
         }
         fileWriter.close();
         scanner.close();
-        temporary.delete();
+        boolean bool = temporary.delete();
     }
 }
