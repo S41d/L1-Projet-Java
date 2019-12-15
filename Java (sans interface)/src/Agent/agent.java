@@ -1,7 +1,7 @@
 package Agent;
 
 import Classes_principales.Patient;
-
+import Medecin.medecin;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -94,7 +94,8 @@ public class agent {
 		  case "N":
 			 Nouveau(); break;
 		  case "V":
-			 Verifier(); break;
+			 Verifier();
+			 medecin.main(null);break;
 		  case "S":
 			 Supprimer(); break;
 		  case "M":

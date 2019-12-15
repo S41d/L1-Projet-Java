@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/dictionaries/said.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/src/Classes_principales/Consultations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Java (sans interface)/src/Classes_principales/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Roles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Roles.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Create_an_account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Create_an_account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Modifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Supprimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Supprimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/bin/Agent/agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/bin/Agent/agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/bin/Medecin/Check.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/bin/Classes_principales/Consultations.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/bin/Classes_principales/Consultations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java (sans interface)/bin/Medecin/medecin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/bin/Medecin/medecin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java (sans interface)/data/Consultations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/data/Consultations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/data/Patient.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/data/Patient.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/src/Agent/agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/src/Agent/agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/src/Medecin/Check.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java (sans interface)/src/Classes_principales/Consultations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/src/Classes_principales/Consultations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java (sans interface)/src/Medecin/medecin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java (sans interface)/src/Medecin/medecin.java" afterDir="false" />
     </list>
     <list id="3a0341d7-1491-4337-8664-3a33e2fd7148" name="Default Changelistc" comment="" />
@@ -60,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Java (sans interface)" />
     <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RunManager">
@@ -126,34 +112,39 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="620" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1575941149942" />
+    <state x="643" y="268" width="624" height="542" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576346867990">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="643" y="268" width="624" height="542" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576346867990" />
     <state x="320" y="53" key="CommitChangelistDialog2" timestamp="1576202348527">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="320" y="53" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576202348527" />
-    <state x="549" y="149" key="FileChooserDialogImpl" timestamp="1576198468324">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="686" y="186" width="424" height="482" key="FileChooserDialogImpl" timestamp="1576346935245">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="549" y="149" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576198468324" />
-    <state width="1920" height="149" key="GridCell.Tab.0.bottom" timestamp="1576327323078">
+    <state x="686" y="186" width="424" height="482" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1576346935245" />
+    <state width="1920" height="149" key="GridCell.Tab.0.bottom" timestamp="1576346591500">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1495" height="89" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
-    <state width="1920" height="149" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576327323078" />
-    <state width="1920" height="149" key="GridCell.Tab.0.center" timestamp="1576327323078">
+    <state width="1920" height="149" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576346591500" />
+    <state width="1920" height="149" key="GridCell.Tab.0.center" timestamp="1576346591499">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1495" height="89" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
-    <state width="1920" height="149" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576327323078" />
-    <state width="1920" height="149" key="GridCell.Tab.0.left" timestamp="1576327323077">
+    <state width="1920" height="149" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576346591499" />
+    <state width="1920" height="149" key="GridCell.Tab.0.left" timestamp="1576346591499">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1495" height="89" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
-    <state width="1920" height="149" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576327323077" />
-    <state width="1920" height="149" key="GridCell.Tab.0.right" timestamp="1576327323078">
+    <state width="1920" height="149" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576346591499" />
+    <state width="1920" height="149" key="GridCell.Tab.0.right" timestamp="1576346591500">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1495" height="89" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576202473629" />
-    <state width="1920" height="149" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576327323078" />
+    <state width="1920" height="149" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576346591500" />
     <state x="439" y="131" key="NewModule_or_Project.wizard" timestamp="1575941194961">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
