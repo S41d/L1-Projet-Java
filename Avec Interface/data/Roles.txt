@@ -1,9 +1,11 @@
-1 Username : Sophie, Role : Agent$R Password : aaaa
-2 Username : Lilian, Role : Technicien$R Password : gnegne
-3 Username : Matthieu, Role : Agent$R Password : hehe
-4 Username : Thomas, Role : Agent$R Password : wow
-5 Username : Said, Role : Agent$R Password : blabla
-6 Username : Adrien, Role : Technicien$R TechPassword : cool
-7 Username : Alex, Role : Technicien$R Password : bg
-8 Username : Enzo, Role : Medecin$R Password : meow
-9 Username : Hoda, Role : Technicien$R Password : hoda
+1 1 Username: Sophie$USER Password: aaaaaaaaa$P Role: Medecin$R
+2 1 Username: Lilian$USER Password : gnegne$P Role: Technicien$R
+3 1 Username: Matthieu$USER Password : hehe$P Role: Agent$R
+4 2 Username: Thomas$USER Password : wow$P Role: Agent$R
+5 3 Username: Said$USER Password : blabla$P Role: Agent$R
+6 2 Username: Adrien$USER TechPassword : cool$P Role: Technicien$R
+7 3 Username: Alex$USER Password : bg$P Role: Technicien$R
+8 2 Username: Enzo$USER Password : meow$P Role: Medecin$R
+9 3 Username: Hoda$USER Password : hoda$P Role: Technicien$R
+11 3 Username: Kiwi$USER Password: bon$P Role: Medecin
+12 4 Username: new Medecin$USER Password: pass$P Role: Medecin$R

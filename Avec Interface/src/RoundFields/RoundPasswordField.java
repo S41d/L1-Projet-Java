@@ -10,7 +10,7 @@ public class RoundPasswordField extends JPasswordField {
     private Shape shape;
     public RoundPasswordField(int size) {
         super(size);
-        setOpaque(false); // As suggested by @AVD in comment.
+        setOpaque(false);
     }
     public RoundPasswordField(){
         setOpaque(false);

@@ -10,7 +10,7 @@ public class RoundTextField extends JTextField {
     private Shape shape;
     public RoundTextField(int size) {
         super(size);
-        setOpaque(false); // As suggested by @AVD in comment.
+        setOpaque(false);
     }
     public RoundTextField(){
         setOpaque(false);
