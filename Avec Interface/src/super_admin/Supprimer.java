@@ -62,7 +62,6 @@ public class Supprimer {
 
     }
 
-    
 
     public static boolean check(int num) throws FileNotFoundException {
         boolean account_exists = false;

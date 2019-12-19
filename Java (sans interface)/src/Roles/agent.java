@@ -1,7 +1,7 @@
-package Agent;
+package Roles;
 
 import Classes_principales.Patient;
-import Medecin.medecin;
+
 import java.io.IOException;
 import java.util.Scanner;
 

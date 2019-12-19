@@ -1,6 +1,14 @@
 package Classes_principales;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -91,25 +99,6 @@ public class Consultations {
     }
 
     public static void write_Appareil(int nombre){
-        File Appareil = new File("data/Appareils.txt");
-        File Tempo = new File("data/AppareilTempo.txt");
-        try (FileInputStream fis = new FileInputStream(Appareil);
-           FileOutputStream fos = new FileOutputStream(Tempo)) {
-            int len;
-            byte[] buffer = new byte[4096];
-            while ((len = fis.read(buffer)) > 0) {
-                fos.write(buffer, 0, len);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-	   try {
-		  FileReader reader = new FileReader(Tempo);
-		  PrintWriter writer = new PrintWriter(Appareil);
-
-	   } catch (FileNotFoundException e) {
-		  e.printStackTrace();
-	   }
 
     }
 

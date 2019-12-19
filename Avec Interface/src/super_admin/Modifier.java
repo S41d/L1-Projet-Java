@@ -6,6 +6,15 @@ import javax.swing.*;
 import java.util.Scanner;
 
 public class Modifier {
+    public static void takeNum(){
+	   String ID = JOptionPane.showInputDialog(null, "ID?", "Saisir ID", JOptionPane.OK_CANCEL_OPTION);
+
+    }
+
+    public static void main(String[] args) {
+	   takeNum();
+    }
+
     public static void ui() {
 	   JFrame frame = new JFrame("Modifier");
 	   frame.setSize(300, 400);

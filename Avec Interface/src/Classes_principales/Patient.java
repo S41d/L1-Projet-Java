@@ -25,12 +25,10 @@ public class Patient {
 		  } else {
 			 Check = false;
 		  }
-
 	   }
 	   scanner.close();
 	   return Check;
     }
-
 
     public static String recherche(int ID) throws FileNotFoundException {
 	   File Patients = new File("data/Patient.txt");

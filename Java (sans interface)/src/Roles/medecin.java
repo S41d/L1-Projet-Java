@@ -1,7 +1,9 @@
-package Medecin;
+package Roles;
 
-import java.io.*;
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import Classes_principales.*;
 
@@ -50,13 +52,15 @@ public class medecin {
 			 if (Consultations.Check(ID)) {
 				System.out.println(Patient.recherche(ID));
 				detailsConsultations(ID);
-			 } else System.out.println("Pas de Consultations");
-			 System.out.println("Numero de la consultation pour modifier?");
-			 ID_Consultation = scanner.nextInt();
-			 scanner.nextLine();
-			 System.out.println("Nouveau consultation?");
-			 String consultation = scanner.nextLine();
-			 Consultations.modifierConsultation(ID, ID_Consultation, consultation);
+				System.out.println("Numero de la consultation pour modifier?");
+				ID_Consultation = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("Nouveau consultation?");
+				String consultation = scanner.nextLine();
+				Consultations.modifierConsultation(ID, ID_Consultation, consultation);
+			 } else {
+			     System.out.println("Pas de Consultations");
+			 }
 			 break;
 	   }
 
