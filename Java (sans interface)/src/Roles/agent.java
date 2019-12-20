@@ -1,7 +1,6 @@
 package Roles;
 
 import Classes_principales.Patient;
-
 import java.io.IOException;
 import java.util.Scanner;
 

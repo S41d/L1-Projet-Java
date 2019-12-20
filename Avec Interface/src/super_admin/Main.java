@@ -65,7 +65,7 @@ public class Main {
 				} else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Technicien")) {
 				    label.setHorizontalAlignment(SwingConstants.CENTER);
 				    label.setText("loggin in as IT");
-				    timer.start();
+					timer.start();
 				    break;
 				} else {
 				    label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -75,11 +75,7 @@ public class Main {
 			 scanner.close();
 		  } catch (FileNotFoundException e) {
 			 JOptionPane.showMessageDialog(frame, "File not found", "Error", JOptionPane.ERROR_MESSAGE);
-		  } catch (IllegalAccessException | ClassNotFoundException e) {
-			 e.printStackTrace();
-		  } catch (InstantiationException e) {
-			 e.printStackTrace();
-		  } catch (UnsupportedLookAndFeelException e) {
+		  } catch (IllegalAccessException | ClassNotFoundException | InstantiationException | UnsupportedLookAndFeelException e) {
 			 e.printStackTrace();
 		  }
 	   }); // Logging in button

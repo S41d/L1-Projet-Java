@@ -21,7 +21,8 @@ public class medecin {
     }
 
     public static void main(String[] args) throws IOException {
-	   System.out.println("Saisir: D pour details du patient et ses consultations, N pour creer une consultation, M pour modifier une consultation");
+	   System.out.println("Saisir: D pour details du patient et ses consultations, N pour creer une consultation," +
+			 " M pour modifier une consultation, O pour creer une ordonnance");
 	   Scanner scanner = new Scanner(System.in);
 	   String switchString = scanner.nextLine();
 	   int ID, ID_Consultation;
@@ -59,9 +60,23 @@ public class medecin {
 				String consultation = scanner.nextLine();
 				Consultations.modifierConsultation(ID, ID_Consultation, consultation);
 			 } else {
-			     System.out.println("Pas de Consultations");
+				System.out.println("Pas de Consultations");
 			 }
 			 break;
+		  case "O":
+			 System.out.println("ID du patient?");
+			 ID = scanner.nextInt();
+			 scanner.nextLine();
+			 if (Patient.check(ID)) {
+				System.out.println("Ecrire l'ordonnance");
+				String ordonnance = scanner.nextLine();
+				Consultations.write_Ordonnance(ordonnance, ID);
+			 } else {
+				System.out.println("Ce patient n'exist pas");
+			 }
+			 break;
+		  default:
+			 System.out.println("Mauvaise saisie"); break;
 	   }
 
     }
