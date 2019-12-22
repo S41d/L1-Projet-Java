@@ -1,8 +1,9 @@
-1 ID: 1$ID $Appareil$ Appareil 1: instance$A
+1 ID: 1$ID $APPAREIL$ Appareil 1: instance$A
 2 ID: 1$ID 
 3 ID: 2$ID 
-4 ID: 3$ID $Appareil$ Apparei1 1: instance$A Appareil 2: instance$A
-5 ID: 1$ID $Appareil$ Appareil 1: instance$A Appareil 2: instance$A
-6 ID: 4$ID $Appareil$ Appareil 1: instance$A Appareil 2: instance$A Appareil 3: instance$A
+4 ID: 3$ID $APPAREIL$ Apparei1 1: instance$A Appareil 2: instance$A
+5 ID: 1$ID $APPAREIL$ Appareil 1: instance$A Appareil 2: instance$A
+6 ID: 4$ID $APPAREIL$ Appareil 1: instance$A Appareil 2: instance$A Appareil 3: instance$A
 7 ID: 2$ID
 8 ID: 1$ID
+9 ID: 3$ID $APPAREIL$ Appareil 1: instance$A

@@ -16,24 +16,27 @@ public class medecin {
 			 System.out.println(string1);
 		  }
 	   } catch (FileNotFoundException i) {
-		  System.out.println("Consultations file not found");
+		  i.printStackTrace();
 	   }
     }
 
     public static void main(String[] args) throws IOException {
-	   System.out.println("Saisir: D pour details du patient et ses consultations, N pour creer une consultation," +
-			 " M pour modifier une consultation, O pour creer une ordonnance");
+	   System.out.println("Saisir: D pour details du patient et ses consultations, N pour creer une consultation," + "\n" +
+			 " M pour modifier une consultation, O pour creer une ordonnance, E pour exporter des consultations");
 	   Scanner scanner = new Scanner(System.in);
 	   String switchString = scanner.nextLine();
 	   int ID, ID_Consultation;
 	   switch (switchString.toUpperCase()) {
 		  case "D":
-			 System.out.println("ID?");
+			 System.out.println("ID du patient?");
 			 ID = scanner.nextInt();
 			 if (Consultations.Check(ID)) {
 				System.out.println(Patient.recherche(ID));
 				detailsConsultations(ID);
-			 } else System.out.println("Pas de Consultations");
+			 } else if (Patient.check(ID)) {
+				System.out.println(Patient.recherche(ID));
+				System.out.println("Pas de Consultations");
+			 } else System.out.println("ce patient n'est pas dans la liste");
 			 break;
 		  case "N":
 			 System.out.println("ID du patient?");
@@ -73,6 +76,27 @@ public class medecin {
 				Consultations.write_Ordonnance(ordonnance, ID);
 			 } else {
 				System.out.println("Ce patient n'exist pas");
+			 }
+			 break;
+		  case "E":
+			 ArrayList<Integer> num_exporter = new ArrayList<>();
+			 System.out.println("ID du patient?");
+			 ID = scanner.nextInt();
+			 if (Patient.check(ID) && Consultations.Check(ID)) {
+				detailsConsultations(ID);
+				System.out.println("Combien de consultations?");
+				int nombre_de_consultation = scanner.nextInt();
+				for (int i = 0; i < nombre_de_consultation; i++) {
+				    System.out.println("numero de consultations?");
+				    int num_de_consultation = scanner.nextInt();
+				    num_exporter.add(num_de_consultation);
+				}
+				scanner.nextLine();
+				System.out.println("Nom de fichier?");
+				String nom = scanner.nextLine();
+				Consultations.exporterConsultations(num_exporter, nom);
+			 } else {
+				System.out.println("Le patient n'est pas dans la liste des patients ou n'a pas encore de consultations");
 			 }
 			 break;
 		  default:

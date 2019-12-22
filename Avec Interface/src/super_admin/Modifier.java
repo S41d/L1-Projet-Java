@@ -1,99 +1,197 @@
 package super_admin;
 
-import java.awt.event.*;
-import java.io.*;
+import RoundedBorders.*;
+
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Modifier {
-    public static void takeNum(){
-	   String ID = JOptionPane.showInputDialog(null, "ID?", "Saisir ID", JOptionPane.OK_CANCEL_OPTION);
+    public static void takeNum() {
+	   JFrame frame = new JFrame("ID");
+	   frame.setSize(300, 150);
 
+	   JTextField dummy = new JTextField();
+	   dummy.requestFocusInWindow();
+
+	   JTextField textField = new RoundedTextField();
+	   textField.setText("ID Global");
+	   textField.setHorizontalAlignment(JTextField.LEFT);
+	   textField.setBackground(new Color(79, 79, 79));
+	   textField.setForeground(Color.LIGHT_GRAY);
+	   textField.setBounds(30, 20, 240, 30);
+	   textField.addFocusListener(new FocusListener() {
+		  @Override
+		  public void focusGained(FocusEvent focusEvent) {
+			 if (textField.getText().equals("ID Global"))
+				textField.setText("");
+		  }
+
+		  @Override
+		  public void focusLost(FocusEvent focusEvent) {
+			 if (textField.getText().isEmpty())
+				textField.setText("ID Global");
+		  }
+	   });
+
+	   JButton btnOK = new RoundedButton("OK");
+	   btnOK.setBackground(new Color(105, 205, 160));
+	   btnOK.setForeground(Color.DARK_GRAY);
+	   btnOK.setBounds(70, 65, 75, 30);
+	   btnOK.addActionListener(actionEvent -> {
+		  try {
+			 int ID = Integer.parseInt(textField.getText());
+			 if (check(ID)) {
+				frame.dispose();
+				ui(ID);
+			 } else {
+				error_ui();
+			 }
+		  } catch (FileNotFoundException e) {
+			 e.printStackTrace();
+		  }
+	   });
+
+	   JButton btnAnnuler = new RoundedButton("Annuler");
+	   btnAnnuler.setBackground(new Color(244, 72, 72));
+	   btnAnnuler.setForeground(Color.DARK_GRAY);
+	   btnAnnuler.setBounds(155, 65, 75, 30);
+	   btnAnnuler.addActionListener(actionEvent -> frame.dispose());
+
+	   frame.getContentPane().setBackground(Color.darkGray);
+	   frame.add(btnAnnuler);
+	   frame.add(btnOK);
+	   frame.add(dummy);
+	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	   frame.add(textField);
+	   frame.setLocationRelativeTo(null);
+	   frame.setLayout(null);
+	   frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-	   takeNum();
-    }
+    public static void ui(int num) throws FileNotFoundException {
+	   File Roles = new File("data/Roles.txt");
+	   FileReader roles_reader = new FileReader(Roles);
+	   Scanner scanner_roles = new Scanner(roles_reader);
 
-    public static void ui() {
+	   String USER = "";
+	   String PASS = "";
+	   String ROLE = "";
+
+	   while (scanner_roles.hasNextLine()) {
+		  String ligne = scanner_roles.nextLine();
+		  int ID = Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")));
+		  if (ID == num) {
+			 USER = ligne.substring(ligne.indexOf("Username:"), ligne.indexOf("$USER"));
+			 USER = USER.substring(USER.indexOf(" "));
+			 USER = USER.substring(1);
+
+			 PASS = ligne.substring(ligne.indexOf("Password:"), ligne.indexOf("$P"));
+			 PASS = PASS.substring(PASS.indexOf(" "));
+			 PASS = PASS.substring(1);
+
+			 ROLE = ligne.substring(ligne.indexOf("Role:"), ligne.indexOf("$R"));
+			 ROLE = ROLE.substring(ROLE.indexOf(" "));
+			 ROLE = ROLE.substring(1);
+		  }
+	   }
+
+
 	   JFrame frame = new JFrame("Modifier");
-	   frame.setSize(300, 400);
+	   frame.setSize(600, 400);
+	   frame.getContentPane().setBackground(Color.darkGray);
 
-	   JPanel panel = new JPanel();
-	   panel.setSize(300, 400);
+	   JTextField userField = new RoundedTextField();
+	   userField.setText(USER);
+	   userField.setBackground(new Color(79, 79, 79));
+	   userField.setForeground(Color.LIGHT_GRAY);
+	   userField.setHorizontalAlignment(JTextField.CENTER);
+	   userField.setBounds(150, 30, 400, 40);
 
-	   JTextField numField = new JTextField();
-	   numField.setBounds(110, 20, 100, 30);
+	   JLabel userLabel = new JLabel("Username:");
+	   userLabel.setForeground(Color.LIGHT_GRAY);
+	   userLabel.setBounds(50, 30, 100, 40);
 
-	   JLabel numLabel = new JLabel("Numero ID :");
-	   numLabel.setBounds(15, 20, 100, 30);
 
-	   JTextField userField = new JTextField();
-	   userField.setBounds(110, 75, 100, 30);
+	   JPasswordField passwordField = new RoundedPasswordField();
+	   passwordField.setText(PASS);
+	   passwordField.setBackground(new Color(79, 79, 79));
+	   passwordField.setForeground(Color.LIGHT_GRAY);
+	   passwordField.setHorizontalAlignment(JPasswordField.CENTER);
+	   passwordField.setBounds(150, 90, 400, 40);
 
-	   JPasswordField passwordField = new JPasswordField();
-	   passwordField.setBounds(110, 130, 100, 30);
+	   JLabel passLabel = new JLabel("Password:");
+	   passLabel.setForeground(Color.LIGHT_GRAY);
+	   passLabel.setBounds(50, 90, 100, 40);
 
-	   JTextField roleField = new JTextField();
-	   roleField.setBounds(110, 185, 100, 30);
 
-	   JLabel login_Label = new JLabel("Username :");
-	   login_Label.setBounds(15, 75, 100, 30);
+	   JTextField roleField = new RoundedTextField();
+	   roleField.setText(ROLE);
+	   roleField.setBackground(new Color(79, 79, 79));
+	   roleField.setForeground(Color.LIGHT_GRAY);
+	   roleField.setHorizontalAlignment(JTextField.CENTER);
+	   roleField.setBounds(150, 150, 400, 40);
 
-	   JLabel pass_Label = new JLabel("Password :");
-	   pass_Label.setBounds(15, 130, 100, 30);
+	   JLabel roleLabel = new JLabel("Role:");
+	   roleLabel.setForeground(Color.LIGHT_GRAY);
+	   roleLabel.setBounds(50, 150, 100, 40);
 
-	   JLabel role_label = new JLabel("Role :");
-	   role_label.setBounds(15, 185, 100, 30);
 
-	   JLabel label = new JLabel();
-	   label.setBounds(20, 290, 270, 150);
+	   JTextField addresseField = new RoundedTextField();
+	   addresseField.setText("Code Postale");
+	   addresseField.setBackground(new Color(79, 79, 79));
+	   addresseField.setForeground(Color.LIGHT_GRAY);
+	   addresseField.setHorizontalAlignment(JTextField.CENTER);
+	   addresseField.setBounds(150, 210, 400, 40);
 
-	   Timer timer = new Timer(2000, new ActionListener() {
-		  @Override
-		  public void actionPerformed(ActionEvent arg0) {
-			 label.setText("");
-		  }
-	   });
-	   Timer timer1 = new Timer(2000, new ActionListener() {
-		  @Override
-		  public void actionPerformed(ActionEvent arg0) {
-			 label.setText("Compte modifié");
-			 frame.dispose();
-		  }
-	   });
+	   JLabel adresseLabel = new JLabel("Adresse:");
+	   adresseLabel.setForeground(Color.LIGHT_GRAY);
+	   adresseLabel.setBounds(50, 210, 100, 40);
 
-	   JButton button = new JButton("Modifier");
-	   button.setBounds(70, 235, 150, 30);
+	   JButton button = new RoundedButton("Modifier");
+	   button.setBackground(new Color(243, 144, 57));
+	   button.setForeground(Color.DARK_GRAY);
+	   button.setBounds(160, 280, 150, 40);
 	   button.addActionListener(action -> {
 		  try {
 			 String pass = new String(passwordField.getPassword());
-			 if (check(Integer.parseInt(numField.getText()))) {
-				modifier_compte(Integer.parseInt(numField.getText()), userField.getText(), pass, roleField.getText());
-				timer1.start();
-			 } else {
-				label.setText("Ce compte n'existe pas");
-				timer.start();
-			 }
+			 modifier_compte(num, userField.getText(), pass, roleField.getText());
+			 reussi_Modifier_ui();
+			 frame.dispose();
 		  } catch (FileNotFoundException i) {
-			 System.out.println("Exception i");
+			 i.printStackTrace();
 		  }
-
 	   });
 
-	   panel.add(button);
-	   panel.add(numField);
-	   panel.add(numLabel);
-	   panel.add(userField);
-	   panel.add(passwordField);
-	   panel.add(roleField);
-	   panel.add(login_Label);
-	   panel.add(pass_Label);
-	   panel.add(role_label);
-	   panel.add(label);
-	   panel.setLayout(null);
+	   JButton btnAnnuler = new RoundedButton("Annuler");
+	   btnAnnuler.setBackground(new Color(240, 74, 82));
+	   btnAnnuler.setForeground(Color.DARK_GRAY);
+	   btnAnnuler.setBounds(320, 280, 150, 40);
+	   btnAnnuler.addActionListener(actionEvent -> frame.dispose());
 
-	   frame.add(panel);
+	   frame.add(btnAnnuler);
+	   frame.add(adresseLabel);
+	   frame.add(roleLabel);
+	   frame.add(passLabel);
+	   frame.add(userLabel);
+	   frame.add(addresseField);
+	   frame.add(button);
+	   frame.add(userField);
+	   frame.add(passwordField);
+	   frame.add(roleField);
 	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	   frame.setLocationRelativeTo(null);
 	   frame.setLayout(null);
@@ -106,9 +204,8 @@ public class Modifier {
 	   Scanner scanner = new Scanner(reader);
 	   while (scanner.hasNextLine()) {
 		  String string = scanner.nextLine();
-		  string = string.substring(string.indexOf(" "));
-		  string = string.substring(1);
-		  int numero = Integer.parseInt(string.substring(0, string.indexOf(" ")));
+		  string = string.substring(0, string.indexOf(" "));
+		  int numero = Integer.parseInt(string);
 		  if (numero == num) {
 			 account_exists = true;
 			 break;
@@ -118,11 +215,6 @@ public class Modifier {
 	   }
 	   scanner.close();
 	   return account_exists;
-    }
-
-    public static void modifier_compte(int num, String user, String pass, String role) throws FileNotFoundException {
-	   write_temporary();
-	   write_file(num, user, pass, role);
     }
 
     public static String modifie_role(int id, String user, String pass, String role) {
@@ -165,9 +257,9 @@ public class Modifier {
 			 int ID = Integer.parseInt(string1);
 			 if (ID != id) fileWriter.println(ligne);
 			 else {
-			     string_of_return = ID + " Username: " + user + "$USER Password: " + pass + "$P";
-			     fileWriter.println(string_of_return);
-                }
+				string_of_return = ID + " Username: " + user + "$USER Password: " + pass + "$P";
+				fileWriter.println(string_of_return);
+			 }
 		  }
 		  fileWriter.close();
 		  scanner.close();
@@ -178,26 +270,20 @@ public class Modifier {
 	   return string_of_return;
     }
 
-    static void write_temporary() throws FileNotFoundException {
+    static void modifier_compte(int num, String user, String pass, String role) throws FileNotFoundException {
 	   File temporary = new File("data/temporary.txt");
 	   File file = new File("data/Roles.txt");
 
-	   PrintWriter tempWriter = new PrintWriter(temporary);
-	   InputStream inputStream = new FileInputStream(file);
-	   InputStreamReader reader = new InputStreamReader(inputStream);
-	   Scanner scanner = new Scanner(reader);
-
-	   while (scanner.hasNextLine()) {
-		  String string = scanner.nextLine();
-		  tempWriter.println(string);
+	   try (FileInputStream fis = new FileInputStream(file);
+	      FileOutputStream fos = new FileOutputStream(temporary)) {
+	       int len;
+	       byte[] buffer = new byte[4096];
+	       while ((len = fis.read(buffer)) > 0) {
+	           fos.write(buffer, 0, len);
+	       }
+	   } catch (IOException e) {
+	       e.printStackTrace();
 	   }
-	   tempWriter.close();
-	   scanner.close();
-    }
-
-    static void write_file(int num, String user, String pass, String role) throws FileNotFoundException {
-	   File temporary = new File("data/temporary.txt");
-	   File file = new File("data/Roles.txt");
 
 	   PrintWriter fileWriter = new PrintWriter(file);
 	   InputStream inputStream = new FileInputStream(temporary);
@@ -210,8 +296,8 @@ public class Modifier {
 		  String string = ligne.substring(ligne.indexOf(" "));
 		  string = string.substring(1);
 		  int id = Integer.parseInt(string.substring(0, string.indexOf(" ")));
-		  if (id == num && ("Role: " + role).equals(string.substring(string.indexOf("Role:"), string.indexOf("$R")))) {
-                fileWriter.println(idLigne + " " + modifie_role(num, user, pass, role) + " Role: " + role + "$R");
+		  if (idLigne == num && ("Role: " + role).equals(ligne.substring(ligne.indexOf("Role:"), ligne.indexOf("$R")))) {
+			 fileWriter.println(idLigne + " " + modifie_role(id, user, pass, role) + " Role: " + role + "$R");
 		  } else {
 			 fileWriter.println(ligne);
 		  }
@@ -221,4 +307,51 @@ public class Modifier {
 	   boolean bool = temporary.delete();
     }
 
+    //interfaces pour les erreurs
+
+    public static void reussi_Modifier_ui() {
+	   JFrame frame = new JFrame();
+	   frame.setSize(200, 140);
+	   frame.getContentPane().setBackground(Color.darkGray);
+
+	   JLabel label = new JLabel("Modifications enregistrés");
+	   label.setHorizontalAlignment(JLabel.CENTER);
+	   label.setForeground(Color.LIGHT_GRAY);
+	   label.setBounds(0, 20, 200, 30);
+
+	   JButton button = new RoundedButton("OK");
+	   button.setBounds(75, 60, 50, 30);
+	   button.setBackground(new Color(212, 163, 68));
+	   button.addActionListener(actionEvent -> frame.dispose());
+
+	   frame.add(label);
+	   frame.add(button);
+	   frame.setLocationRelativeTo(null);
+	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	   frame.setLayout(null);
+	   frame.setVisible(true);
+    }
+
+    public static void error_ui() {
+	   JFrame frame = new JFrame("Erreur");
+	   frame.setSize(200, 140);
+	   frame.getContentPane().setBackground(Color.darkGray);
+
+	   JLabel label = new JLabel("ID non reconnu");
+	   label.setHorizontalAlignment(JLabel.CENTER);
+	   label.setForeground(Color.LIGHT_GRAY);
+	   label.setBounds(20, 20, 160, 30);
+
+	   JButton button = new RoundedButton("OK");
+	   button.setBounds(75, 60, 50, 30);
+	   button.setBackground(new Color(212, 163, 68));
+	   button.addActionListener(actionEvent -> frame.dispose());
+
+	   frame.add(label);
+	   frame.add(button);
+	   frame.setLocationRelativeTo(null);
+	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	   frame.setLayout(null);
+	   frame.setVisible(true);
+    }
 }

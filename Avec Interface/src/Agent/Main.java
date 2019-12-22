@@ -1,20 +1,20 @@
 package Agent;
 
 import Classes_principales.Patient;
-import RoundFields.*;
+import RoundedBorders.RoundedPasswordField;
+import RoundedBorders.RoundedTextField;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
 public class Main {
-    public static void ui() throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-
+    public static void ui() {
 	   JFrame frame = new JFrame("Agent");
 	   frame.setSize(600, 300);
 	   frame.getContentPane().setBackground(Color.darkGray);
 
-	   JTextField idField = new RoundTextField();
+	   JTextField idField = new RoundedTextField();
 	   idField.setBounds(110, 30, 380, 30);
 	   idField.setForeground(Color.DARK_GRAY);
 
@@ -52,18 +52,18 @@ public class Main {
 	   btnSupprimer.setBounds(370, 80, 120, 30);
 	   btnSupprimer.setBackground(new Color(244, 72, 72));
 
-	   JButton btnCreer = new RoundButton("Creer un nouveau compte patient");
+	   JButton btnCreer = new JButton("Creer un nouveau compte patient");
 	   btnCreer.setBounds(110, 120, 380, 30);
 	   btnCreer.setBackground(Color.darkGray);
 	   btnCreer.setForeground(Color.LIGHT_GRAY);
 
 	   frame.add(btnVerifier); frame.add(btnModifier); frame.add(btnSupprimer); frame.add(btnCreer);
 	   frame.add(resultatLabel);
-	   frame.add(idField); frame.add(idLabel); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	   frame.add(idField); frame.add(idLabel); frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	   frame.setLayout(null); frame.setLocationRelativeTo(null); frame.setVisible(true);
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) {
 	   ui();
     }
 }

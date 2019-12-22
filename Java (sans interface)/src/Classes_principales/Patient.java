@@ -29,8 +29,7 @@ public class Patient {
 	   }
 	   scanner.close();
 	   return Check;
-    }
-
+    }		// verifier si le patient existe
 
     public static String recherche(int ID) throws FileNotFoundException {
 	   File Patients = new File("data/Patient.txt");
@@ -49,13 +48,14 @@ public class Patient {
 			 String Prenom = prenom.substring(prenom.indexOf(" "));
 			 String Adresse = adresse.substring(adresse.indexOf(" "));
 			 String DDN = ddn.substring(ddn.lastIndexOf(" "));
+			 // pour que les details s'affichent pas avec les $ et tout
 			 details = "ID : " + ID + " ,Nom :" + Nom + " ,Prenom :" + Prenom + " ,Adresse :" + Adresse + ", Date de naissance : " + DDN;
 			 break;
 		  }
 	   }
 	   scanner.close();
 	   return details;
-    }
+    }		//details du patient
 
     public static void nouveauPatient(String nom, String prenom, int Adresse, String Date) {
 	   File Patient = new File("data/Patient.txt");
@@ -94,7 +94,7 @@ public class Patient {
 	   } catch (IOException e) {
 		  e.printStackTrace();
 	   }
-    }
+    }	//creer un nouveau patient
 
     public static void supprimerPatient(int ID) {
 	   File Patient = new File("data/Patient.txt");
@@ -128,7 +128,7 @@ public class Patient {
 	   } catch (IOException i) {
 		  i.printStackTrace();
 	   }
-    }
+    }		//supprimer un patient
 
     public static void modifier(int ID, String nom, String prenom, int Adresse, String Date) throws FileNotFoundException{
         File Patient = new File("data/Patient.txt");
@@ -142,7 +142,7 @@ public class Patient {
 	       }
 	   } catch (IOException e) {
             e.printStackTrace();
-	   }
+	   }	//copier dans temporaire
 
 	   try{
             PrintWriter fileWriter = new PrintWriter(Patient);
@@ -165,6 +165,6 @@ public class Patient {
         } catch (IOException e) {
 	       e.printStackTrace();
 	   }
-    }
+    }		//modifier un patient
     
 }
