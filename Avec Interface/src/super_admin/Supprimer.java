@@ -3,13 +3,10 @@ package super_admin;
 import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedTextField;
 
-import java.awt.event.*;
-import java.util.*;
-import javax.management.relation.Role;
 import javax.swing.*;
-import javax.swing.Timer;
+import java.awt.*;
 import java.io.*;
-import java.awt.Color;
+import java.util.Scanner;
 
 public class Supprimer {
     public static void ui() {

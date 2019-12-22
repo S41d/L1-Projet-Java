@@ -289,11 +289,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="632" y="120" width="673" height="840" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1576494652589" />
-    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup" timestamp="1577011156187">
+    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup" timestamp="1577048759466">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1576195676955" />
-    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577011156187" />
+    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577048759466" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Avec_Interface$Main.ic" NAME="Main Coverage Results" MODIFIED="1576699934520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -1,22 +1,14 @@
 package super_admin;
 
-import RoundedBorders.*;
+import RoundedBorders.RoundedButton;
+import RoundedBorders.RoundedPasswordField;
+import RoundedBorders.RoundedTextField;
 
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import javax.swing.*;
-import javax.swing.text.NumberFormatter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.text.NumberFormat;
+import java.io.*;
 import java.util.Scanner;
 
 public class Modifier {
