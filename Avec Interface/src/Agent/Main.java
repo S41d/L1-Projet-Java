@@ -6,8 +6,7 @@ import RoundedBorders.RoundedTextField;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
+import java.awt.event.*;
 import java.io.*;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -28,17 +27,34 @@ public class Main {
 	   idField.setForeground(Color.LIGHT_GRAY);
 	   idField.setHorizontalAlignment(JTextField.CENTER);
 	   idField.setBounds(50, 30, 500, 40);
-	   idField.addFocusListener(new FocusListener() {
+	   idField.addMouseListener(new MouseListener() {
 		  @Override
-		  public void focusGained(FocusEvent focusEvent) {
-			 if (idField.getText().toUpperCase().equals("ID DU PATIENT"))
-				idField.setText("");
+		  public void mouseClicked(MouseEvent mouseEvent) {
+			 try {
+				Moteur_de_recherche.Class.ui();
+			 } catch (Exception e) {
+				e.printStackTrace();
+			 }
 		  }
 
 		  @Override
-		  public void focusLost(FocusEvent focusEvent) {
-			 if (idField.getText().isEmpty())
-				idField.setText("ID du patient");
+		  public void mousePressed(MouseEvent mouseEvent) {
+
+		  }
+
+		  @Override
+		  public void mouseReleased(MouseEvent mouseEvent) {
+
+		  }
+
+		  @Override
+		  public void mouseEntered(MouseEvent mouseEvent) {
+
+		  }
+
+		  @Override
+		  public void mouseExited(MouseEvent mouseEvent) {
+
 		  }
 	   });
 
