@@ -3,7 +3,6 @@ package Classes_principales;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,16 +59,7 @@ public class Patient {
     public static void nouveauPatient(String nom, String prenom, int Adresse, String Date) {
 	   File Patient = new File("data/Patient.txt");
 	   File temporaire = new File("data/Temporaire_Patient.txt");
-	   try (FileInputStream fis = new FileInputStream(Patient);
-		   FileOutputStream fos = new FileOutputStream(temporaire)) {
-		  int len;
-		  byte[] buffer = new byte[4096];
-		  while ((len = fis.read(buffer)) > 0) {
-			 fos.write(buffer, 0, len);
-		  }
-	   } catch (IOException e) {
-		  e.printStackTrace();
-	   }// Copier dans Temporaire
+	   Consultations.copyTemporaire(Patient, temporaire);
 	   try {
 		  PrintWriter fileWriter = new PrintWriter(Patient);
 		  InputStream inputStream = new FileInputStream(temporaire);
@@ -99,16 +89,7 @@ public class Patient {
     public static void supprimerPatient(int ID) {
 	   File Patient = new File("data/Patient.txt");
 	   File Temporaire = new File("data/Temporaire_Patient.txt");
-	   try (FileInputStream fis = new FileInputStream(Patient);
-		   FileOutputStream fos = new FileOutputStream(Temporaire)) {
-		  int len;
-		  byte[] buffer = new byte[4096];
-		  while ((len = fis.read(buffer)) > 0) {
-			 fos.write(buffer, 0, len);
-		  }
-	   } catch (IOException e) {
-		  e.printStackTrace();
-	   }// copier dans Temporaire
+	   Consultations.copyTemporaire(Patient, Temporaire);
 
 	   try {
 		  PrintWriter fileWriter = new PrintWriter(Patient);
@@ -133,16 +114,7 @@ public class Patient {
     public static void modifier(int ID, String nom, String prenom, int Adresse, String Date) throws FileNotFoundException{
         File Patient = new File("data/Patient.txt");
         File Temporary_Patient = new File("data/Temporaire_Patient.txt");
-	   try (FileInputStream fis = new FileInputStream(Patient);
-	      FileOutputStream fos = new FileOutputStream(Temporary_Patient)) {
-	       int len;
-	       byte[] buffer = new byte[4096];
-	       while ((len = fis.read(buffer)) > 0) {
-	           fos.write(buffer, 0, len);
-	       }
-	   } catch (IOException e) {
-            e.printStackTrace();
-	   }	//copier dans temporaire
+	   Consultations.copyTemporaire(Patient, Temporary_Patient);
 
 	   try{
             PrintWriter fileWriter = new PrintWriter(Patient);

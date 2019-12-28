@@ -1,5 +1,8 @@
 package super_admin;
 
+import Classes_principales.Patient;
+import Dialogue.dialogue;
+import Dialogue.yes_no_option;
 import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedTextField;
 
@@ -37,19 +40,24 @@ public class Supprimer {
         supprime_Button.setForeground(Color.darkGray);
         supprime_Button.addActionListener(actionEvent -> {
             try {
-                if (check(Integer.parseInt(numField.getText())))  {
-                    int ans = JOptionPane.showConfirmDialog(frame, "Vous etes sur de supprimer ce compte?", "", JOptionPane.YES_NO_OPTION);
-                    if (ans != 1) {
-                        supprime_compte(Integer.parseInt(numField.getText()), Roles_Field.getText());
+                if (Patient.check(Integer.parseInt(numField.getText()))) {
+                    new yes_no_option("Vous êtes sûr de supprimer?");
+                    yes_no_option.YES.addActionListener(actionEvent1 -> {
+                        try {
+                            supprime_compte(Integer.parseInt(numField.getText()), Roles_Field.getText());
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
                         frame.dispose();
-                    }
+                    });
                 } else {
-                    JOptionPane.showMessageDialog(frame, "Ce compte n'existe pas", "Error", JOptionPane.ERROR_MESSAGE);
+                    new dialogue("Ce compte n'exist pas");
                 }
-            } catch (FileNotFoundException e) {
-                System.out.println("file not found exception");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        });
+            });
+
 
         JButton btnAnnuler = new RoundedButton("Annuler");
         btnAnnuler.setBackground(new Color(105, 205, 160));

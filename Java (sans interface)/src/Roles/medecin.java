@@ -22,7 +22,7 @@ public class medecin {
 
     public static void main(String[] args) throws IOException {
 	   System.out.println("Saisir: D pour details du patient et ses consultations, N pour creer une consultation," + "\n" +
-			 " M pour modifier une consultation, O pour creer une ordonnance, E pour exporter des consultations");
+			 " M pour modifier une consultation, O pour creer une ordonnance, E pour exporter des consultations, S pour supprimer une consultation");
 	   Scanner scanner = new Scanner(System.in);
 	   String switchString = scanner.nextLine();
 	   int ID, ID_Consultation;
@@ -95,6 +95,19 @@ public class medecin {
 				System.out.println("Nom de fichier?");
 				String nom = scanner.nextLine();
 				Consultations.exporterConsultations(num_exporter, nom);
+			 } else {
+				System.out.println("Le patient n'est pas dans la liste des patients ou n'a pas encore de consultations");
+			 }
+			 break;
+		  case "S":
+			 System.out.println("ID du patient");
+			 ID = scanner.nextInt();
+			 if (Patient.check(ID) && Consultations.Check(ID)) {
+				detailsConsultations(ID);
+				System.out.println("Numero de la consultations?");
+				int num = scanner.nextInt();
+				Consultations.supprimer_consultation(num);
+				scanner.nextLine();
 			 } else {
 				System.out.println("Le patient n'est pas dans la liste des patients ou n'a pas encore de consultations");
 			 }

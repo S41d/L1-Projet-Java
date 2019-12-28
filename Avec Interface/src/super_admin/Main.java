@@ -97,12 +97,14 @@ public class Main {
 				    label.setHorizontalAlignment(SwingConstants.CENTER);
 				    label.setText("loggin in as medecin");
 				    timer.start();
+				    frame.dispose();
+				    Medecin.Main.ui();
 				    break;
 				} else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Agent")) {
 				    label.setHorizontalAlignment(SwingConstants.CENTER);
 				    label.setText("loggin in as agent");
 				    timer.start();
-				    Thread.sleep(1000);
+				    frame.dispose();
 				    Agent.Main.ui();
 				    break;
 				} else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Technicien")) {
@@ -118,8 +120,6 @@ public class Main {
 			 scanner.close();
 		  } catch (FileNotFoundException e) {
 			 JOptionPane.showMessageDialog(frame, "File not found", "Error", JOptionPane.ERROR_MESSAGE);
-		  } catch (InterruptedException e) {
-			 e.printStackTrace();
 		  }
 	   }); // Logging in button
 

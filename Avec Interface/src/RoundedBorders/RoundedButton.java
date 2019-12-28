@@ -2,6 +2,8 @@ package RoundedBorders;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class RoundedButton extends JButton {
     @Override protected void paintComponent(Graphics g) {
@@ -17,10 +19,13 @@ public class RoundedButton extends JButton {
     @Override public void updateUI() {
 	   super.updateUI();
 	   setOpaque(false);
+	   setContentAreaFilled(false);
 	   setBorder(new RoundedCornerBorder());
     }
+
+
     public RoundedButton(String text){
         super(text);
-        setOpaque(false);
+        setFocusPainted(false);
     }
 }

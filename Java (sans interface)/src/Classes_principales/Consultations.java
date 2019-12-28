@@ -1,15 +1,6 @@
 package Classes_principales;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.nio.charset.IllegalCharsetNameException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,7 +24,7 @@ public class Consultations {
 		  }
 	   }
 	   scanner.close();
-	   return Check;          //verifier si la consultation existe
+	   return Check;          //verifier si le patient a des consultations
     }
 
     public static ArrayList<String> getAppareil(int ID) throws FileNotFoundException {
@@ -79,7 +70,7 @@ public class Consultations {
 			 String Consultation = ligne_Consultations.substring(ligne_Consultations.indexOf("$ID"));
 			 Consultation = Consultation.substring(Consultation.indexOf(" "));
 			 tousLesConsultations.add(id + " " + Consultation);
-			 if (ligne.contains("$APPAREIL$")){
+			 if (ligne.contains("$APPAREIL$")) {
 				tousLesConsultations.add(list.get(i));
 				i++;
 			 }
@@ -92,16 +83,7 @@ public class Consultations {
     public static void creerConsultation(int ID, String consultation) {
 	   File Consultations = new File("data/Consultations.txt");
 	   File Temporaire = new File("data/Temporaire_consultations.txt");
-	   try (FileInputStream fis = new FileInputStream(Consultations);
-		   FileOutputStream fos = new FileOutputStream(Temporaire)) {
-		  int len;
-		  byte[] buffer = new byte[4096];
-		  while ((len = fis.read(buffer)) > 0) {
-			 fos.write(buffer, 0, len);
-		  }
-	   } catch (IOException e) {
-		  e.printStackTrace();
-	   }
+	   copyTemporaire(Consultations, Temporaire);
 	   try {
 		  PrintWriter fileWriter = new PrintWriter(Consultations);
 		  InputStream inputStream = new FileInputStream(Temporaire);
@@ -115,12 +97,12 @@ public class Consultations {
 			 counter = Integer.parseInt(string.substring(0, string.indexOf(" ")));
 			 counter++;
 		  }
-		  fileWriter.write(counter + " ID: " + ID + "$ID " + consultation);
 		  System.out.println("Besoin d'appareil? Y pour oui, N pour non");
 		  Scanner scanner_appareil = new Scanner(System.in);
 		  String stringOfSwitch = scanner_appareil.nextLine();
 		  switch (stringOfSwitch.toUpperCase()) {
 			 case "Y":
+				fileWriter.write(counter + " ID: " + ID + "$ID " + consultation);
 				System.out.println("Nombre d'appareil");
 				int nombre_appareil = scanner_appareil.nextInt();
 				scanner_appareil.nextLine();
@@ -128,7 +110,7 @@ public class Consultations {
 				write_Appareil(nombre_appareil, ID, true);
 
 				String string_appareil;
-				fileWriter.write(" Appareil: ");
+				fileWriter.write("$APPAREIL$ Appareil: ");
 				for (int i = 0; i < nombre_appareil; i++) {
 				    System.out.println("L'Appareil?");
 				    string_appareil = scanner_appareil.nextLine() + "$A" + (i + 1) + ",\t";
@@ -136,6 +118,7 @@ public class Consultations {
 				}
 				break;
 			 case "N":
+				fileWriter.write(counter + " ID: " + ID + "$ID " + consultation);
 				write_Appareil(0, ID, false);
 				System.out.println("Pas d'appareil");
 				break;
@@ -156,16 +139,7 @@ public class Consultations {
     public static void write_Appareil(int nombre, int ID, boolean boo) {
 	   File Appareil = new File("data/Appareils.txt");
 	   File Tempo = new File("data/AppareilTempo.txt");
-	   try (FileInputStream fis = new FileInputStream(Appareil);
-		   FileOutputStream fos = new FileOutputStream(Tempo)) {
-		  int len;
-		  byte[] buffer = new byte[4096];
-		  while ((len = fis.read(buffer)) > 0) {
-			 fos.write(buffer, 0, len);
-		  }
-	   } catch (IOException e) {
-		  e.printStackTrace();
-	   }
+	   copyTemporaire(Appareil, Tempo);
 	   try {
 		  FileReader reader = new FileReader(Tempo);
 		  PrintWriter writer = new PrintWriter(Appareil);
@@ -182,7 +156,7 @@ public class Consultations {
 			 writer.write(" $APPAREIL$");
 		  }
 		  for (int i = 0; i < nombre; i++) {
-			 writer.write(" Appareil_" + (i + 1) + ": instance$A" + (i+1));
+			 writer.write(" Appareil_" + (i + 1) + ": instance$A" + (i + 1));
 		  }
 		  writer.close();
 		  scanner.close();
@@ -190,21 +164,13 @@ public class Consultations {
 	   } catch (FileNotFoundException e) {
 		  e.printStackTrace();
 	   }
+	   Tempo.delete();
     }                    //method pour ecrire dans Appareils.txt, utilisé dans creerConsultation
 
     public static void modifierConsultation(int ID, int ID_Consultation, String consultation) {
 	   File Consultations = new File("data/Consultations.txt");
 	   File Temporaire = new File("data/Temporaire_Consultations.txt");
-	   try (FileInputStream fis = new FileInputStream(Consultations);
-		   FileOutputStream fos = new FileOutputStream(Temporaire)) {
-		  int len;
-		  byte[] buffer = new byte[4096];
-		  while ((len = fis.read(buffer)) > 0) {
-			 fos.write(buffer, 0, len);
-		  }
-	   } catch (IOException e) {
-		  e.printStackTrace();
-	   }
+	   copyTemporaire(Consultations, Temporaire);
 
 	   try {
 		  PrintWriter fileWriter = new PrintWriter(Consultations);
@@ -230,6 +196,55 @@ public class Consultations {
 		  e.printStackTrace();
 	   }
     }                    //reécrire une Consultation
+
+    public static void supprimer_consultation(int ID) {
+	   File Consultations = new File("data/Consultations.txt");
+	   File Tempo = new File("data/tempo.txt");
+	   supprime_appareil(ID);
+	   copyTemporaire(Consultations, Tempo);
+	   try {
+		  PrintWriter fileWriter = new PrintWriter(Consultations);
+		  InputStream inputStream = new FileInputStream(Tempo);
+		  InputStreamReader reader = new InputStreamReader(inputStream);
+		  Scanner scanner = new Scanner(reader);
+
+		  while (scanner.hasNextLine()) {
+			 String string = scanner.nextLine();
+			 int counter = Integer.parseInt(string.substring(0, string.indexOf(" ")));
+			 if (counter != ID) {
+				fileWriter.println(string);
+			 }
+		  }
+		  fileWriter.close();
+	   } catch (FileNotFoundException e) {
+		  e.printStackTrace();
+	   }
+	   Tempo.delete();
+    }
+
+    public static void supprime_appareil(int ID) {
+	   File Appareils = new File("data/Appareils.txt");
+	   File Tempo = new File("data/tempo.txt");
+	   copyTemporaire(Appareils, Tempo);
+	   try {
+		  PrintWriter fileWriter = new PrintWriter(Appareils);
+		  InputStream inputStream = new FileInputStream(Tempo);
+		  InputStreamReader reader = new InputStreamReader(inputStream);
+		  Scanner scanner = new Scanner(reader);
+
+		  while (scanner.hasNextLine()) {
+			 String string = scanner.nextLine();
+			 int counter = Integer.parseInt(string.substring(0, string.indexOf(" ")));
+			 if (counter != ID) {
+				fileWriter.println(string);
+			 }
+		  }
+		  fileWriter.close();
+	   } catch (FileNotFoundException e) {
+		  e.printStackTrace();
+	   }
+	   Tempo.delete();
+    }
 
     public static void write_Ordonnance(String text, int ID) {
 	   File Patients = new File("data/Patient.txt");
@@ -325,7 +340,27 @@ public class Consultations {
     public static void octroyer(int ID, int Appareil) throws FileNotFoundException {
 	   File Appareils = new File("data/Appareils.txt");
 	   File temporaire = new File("data/temporaire.txt");
-	   try (FileInputStream fis = new FileInputStream(Appareils);
+	   copyTemporaire(Appareils, temporaire);
+	   FileReader reader = new FileReader(temporaire);
+	   Scanner scanner = new Scanner(reader);
+	   PrintWriter writer = new PrintWriter(Appareils);
+	   while (scanner.hasNextLine()) {
+		  String ligne = scanner.nextLine();
+		  if (ID == Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")))) {
+			 if (ligne.contains("$APPAREIL$")) {
+				ligne = ligne.replace("instance$A" + Appareil, "octroyé$A" + Appareil);
+			 } else {
+				System.out.println("Numero de consultation ou d'appareil incorrect");
+			 }
+		  }
+		  writer.println(ligne);
+	   }
+	   writer.close();
+	   temporaire.delete();
+    }
+
+    public static void copyTemporaire(File original, File temporaire) {
+	   try (FileInputStream fis = new FileInputStream(original);
 		   FileOutputStream fos = new FileOutputStream(temporaire)) {
 		  int len;
 		  byte[] buffer = new byte[4096];
@@ -335,18 +370,5 @@ public class Consultations {
 	   } catch (IOException e) {
 		  e.printStackTrace();
 	   }
-	   FileReader reader = new FileReader(temporaire);
-	   Scanner scanner = new Scanner(reader);
-	   PrintWriter writer = new PrintWriter(Appareils);
-	   while (scanner.hasNextLine()) {
-		  String ligne = scanner.nextLine();
-		  if (ID == Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")))){
-			 if (ligne.contains("$APPAREIL$")) {
-				ligne = ligne.replace("instance$A" + Appareil, "octroyé$A" + Appareil);
-			 }
-		  }
-		  writer.println(ligne);
-	   }
-	   writer.close();
     }
 }

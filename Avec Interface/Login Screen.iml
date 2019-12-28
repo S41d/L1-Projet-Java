@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jdatepicker" level="project" />
+    <orderEntry type="library" name="swingx-0.9.1" level="project" />
   </component>
 </module>

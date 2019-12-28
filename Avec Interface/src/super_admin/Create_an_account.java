@@ -1,5 +1,6 @@
 package super_admin;
 
+import Dialogue.dialogue;
 import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedFormattedTextField;
 import RoundedBorders.RoundedPasswordField;
@@ -60,7 +61,6 @@ public class Create_an_account {
 				roleField.setText("");
 			 }
 		  }
-
 		  @Override
 		  public void focusLost(FocusEvent focusEvent) {
 			 if (roleField.getText().isEmpty()) {
@@ -96,7 +96,6 @@ public class Create_an_account {
 				finalMaskFormatter.setAllowsInvalid(false);
 			 }
 		  }
-
 		  @Override
 		  public void focusLost(FocusEvent focusEvent) {
 			 if (dateFeild.getText().equals("  -  -    ")) {
@@ -111,7 +110,7 @@ public class Create_an_account {
 	   date_lablel.setForeground(Color.LIGHT_GRAY);
 	   date_lablel.setBounds(50, 270, 100, 40);
 
-	   JButton btnAnnuler = new RoundedButton("Annuler");
+	   RoundedButton btnAnnuler = new RoundedButton("Annuler");
 	   btnAnnuler.setBackground(new Color(240, 74, 82));
 	   btnAnnuler.setForeground(Color.DARK_GRAY);
 	   btnAnnuler.setBounds(320, 380, 150, 40);
@@ -120,19 +119,38 @@ public class Create_an_account {
 	   JButton create_Button = new RoundedButton("Créer compte");
 	   create_Button.setBounds(160, 380, 150, 40);
 	   create_Button.setBackground(new Color(105, 205, 160));
-	   create_Button.addActionListener(arg0 -> {
+	   create_Button.addActionListener(actionEvent -> {
 		  try {
+			 String J = dateFeild.getText().substring(0, dateFeild.getText().indexOf("-"));
+			 String M = dateFeild.getText().substring(dateFeild.getText().indexOf("-"), dateFeild.getText().lastIndexOf("-"));
+			 M = M.substring(1);
+			 String A = dateFeild.getText().substring(dateFeild.getText().lastIndexOf("-"));
+			 A = A.substring(1);
+			 int j = Integer.parseInt(J);
+			 int m = Integer.parseInt(M);
+			 int a = Integer.parseInt(A);
+
 			 if (userField.getText().isEmpty() || passField.getText().isEmpty() || Arrays.toString(passwordField.getPassword()).isEmpty()
 				    || dateFeild.getText().equals("  -  -    ") || roleField.getText().isEmpty()) {
-		          empty_fields();
-			 } else if (! check(userField.getText()) && passField.getText().equals(new String(passwordField.getPassword()))) {
+				new dialogue("Un ou plusieurs champs est vide");
+			 } else if(!userField.getText().matches("^[a-zA-Z]+$")){
+				new dialogue("Nom incorrect");
+			 } else if (! passField.getText().equals(new String(passwordField.getPassword()))) {
+				new dialogue("Les mots de passe ne sont pas les memes");
+			 } else if (j > 31 || j <= 0 || m > 12 || m <= 0 || a > 2020 || a <= 1800){
+				new dialogue("Date incorrect");
+			 }
+
+			 else if (! check(userField.getText()) && passField.getText().equals(new String(passwordField.getPassword()))) {  // Appel de methode pour creer le compte
 				String password = new String(passwordField.getPassword());
 				new_account(userField.getText(), password, roleField.getText(), dateFeild.getText());
-			 } else if (! passField.getText().equals(new String(passwordField.getPassword()))) {
-				password_dont_match();
+				frame.dispose();
+				new dialogue("Compte créé");
 			 }
 		  } catch (FileNotFoundException e) {
 			 e.printStackTrace();
+		  } catch (NumberFormatException i){
+			 new dialogue("Date incorrect");
 		  }
 	   });
 
@@ -212,7 +230,7 @@ public class Create_an_account {
 		  scanner.close();
 
 
-		  boolean bool = Temporaire.delete();
+		  Temporaire.delete();
 	   } catch (IOException e) {
 		  e.printStackTrace();
 	   }
@@ -356,87 +374,14 @@ public class Create_an_account {
 			 counter = Integer.parseInt(string.substring(0, string.indexOf(" ")));
 			 counter++;
 		  }
-		  String final_string = roles + " Role : " + role + "$R Date: " + date +"$DATE";
+		  String final_string = roles + " Role: " + role + "$R Date: " + date + "$DATE";
 		  fileWriter.write(counter + " " + final_string);
 
 		  fileWriter.close();
 		  scanner.close();
 	   } else {
-		  role_incorrect();
+		  new dialogue("Role incorrect");
 	   }
 	   boolean bool = temporary.delete();
-    }
-
-    // les interfaces pour les erreurs
-
-    public static void password_dont_match() {
-	   JFrame frame = new JFrame();
-	   frame.setSize(350, 130);
-	   frame.getContentPane().setBackground(Color.darkGray);
-
-	   JLabel label = new JLabel("Les mots de passes ne sont pas le meme");
-	   label.setHorizontalAlignment(JLabel.CENTER);
-	   label.setForeground(Color.LIGHT_GRAY);
-	   label.setBounds(0, 20, 350, 30);
-
-	   JButton button = new RoundedButton("OK");
-	   button.setBounds(145, 60, 60, 30);
-	   button.setBackground(new Color(79, 79, 79));
-	   button.setForeground(Color.LIGHT_GRAY);
-	   button.addActionListener(actionEvent -> frame.dispose());
-
-	   frame.add(label);
-	   frame.add(button);
-	   frame.setLocationRelativeTo(null);
-	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	   frame.setLayout(null);
-	   frame.setVisible(true);
-    }
-
-    public static void role_incorrect() {
-	   JFrame frame = new JFrame();
-	   frame.setSize(350, 130);
-	   frame.getContentPane().setBackground(Color.darkGray);
-
-	   JLabel label = new JLabel("<html><div style='text-align: center;'>Role incorrect<br>" +
-			 "Choisir entre Medecin,Agent et Technicien</html>");
-	   label.setForeground(Color.LIGHT_GRAY);
-	   label.setBounds(20, 20, 350, 30);
-
-	   JButton button = new RoundedButton("OK");
-	   button.setBounds(145, 60, 60, 30);
-	   button.setBackground(new Color(79, 79, 79));
-	   button.setForeground(Color.LIGHT_GRAY);
-	   button.addActionListener(actionEvent -> frame.dispose());
-
-	   frame.add(label);
-	   frame.add(button);
-	   frame.setLocationRelativeTo(null);
-	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	   frame.setLayout(null);
-	   frame.setVisible(true);
-    }
-
-    public static void empty_fields() {
-	   JFrame frame = new JFrame();
-	   frame.setSize(350, 130);
-	   frame.getContentPane().setBackground(Color.darkGray);
-
-	   JLabel label = new JLabel("Un ou plusieurs champs est vide");
-	   label.setForeground(Color.LIGHT_GRAY);
-	   label.setBounds(20, 20, 350, 30);
-
-	   JButton button = new RoundedButton("OK");
-	   button.setBounds(145, 60, 60, 30);
-	   button.setBackground(new Color(79, 79, 79));
-	   button.setForeground(Color.LIGHT_GRAY);
-	   button.addActionListener(actionEvent -> frame.dispose());
-
-	   frame.add(label);
-	   frame.add(button);
-	   frame.setLocationRelativeTo(null);
-	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	   frame.setLayout(null);
-	   frame.setVisible(true);
     }
 }
