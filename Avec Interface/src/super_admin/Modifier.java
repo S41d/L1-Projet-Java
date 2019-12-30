@@ -87,108 +87,94 @@ public class Modifier {
 		  String ligne = scanner_roles.nextLine();
 		  int ID = Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")));
 		  if (ID == num) {
-			 USER = ligne.substring(ligne.indexOf("Username:"), ligne.indexOf("$USER"));
-			 USER = USER.substring(USER.indexOf(" "));
-			 USER = USER.substring(1);
+			  USER = ligne.substring(ligne.indexOf("Username:"), ligne.indexOf("$USER"));
+			  USER = USER.substring(USER.indexOf(" "));
+			  USER = USER.substring(1);
 
-			 PASS = ligne.substring(ligne.indexOf("Password:"), ligne.indexOf("$P"));
-			 PASS = PASS.substring(PASS.indexOf(" "));
-			 PASS = PASS.substring(1);
+			  PASS = ligne.substring(ligne.indexOf("Password:"), ligne.indexOf("$P"));
+			  PASS = PASS.substring(PASS.indexOf(" "));
+			  PASS = PASS.substring(1);
 
-			 ROLE = ligne.substring(ligne.indexOf("Role:"), ligne.indexOf("$R"));
-			 ROLE = ROLE.substring(ROLE.indexOf(" "));
-			 ROLE = ROLE.substring(1);
+			  ROLE = ligne.substring(ligne.indexOf("Role:"), ligne.indexOf("$R"));
+			  ROLE = ROLE.substring(ROLE.indexOf(" "));
+			  ROLE = ROLE.substring(1);
 		  }
 	   }
 
 
-	   JFrame frame = new JFrame("Modifier");
-	   frame.setSize(600, 400);
-	   frame.getContentPane().setBackground(Color.darkGray);
+		JFrame frame = new JFrame("Modifier");
+		frame.setSize(600, 320);
+		frame.getContentPane().setBackground(Color.darkGray);
 
-	   JTextField userField = new RoundedTextField();
-	   userField.setText(USER);
-	   userField.setBackground(new Color(79, 79, 79));
-	   userField.setForeground(Color.LIGHT_GRAY);
-	   userField.setHorizontalAlignment(JTextField.CENTER);
-	   userField.setBounds(150, 30, 400, 40);
+		JTextField userField = new RoundedTextField();
+		userField.setText(USER);
+		userField.setBackground(new Color(79, 79, 79));
+		userField.setForeground(Color.LIGHT_GRAY);
+		userField.setHorizontalAlignment(JTextField.CENTER);
+		userField.setBounds(150, 30, 400, 40);
 
-	   JLabel userLabel = new JLabel("Username:");
-	   userLabel.setForeground(Color.LIGHT_GRAY);
-	   userLabel.setBounds(50, 30, 100, 40);
-
-
-	   JPasswordField passwordField = new RoundedPasswordField();
-	   passwordField.setText(PASS);
-	   passwordField.setBackground(new Color(79, 79, 79));
-	   passwordField.setForeground(Color.LIGHT_GRAY);
-	   passwordField.setHorizontalAlignment(JPasswordField.CENTER);
-	   passwordField.setBounds(150, 90, 400, 40);
-
-	   JLabel passLabel = new JLabel("Password:");
-	   passLabel.setForeground(Color.LIGHT_GRAY);
-	   passLabel.setBounds(50, 90, 100, 40);
+		JLabel userLabel = new JLabel("Username:");
+		userLabel.setForeground(Color.LIGHT_GRAY);
+		userLabel.setBounds(50, 30, 100, 40);
 
 
-	   JTextField roleField = new RoundedTextField();
-	   roleField.setText(ROLE);
-	   roleField.setBackground(new Color(79, 79, 79));
-	   roleField.setForeground(Color.LIGHT_GRAY);
-	   roleField.setHorizontalAlignment(JTextField.CENTER);
-	   roleField.setBounds(150, 150, 400, 40);
+		JPasswordField passwordField = new RoundedPasswordField();
+		passwordField.setText(PASS);
+		passwordField.setBackground(new Color(79, 79, 79));
+		passwordField.setForeground(Color.LIGHT_GRAY);
+		passwordField.setHorizontalAlignment(JPasswordField.CENTER);
+		passwordField.setBounds(150, 90, 400, 40);
 
-	   JLabel roleLabel = new JLabel("Role:");
-	   roleLabel.setForeground(Color.LIGHT_GRAY);
-	   roleLabel.setBounds(50, 150, 100, 40);
+		JLabel passLabel = new JLabel("Password:");
+		passLabel.setForeground(Color.LIGHT_GRAY);
+		passLabel.setBounds(50, 90, 100, 40);
 
 
-	   JTextField addresseField = new RoundedTextField();
-	   addresseField.setText("Code Postale");
-	   addresseField.setBackground(new Color(79, 79, 79));
-	   addresseField.setForeground(Color.LIGHT_GRAY);
-	   addresseField.setHorizontalAlignment(JTextField.CENTER);
-	   addresseField.setBounds(150, 210, 400, 40);
+		JTextField roleField = new RoundedTextField();
+		roleField.setText(ROLE);
+		roleField.setBackground(new Color(79, 79, 79));
+		roleField.setForeground(Color.LIGHT_GRAY);
+		roleField.setHorizontalAlignment(JTextField.CENTER);
+		roleField.setBounds(150, 150, 400, 40);
 
-	   JLabel adresseLabel = new JLabel("Adresse:");
-	   adresseLabel.setForeground(Color.LIGHT_GRAY);
-	   adresseLabel.setBounds(50, 210, 100, 40);
+		JLabel roleLabel = new JLabel("Role:");
+		roleLabel.setForeground(Color.LIGHT_GRAY);
+		roleLabel.setBounds(50, 150, 100, 40);
 
-	   JButton button = new RoundedButton("Modifier");
-	   button.setBackground(new Color(243, 144, 57));
-	   button.setForeground(Color.DARK_GRAY);
-	   button.setBounds(160, 280, 150, 40);
-	   button.addActionListener(action -> {
-		  try {
-			 String pass = new String(passwordField.getPassword());
-			 modifier_compte(num, userField.getText(), pass, roleField.getText());
-			 reussi_Modifier_ui();
-			 frame.dispose();
-		  } catch (FileNotFoundException i) {
-			 i.printStackTrace();
-		  }
-	   });
+		JButton button = new RoundedButton("Modifier");
+		button.setBackground(new Color(243, 144, 57));
+		button.setForeground(Color.DARK_GRAY);
+		button.setBounds(160, 210, 150, 40);
+		button.addActionListener(action -> {
+			try {
+				String pass = new String(passwordField.getPassword());
+				modifier_compte(num, userField.getText(), pass, roleField.getText());
+				reussi_Modifier_ui();
+				frame.dispose();
+			} catch (FileNotFoundException i) {
+				i.printStackTrace();
+			}
+		});
 
-	   JButton btnAnnuler = new RoundedButton("Annuler");
-	   btnAnnuler.setBackground(new Color(240, 74, 82));
-	   btnAnnuler.setForeground(Color.DARK_GRAY);
-	   btnAnnuler.setBounds(320, 280, 150, 40);
-	   btnAnnuler.addActionListener(actionEvent -> frame.dispose());
+		JButton btnAnnuler = new RoundedButton("Annuler");
+		btnAnnuler.setBackground(new Color(240, 74, 82));
+		btnAnnuler.setForeground(Color.DARK_GRAY);
+		btnAnnuler.setBounds(320, 210, 150, 40);
+		btnAnnuler.addActionListener(actionEvent -> frame.dispose());
 
-	   frame.add(btnAnnuler);
-	   frame.add(adresseLabel);
-	   frame.add(roleLabel);
-	   frame.add(passLabel);
-	   frame.add(userLabel);
-	   frame.add(addresseField);
-	   frame.add(button);
-	   frame.add(userField);
-	   frame.add(passwordField);
-	   frame.add(roleField);
-	   frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	   frame.setLocationRelativeTo(null);
-	   frame.setLayout(null);
-	   frame.setVisible(true);
-    }
+		frame.add(btnAnnuler);
+		frame.add(roleLabel);
+		frame.add(passLabel);
+		frame.add(userLabel);
+		frame.add(button);
+		frame.add(userField);
+		frame.add(passwordField);
+		frame.add(roleField);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
+		frame.setLayout(null);
+		frame.setVisible(true);
+	}
 
     public static boolean check(int num) throws FileNotFoundException {
 	   boolean account_exists = false;
