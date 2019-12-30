@@ -1,52 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Creer_Patient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Creer_Patient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Creer_Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Creer_Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Modifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Supprimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Classes_principales/Consultations.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Classes_principales/Consultations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Classes_principales/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Classes_principales/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Dialogue/dialogue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dialogue/dialogue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Dialogue/yes_no_option.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dialogue/yes_no_option.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Medecin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Medecin/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Medecin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Medecin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Roles/Technicien.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Roles/Technicien.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Roles/agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Roles/agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Roles/medecin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Roles/medecin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedCornerBorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedCornerBorder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedFormattedTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedFormattedTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedPasswordField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Create_an_account$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Create_an_account$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Create_an_account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Modifier$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Modifier$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Modifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Supprimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent/Modifier.java" afterDir="false" />
+    <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="bar de recherche pour le medecin fini">
       <change beforePath="$PROJECT_DIR$/src/Classes_principales/Consultations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes_principales/Consultations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dialogue/dialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dialogue/dialogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Moteur_de_recherche/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur_de_recherche/Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Roles/Technicien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sans_Interface/Technicien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Roles/agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sans_Interface/agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Roles/medecin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sans_Interface/medecin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Create_an_account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Create_an_account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Modifier.java" afterDir="false" />
     </list>
     <list id="3a0341d7-1491-4337-8664-3a33e2fd7148" name="Default Changelistc" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +173,7 @@
       <workItem from="1577573202238" duration="194000" />
       <workItem from="1577575187581" duration="309000" />
       <workItem from="1577640338311" duration="1078000" />
-      <workItem from="1577641442513" duration="5910000" />
+      <workItem from="1577641442513" duration="6150000" />
     </task>
     <task id="LOCAL-00001" summary="ajouté les classes d'agent et de medecin dans la partie sans interface">
       <created>1576202350168</created>
@@ -225,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576202350168</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="bar de recherche pour le medecin fini">
+      <created>1577721056858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577721056859</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +198,10 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ajouté les classes d'agent et de medecin dans la partie sans interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajouté les classes d'agent et de medecin dans la partie sans interface" />
+    <MESSAGE value="bar de recherche pour le medecin fini" />
+    <option name="LAST_COMMIT_MESSAGE" value="bar de recherche pour le medecin fini" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="656" y="172" width="623" height="741" key="#Supprimer" timestamp="1577239597622">
@@ -265,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="693" y="289" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577499755151" />
-    <state x="320" y="0" width="1025" height="864" key="CommitChangelistDialog2" timestamp="1577721010239">
+    <state x="320" y="0" width="1025" height="864" key="CommitChangelistDialog2" timestamp="1577721054110">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="320" y="0" width="1025" height="864" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577721010239" />
+    <state x="320" y="0" width="1025" height="864" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577721054110" />
     <state x="80" y="80" width="1376" height="704" key="DiffContextDialog" timestamp="1577643052789">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -316,10 +283,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="608" y="349" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1576200648357" />
-    <state x="361" y="167" key="Vcs.Push.Dialog.v2" timestamp="1576202456093">
+    <state x="361" y="167" key="Vcs.Push.Dialog.v2" timestamp="1577721060824">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="167" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576202456093" />
+    <state x="361" y="167" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1577721060824" />
     <state x="93" y="93" width="1350" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576002257990">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

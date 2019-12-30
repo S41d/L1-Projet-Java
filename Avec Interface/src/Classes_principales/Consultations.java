@@ -328,17 +328,84 @@ public class Consultations {
 	   }
 	   FileReader reader = new FileReader(temporaire);
 	   Scanner scanner = new Scanner(reader);
-	   PrintWriter writer = new PrintWriter(Appareils);
-	   while (scanner.hasNextLine()) {
-		  String ligne = scanner.nextLine();
-		  if (ID == Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")))){
-			 if (ligne.contains("$APPAREIL$")) {
-				ligne = ligne.replace("instance$A" + Appareil, "octroyé$A" + Appareil);
-			 }
-		  }
-		  writer.println(ligne);
-	   }
-	   writer.close();
-	   boolean bool = temporaire.delete();
-    }
+		PrintWriter writer = new PrintWriter(Appareils);
+		while (scanner.hasNextLine()) {
+			String ligne = scanner.nextLine();
+			if (ID == Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")))) {
+				if (ligne.contains("$APPAREIL$")) {
+					ligne = ligne.replace("instance$A" + Appareil, "octroyé$A" + Appareil);
+				}
+			}
+			writer.println(ligne);
+		}
+		writer.close();
+		boolean bool = temporaire.delete();
+	}
+
+	public static void supprimer_consultation(int ID) {
+		File Consultations = new File("data/Consultations.txt");
+		File Tempo = new File("data/tempo.txt");
+		supprime_appareil(ID);
+		try (FileInputStream fis = new FileInputStream(Consultations);
+			 FileOutputStream fos = new FileOutputStream(Tempo)) {
+			int len;
+			byte[] buffer = new byte[4096];
+			while ((len = fis.read(buffer)) > 0) {
+				fos.write(buffer, 0, len);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			PrintWriter fileWriter = new PrintWriter(Consultations);
+			InputStream inputStream = new FileInputStream(Tempo);
+			InputStreamReader reader = new InputStreamReader(inputStream);
+			Scanner scanner = new Scanner(reader);
+
+			while (scanner.hasNextLine()) {
+				String string = scanner.nextLine();
+				int counter = Integer.parseInt(string.substring(0, string.indexOf(" ")));
+				if (counter != ID) {
+					fileWriter.println(string);
+				}
+			}
+			fileWriter.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		Tempo.delete();
+	}
+
+	public static void supprime_appareil(int ID) {
+		File Appareils = new File("data/Appareils.txt");
+		File Tempo = new File("data/tempo.txt");
+		try (FileInputStream fis = new FileInputStream(Appareils);
+			 FileOutputStream fos = new FileOutputStream(Tempo)) {
+			int len;
+			byte[] buffer = new byte[4096];
+			while ((len = fis.read(buffer)) > 0) {
+				fos.write(buffer, 0, len);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			PrintWriter fileWriter = new PrintWriter(Appareils);
+			InputStream inputStream = new FileInputStream(Tempo);
+			InputStreamReader reader = new InputStreamReader(inputStream);
+			Scanner scanner = new Scanner(reader);
+
+			while (scanner.hasNextLine()) {
+				String string = scanner.nextLine();
+				int counter = Integer.parseInt(string.substring(0, string.indexOf(" ")));
+				if (counter != ID) {
+					fileWriter.println(string);
+				}
+			}
+			fileWriter.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		Tempo.delete();
+	}
 }
