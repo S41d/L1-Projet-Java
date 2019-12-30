@@ -3,3 +3,4 @@
 3 Nom: Nung$N, Prenom: Sophie$Pn, Adresse: 37000$A, Date de naissance: 2/5/2001$Date
 4 Nom: Michou$N, Prenom: Thomas$Pn, Adresse: 41000$A, Date de naissance: 5/2/2000$Date
 5 Nom: nom$N, Prenom: prenom$Pn, Adresse: 34000$A, Date de naissance: 5/6/1999$Date
+6 Nom: Shah gol$N 		Prenom: Shah khan$P 			Adresse: 37000$A 		Date de naissance: 12/15/1999$Date

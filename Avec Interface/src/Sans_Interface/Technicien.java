@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class Technicien {
     public static void main(String[] args) throws FileNotFoundException {
-	   Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-	   System.out.println("ID du patient?");
-	   int ID_scanner = scanner.nextInt();
-	   Consultations.getConsultation_technicien(ID_scanner);
+        System.out.println("ID du patient?");
+        int ID_scanner = scanner.nextInt();
+        Consultations.getConsultation_technicien(ID_scanner);
 
         System.out.println("\n" + "Numero de Consultation?");
         int num_Consultation = scanner.nextInt();

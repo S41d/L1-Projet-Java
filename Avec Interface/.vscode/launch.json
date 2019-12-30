@@ -1,25 +1,25 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Main",
-            "request": "launch",
-            "mainClass": "super_admin.Main",
-            "projectName": "Login Screen"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Main",
-            "request": "launch",
-            "mainClass": "app.Main",
-            "projectName": "Login Screen"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - login",
-            "request": "launch",
-            "mainClass": "app.login",
-            "projectName": "Login Screen"
-        }
-    ]
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Main",
+      "request": "launch",
+      "mainClass": "super_admin.Main",
+      "projectName": "Login Screen"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Main",
+      "request": "launch",
+      "mainClass": "app.Main",
+      "projectName": "Login Screen"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - login",
+      "request": "launch",
+      "mainClass": "app.login",
+      "projectName": "Login Screen"
+    }
+  ]
 }

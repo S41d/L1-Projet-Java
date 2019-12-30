@@ -20,7 +20,7 @@ public class Main {
 
     public Main(String text) {
         username = text;
-    }
+    } // pour utiliser dans moteur de recherche
 
 
     public void ui() {

@@ -4,10 +4,7 @@ import RoundedBorders.RoundedTextField;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,19 +15,19 @@ public class Class {
     public void ui() {
         JDialog frame = new JDialog();
         frame.getContentPane().setBackground(Color.darkGray);
-        frame.setSize(700, 500);
+        frame.setSize(600, 400);
 
         JTextArea textArea = new JTextArea();
         textArea.setBackground(Color.DARK_GRAY);
         textArea.setForeground(Color.LIGHT_GRAY);
-        textArea.setBounds(100, 100, 500, 300);
+        textArea.setBounds(90, 100, 500, 300);
 
         JTextField textField = new RoundedTextField();
         textField.setText("Entrez l'ID, le nom ou le prenom du patient");
         textField.setBackground(new Color(79, 79, 79));
         textField.setForeground(Color.LIGHT_GRAY);
         textField.setHorizontalAlignment(JTextField.CENTER);
-        textField.setBounds(100, 30, 500, 40);
+        textField.setBounds(50, 30, 500, 40);
         textField.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent focusEvent) {
@@ -97,7 +94,18 @@ public class Class {
         frame.add(textArea);
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                new Agent.Main().ui();
+                super.windowClosing(e);
+            }
+        });
         frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        Class Class = new Class();
+        Class.ui();
     }
 }

@@ -1,21 +1,14 @@
 package Medecin;
 
-import Agent.Creer_Patient;
-import Agent.Modifier;
-import Agent.Supprimer;
-import Classes_principales.Patient;
-import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedTextField;
 
-import java.awt.Color;
-import java.awt.event.*;
-import java.io.*;
 import javax.swing.*;
-import java.text.ParseException;
-import java.util.Scanner;
+import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
-public class Main{
-    public static void ui(){
+public class Main {
+    public static void ui() {
         JFrame frame = new JFrame();
         frame.setSize(600, 300);
 
@@ -39,5 +32,10 @@ public class Main{
             }
         });
 
+        frame.add(userField);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(null);
+        frame.setVisible(true);
     }
 }

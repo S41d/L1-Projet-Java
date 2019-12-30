@@ -17,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Login");
         frame.setSize(600, 320);
+        frame.getContentPane().setBackground(Color.DARK_GRAY);
 
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();  // pour que ca focus pas directement sur les autres textefields
@@ -151,7 +152,6 @@ public class Main {
         frame.add(modifier_Button);
         frame.add(supprimer_Button);
         frame.add(login_button);
-        frame.getContentPane().setBackground(Color.DARK_GRAY);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);

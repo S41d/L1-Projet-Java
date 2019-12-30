@@ -15,7 +15,7 @@ public class Supprimer {
     public static void ui() {
         JFrame frame = new JFrame("Supprimer");
         frame.setSize(400, 220);
-        
+
         JTextField numField = new RoundedTextField();
         numField.setBackground(Color.LIGHT_GRAY);
         numField.setForeground(Color.DARK_GRAY);
@@ -56,7 +56,7 @@ public class Supprimer {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            });
+        });
 
 
         JButton btnAnnuler = new RoundedButton("Annuler");
@@ -100,9 +100,9 @@ public class Supprimer {
     }
 
 
-    public static void supprime_role(int idRole, String role){
+    public static void supprime_role(int idRole, String role) {
         String string = "";
-        switch (role){
+        switch (role) {
             case "Medecin":
                 string = "data/Medecin.txt";
                 break;
@@ -127,7 +127,7 @@ public class Supprimer {
             e.printStackTrace();
         }
 
-        try{
+        try {
             PrintWriter fileWriter = new PrintWriter(Roles);
             InputStream inputStream = new FileInputStream(Temporaire);
             InputStreamReader reader = new InputStreamReader(inputStream);
@@ -142,7 +142,7 @@ public class Supprimer {
             fileWriter.close();
             scanner.close();
             boolean bool = Temporaire.delete();
-        } catch (FileNotFoundException i){
+        } catch (FileNotFoundException i) {
             i.printStackTrace();
         }
     }
@@ -152,7 +152,7 @@ public class Supprimer {
         File file = new File("data/Roles.txt");
 
         try (FileInputStream fis = new FileInputStream(file);
-           FileOutputStream fos = new FileOutputStream(temporary)) {
+             FileOutputStream fos = new FileOutputStream(temporary)) {
             int len;
             byte[] buffer = new byte[4096];
             while ((len = fis.read(buffer)) > 0) {
@@ -174,7 +174,8 @@ public class Supprimer {
             String string = ligne.substring(ligne.indexOf(" "));
             string = string.substring(1);
             int id = Integer.parseInt(string.substring(0, string.indexOf(" ")));
-            if (id == num && ("Role: " + role).equals(string.substring(string.indexOf("Role:"), string.indexOf("$R"))));
+            if (id == num && ("Role: " + role).equals(string.substring(string.indexOf("Role:"), string.indexOf("$R"))))
+                ;
             else fileWriter.println(ligne);
         }
         fileWriter.close();
