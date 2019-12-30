@@ -68,7 +68,7 @@ public class Patient {
             InputStreamReader reader = new InputStreamReader(inputStream);
             Scanner scanner = new Scanner(reader);
 
-            String patient = "Nom: " + nom + "$N \t\tPrenom: " + prenom + "$P \t\t\tAdresse: " + Adresse + "$A \t\tDate de naissance: " + Date + "$Date";
+            String patient = "Nom: " + nom + "$N, Prenom: " + prenom + "$P, Adresse: " + Adresse + "$A, Date de naissance: " + Date + "$Date";
 
             int counter = 1;
 
@@ -122,7 +122,7 @@ public class Patient {
         }
     }        //supprimer un patient
 
-    public static void modifier(int ID, String nom, String prenom, int Adresse, String Date) throws FileNotFoundException {
+    public static void modifier(int ID, String nom, String prenom, int Adresse, String Date) {
         File Patient = new File("data/Patient.txt");
         File Temporary_Patient = new File("data/Temporaire_Patient.txt");
         try (FileInputStream fis = new FileInputStream(Patient);
@@ -145,7 +145,7 @@ public class Patient {
             while (scanner.hasNextLine()) {
                 String string = scanner.nextLine();
                 if (Integer.parseInt(string.substring(0, string.indexOf(" "))) == ID) {
-                    fileWriter.println(ID + " Nom: " + nom + "$N\t\tPrenom: " + prenom + "$Pn\t\tAdresse:" + Adresse + "$A\t\tDate de naissance: " + Date + "$Date");
+                    fileWriter.println(ID + " Nom: " + nom + "$N, Prenom: " + prenom + "$Pn, Adresse: " + Adresse + "$A, Date de naissance: " + Date + "$Date");
                 } else {
                     fileWriter.println(string);
                 }

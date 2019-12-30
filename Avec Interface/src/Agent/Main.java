@@ -93,7 +93,7 @@ public class Main {
         JButton btnModifier = new RoundedButton("Modifier");
         btnModifier.setBounds(240, 80, 120, 30);
         btnModifier.setBackground(new Color(243, 144, 57));
-        btnModifier.addActionListener(actionEvent -> Modifier.ui());
+        btnModifier.addActionListener(actionEvent -> Modifier.takeNum());
 
         JButton btnSupprimer = new RoundedButton("Supprimer");
         btnSupprimer.setBounds(370, 80, 120, 30);

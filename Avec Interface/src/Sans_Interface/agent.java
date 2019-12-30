@@ -82,13 +82,14 @@ public class agent {
         int Annee = sc.nextInt();
 
         sc.close();
-        String Date = Jour + "/" + Mois + "/" + Annee;
+        String Date = Jour + "-" + Mois + "-" + Annee;
         Patient.modifier(ID, nom, prenom, Adresse, Date);
     }
 
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Saisir : N pour enregistrer un nouveau patient, V verifier que le patient est dans la liste des patients, S pour Supprimer, M pour modifier");
+        System.out.println("Saisir : N pour enregistrer un nouveau patient, V verifier que le patient est dans la liste des patients," +
+                " S pour Supprimer, M pour modifier");
         String switchString = scanner.nextLine();
         switch (switchString.toUpperCase()) {
             case "N":
