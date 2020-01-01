@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Agent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Agent/Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Modifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Classes_principales/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Classes_principales/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Medecin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Medecin.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Patient.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Patient.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Roles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Roles.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Agent/Creer_Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent/Creer_Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent/Modifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes_principales/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes_principales/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sans_Interface/agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sans_Interface/agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dialogue/dialogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dialogue/dialogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Medecin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Medecin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Moteur_de_recherche/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur_de_recherche/Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/super_admin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Main.java" afterDir="false" />
     </list>
     <list id="3a0341d7-1491-4337-8664-3a33e2fd7148" name="Default Changelistc" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,11 +66,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/Github/First_html_css_classes_online" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/data/Appareils.txt" />
   </component>
   <component name="RecentsManager">
@@ -74,7 +79,20 @@
       <recent name="RoundedBorders" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Modifier">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Class" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Moteur_de_recherche.Class" />
+      <module name="Login Screen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Moteur_de_recherche.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="super_admin.Main" />
       <module name="Login Screen" />
@@ -102,13 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="agent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Sans_Interface.agent" />
-      <module name="Login Screen" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="medecin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Sans_Interface.medecin" />
       <module name="Login Screen" />
@@ -118,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Modifier" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Class" />
+        <item itemvalue="Application.Modifier" />
         <item itemvalue="Application.medecin" />
         <item itemvalue="Application.Technicien" />
-        <item itemvalue="Application.agent" />
       </list>
     </recent_temporary>
   </component>
@@ -168,6 +179,12 @@
       <workItem from="1577722004738" duration="1284000" />
       <workItem from="1577729031066" duration="6026000" />
       <workItem from="1577736476778" duration="5114000" />
+      <workItem from="1577837564355" duration="573000" />
+      <workItem from="1577838148984" duration="208000" />
+      <workItem from="1577838368048" duration="29000" />
+      <workItem from="1577838408293" duration="29000" />
+      <workItem from="1577838450095" duration="1744000" />
+      <workItem from="1577847299347" duration="2634000" />
     </task>
     <task id="LOCAL-00001" summary="ajouté les classes d'agent et de medecin dans la partie sans interface">
       <created>1576202350168</created>
@@ -230,10 +247,11 @@
     </state>
     <state x="614" y="197" width="328" height="468" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1577730059359" />
     <state x="768" y="246" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1577054342233" />
-    <state x="620" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1575941149942">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="775" y="401" width="307" height="222" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1577838102916">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="620" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1575941149942" />
+    <state x="775" y="401" width="307" height="222" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577838102916" />
     <state x="643" y="268" width="624" height="545" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577065761181">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -242,10 +260,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="693" y="289" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577499755151" />
-    <state x="320" y="0" width="1025" height="864" key="CommitChangelistDialog2" timestamp="1577735117183">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="400" y="0" width="1025" height="864" key="CommitChangelistDialog2" timestamp="1577850081666">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="0" width="1025" height="864" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577735117183" />
+    <state x="400" y="0" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1577850081666" />
     <state x="80" y="80" width="1376" height="704" key="DiffContextDialog" timestamp="1577643052789">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -256,35 +275,35 @@
     </state>
     <state x="549" y="149" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1577730866342" />
     <state x="686" y="186" width="640" height="488" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1577236532034" />
-    <state width="1537" height="164" key="GridCell.Tab.0.bottom" timestamp="1577745991258">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1642" height="152" key="GridCell.Tab.0.bottom" timestamp="1577849742073">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1642" height="159" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577532955699" />
-    <state width="1537" height="164" key="GridCell.Tab.0.center" timestamp="1577745991258">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1642" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1577849742073" />
+    <state width="1642" height="152" key="GridCell.Tab.0.center" timestamp="1577849742073">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1642" height="159" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577532955699" />
-    <state width="1537" height="164" key="GridCell.Tab.0.left" timestamp="1577745991258">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1642" height="152" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1577849742073" />
+    <state width="1642" height="152" key="GridCell.Tab.0.left" timestamp="1577849742073">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1642" height="159" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577532955699" />
-    <state width="1537" height="164" key="GridCell.Tab.0.right" timestamp="1577745991258">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1642" height="152" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1577849742073" />
+    <state width="1642" height="152" key="GridCell.Tab.0.right" timestamp="1577849742073">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1642" height="159" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577532955699" />
+    <state width="1642" height="152" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1577849742073" />
     <state x="439" y="131" key="NewModule_or_Project.wizard" timestamp="1575941194961">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="439" y="131" key="NewModule_or_Project.wizard/0.0.1536.864@0.0.1536.864" timestamp="1575941194961" />
-    <state x="316" y="102" width="1172" height="736" key="SettingsEditor" timestamp="1577735488479">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="310" y="172" width="1533" height="876" key="SettingsEditor" timestamp="1577849934318">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="316" y="102" width="921" height="707" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1577735488479" />
-    <state x="659" y="300" width="1172" height="736" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1577498697482" />
+    <state x="310" y="172" width="1533" height="876" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1577849934318" />
     <state width="498" height="398" key="SwitcherDM" timestamp="1576269888686">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -301,11 +320,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="93" y="93" width="1350" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1576002257990" />
-    <state x="470" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1577065695621">
+    <state x="470" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1577837567235">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="376" y="436" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1576198033207" />
-    <state x="470" y="545" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577065695621" />
+    <state x="470" y="545" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577837567235" />
     <state x="577" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577730288431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

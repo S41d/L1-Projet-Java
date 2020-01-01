@@ -20,7 +20,7 @@ public class Class {
         JTextArea textArea = new JTextArea();
         textArea.setBackground(Color.DARK_GRAY);
         textArea.setForeground(Color.LIGHT_GRAY);
-        textArea.setBounds(90, 100, 500, 300);
+        textArea.setBounds(50, 100, 500, 300);
 
         JTextField textField = new RoundedTextField();
         textField.setText("Entrez l'ID, le nom ou le prenom du patient");
@@ -72,7 +72,7 @@ public class Class {
                     while (scanner.hasNextLine()) {
                         String ligne = scanner.nextLine();
                         String nom = ligne.substring(ligne.indexOf("Nom:"), ligne.indexOf("$N"));
-                        String prenom = ligne.substring(ligne.indexOf("Prenom"), ligne.indexOf("$Pn"));
+                        String prenom = ligne.substring(ligne.indexOf("Prenom:"), ligne.indexOf("$Pn"));
                         String ID = ligne.substring(0, ligne.indexOf(" "));
                         if (nom.contains(textField.getText()) || prenom.contains(textField.getText()) || ID.equals(textField.getText())) {
                             ligne = ligne.replace("$A", "");

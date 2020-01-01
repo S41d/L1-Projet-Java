@@ -66,12 +66,8 @@ public class Main {
             }
         });
 
-        JLabel resultatLabel = new JLabel();
-        resultatLabel.setBounds(110, 180, 380, 30);
-        resultatLabel.setForeground(Color.LIGHT_GRAY);
-
         JButton btnVerifier = new RoundedButton("Verifier");
-        btnVerifier.setBounds(110, 80, 120, 30);
+        btnVerifier.setBounds(110, 90, 120, 40);
         btnVerifier.setBackground(new Color(51, 208, 240));
         btnVerifier.addActionListener(actionEvent -> {
             String idFieldString = idField.getText();
@@ -79,11 +75,10 @@ public class Main {
             int ID = Integer.parseInt(idFieldString.substring(0, idFieldString.indexOf(" ")));
             try {
                 if (Patient.check(ID)) {
-                    resultatLabel.setText("le patient exist");
                     frame.dispose();
-                    Medecin.Main.ui();
+                    new Medecin.Main().ui();
                 } else {
-                    resultatLabel.setText("le patient n'existe pas");
+                    new Dialogue.dialogue("Ce patient n'est pas encore dans la liste");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -91,19 +86,19 @@ public class Main {
         });
 
         JButton btnModifier = new RoundedButton("Modifier");
-        btnModifier.setBounds(240, 80, 120, 30);
+        btnModifier.setBounds(240, 90, 120, 40);
         btnModifier.setBackground(new Color(243, 144, 57));
         btnModifier.addActionListener(actionEvent -> Modifier.takeNum());
 
         JButton btnSupprimer = new RoundedButton("Supprimer");
-        btnSupprimer.setBounds(370, 80, 120, 30);
+        btnSupprimer.setBounds(370, 90, 120, 40);
         btnSupprimer.setBackground(new Color(244, 72, 72));
         btnSupprimer.addActionListener(actionEvent -> {
             Supprimer.ui();
         });
 
         JButton btnCreer = new RoundedButton("Ajouter un nouveau patient");
-        btnCreer.setBounds(110, 120, 380, 30);
+        btnCreer.setBounds(110, 140, 380, 40);
         btnCreer.setBackground(Color.darkGray);
         btnCreer.setForeground(Color.LIGHT_GRAY);
         btnCreer.addActionListener(actionEvent -> {
@@ -119,10 +114,10 @@ public class Main {
         frame.add(btnModifier);
         frame.add(btnSupprimer);
         frame.add(btnCreer);
-        frame.add(resultatLabel);
         frame.add(idField);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

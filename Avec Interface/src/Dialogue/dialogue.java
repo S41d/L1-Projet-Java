@@ -31,4 +31,27 @@ public class dialogue extends JFrame {
         this.setLayout(null);
         this.setVisible(true);
     }
+
+    public dialogue(String text, Color foreground, Color background) {
+        this.setSize(350, 150);
+        this.getContentPane().setBackground(background);
+
+        label = new JLabel(text);
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setForeground(foreground);
+        label.setBounds(0, 15, 350, 30);
+
+        button = new RoundedButton("OK");
+        button.setBounds(145, 60, 60, 30);
+        button.setBackground(background);
+        button.setForeground(foreground);
+        button.addActionListener(actionEvent -> this.dispose());
+
+        this.add(label);
+        this.add(button);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setLayout(null);
+        this.setVisible(true);
+    }
 }

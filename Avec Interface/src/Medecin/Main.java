@@ -8,14 +8,25 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 public class Main {
-    public static void ui() {
+    String userString;
+
+    public Main() {
+        userString = "";
+    }
+
+    public Main(String text) {
+        userString = text;
+    }
+
+    public void ui() {
         JFrame frame = new JFrame();
         frame.setSize(600, 300);
+        frame.getContentPane().setBackground(Color.BLACK);
 
         JTextField userField = new RoundedTextField();
         userField.setBounds(50, 30, 500, 40);
-        userField.setText("ID du patient?");
-        userField.setBackground(new Color(79, 79, 79));
+        userField.setText(userString);
+        userField.setBackground(new Color(24, 24, 24));
         userField.setForeground(Color.LIGHT_GRAY);
         userField.setHorizontalAlignment(JTextField.CENTER);
         userField.addFocusListener(new FocusListener() {

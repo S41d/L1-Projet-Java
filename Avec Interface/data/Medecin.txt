@@ -1,4 +1,4 @@
-1 Username: Sophie$USER Password: aaaaaaaaa$P
+1 Username: Sophie$USER Password: aaaa$P
 2 Username: Enzo$USER Password : meow$P
 3 Username: Kiwi$USER Password: bon$P
 4 Username: user$USER Password: brb$P

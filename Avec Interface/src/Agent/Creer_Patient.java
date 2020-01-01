@@ -1,6 +1,7 @@
 package Agent;
 
 import Classes_principales.Patient;
+import Dialogue.dialogue;
 import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedFormattedTextField;
 import RoundedBorders.RoundedTextField;
@@ -88,7 +89,7 @@ public class Creer_Patient {
         create_Button.setBackground(new Color(105, 205, 160));
         create_Button.addActionListener(arg0 -> {
             if (userField.getText().isEmpty() || prenomField.getText().isEmpty() || dateFeild.getText().equals("  -  -    ") || adresseField.getText().isEmpty()) {
-                empty_fields();
+                new dialogue("Un ou plusieurs champs est vide");
             } else {
                 Patient.nouveauPatient(userField.getText(), prenomField.getText(), Integer.parseInt(adresseField.getText()), dateFeild.getText());
             }
@@ -106,78 +107,6 @@ public class Creer_Patient {
         frame.add(create_Button);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setLayout(null);
-        frame.setVisible(true);
-    }
-    // les interfaces pour les erreurs
-
-    public static void password_dont_match() {
-        JFrame frame = new JFrame();
-        frame.setSize(350, 130);
-        frame.getContentPane().setBackground(Color.darkGray);
-
-        JLabel label = new JLabel("Les mots de passes ne sont pas le meme");
-        label.setHorizontalAlignment(JLabel.CENTER);
-        label.setForeground(Color.LIGHT_GRAY);
-        label.setBounds(0, 20, 350, 30);
-
-        JButton button = new RoundedButton("OK");
-        button.setBounds(145, 60, 60, 30);
-        button.setBackground(new Color(79, 79, 79));
-        button.setForeground(Color.LIGHT_GRAY);
-        button.addActionListener(actionEvent -> frame.dispose());
-
-        frame.add(label);
-        frame.add(button);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setLayout(null);
-        frame.setVisible(true);
-    }
-
-    public static void role_incorrect() {
-        JFrame frame = new JFrame();
-        frame.setSize(350, 130);
-        frame.getContentPane().setBackground(Color.darkGray);
-
-        JLabel label = new JLabel("<html><div style='text-align: center;'>Role incorrect<br>" +
-                "Choisir entre Medecin,Agent et Technicien</html>");
-        label.setForeground(Color.LIGHT_GRAY);
-        label.setBounds(20, 20, 350, 30);
-
-        JButton button = new RoundedButton("OK");
-        button.setBounds(145, 60, 60, 30);
-        button.setBackground(new Color(79, 79, 79));
-        button.setForeground(Color.LIGHT_GRAY);
-        button.addActionListener(actionEvent -> frame.dispose());
-
-        frame.add(label);
-        frame.add(button);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setLayout(null);
-        frame.setVisible(true);
-    }
-
-    public static void empty_fields() {
-        JFrame frame = new JFrame();
-        frame.setSize(350, 130);
-        frame.getContentPane().setBackground(Color.darkGray);
-
-        JLabel label = new JLabel("Un ou plusieurs champs est vide");
-        label.setForeground(Color.LIGHT_GRAY);
-        label.setBounds(20, 20, 350, 30);
-
-        JButton button = new RoundedButton("OK");
-        button.setBounds(145, 60, 60, 30);
-        button.setBackground(new Color(79, 79, 79));
-        button.setForeground(Color.LIGHT_GRAY);
-        button.addActionListener(actionEvent -> frame.dispose());
-
-        frame.add(label);
-        frame.add(button);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(null);
         frame.setVisible(true);
     }

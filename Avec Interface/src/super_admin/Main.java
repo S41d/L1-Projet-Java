@@ -1,5 +1,6 @@
 package super_admin;
 
+import Dialogue.dialogue;
 import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedPasswordField;
 import RoundedBorders.RoundedTextField;
@@ -17,15 +18,15 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Login");
         frame.setSize(600, 320);
-        frame.getContentPane().setBackground(Color.DARK_GRAY);
+        frame.getContentPane().setBackground(Color.WHITE);
 
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();  // pour que ca focus pas directement sur les autres textefields
 
         JTextField textField = new RoundedTextField();
         textField.setText("Username");
-        textField.setBackground(new Color(79, 79, 79));
-        textField.setForeground(Color.LIGHT_GRAY);
+        textField.setBackground(Color.LIGHT_GRAY);
+        textField.setForeground(Color.DARK_GRAY);
         textField.setHorizontalAlignment(JTextField.CENTER);
         textField.setBounds(50, 30, 500, 40);
         textField.addFocusListener(new FocusListener() {
@@ -44,8 +45,8 @@ public class Main {
 
         JPasswordField passwordField = new RoundedPasswordField();
         passwordField.setText("Password");
-        passwordField.setBackground(new Color(79, 79, 79));
-        passwordField.setForeground(Color.LIGHT_GRAY);
+        passwordField.setBackground(Color.LIGHT_GRAY);
+        passwordField.setForeground(Color.DARK_GRAY);
         char Char = passwordField.getEchoChar();
         passwordField.setEchoChar((char) 0);
         passwordField.setHorizontalAlignment(JPasswordField.CENTER);
@@ -100,7 +101,7 @@ public class Main {
                         label.setText("loggin in as medecin");
                         timer.start();
                         frame.dispose();
-                        Medecin.Main.ui();
+                        new Medecin.Main().ui();
                         break;
                     } else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Agent")) {
                         label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -122,13 +123,15 @@ public class Main {
                 }
                 scanner.close();
             } catch (FileNotFoundException e) {
-                JOptionPane.showMessageDialog(frame, "File not found", "Error", JOptionPane.ERROR_MESSAGE);
+                new dialogue("File not Founde", Color.LIGHT_GRAY, Color.lightGray);
+            } catch (StringIndexOutOfBoundsException i) {
+                new dialogue("Mot de pass ou Username incorrect", Color.LIGHT_GRAY, Color.lightGray);
             }
         }); // Logging in button
 
         JButton create_an_account_Button = new RoundedButton("Creer un nouveau compte"); // Creating a new account
-        create_an_account_Button.setBackground(Color.darkGray);
-        create_an_account_Button.setForeground(Color.lightGray);
+        create_an_account_Button.setBackground(Color.lightGray);
+        create_an_account_Button.setForeground(Color.darkGray);
         create_an_account_Button.setBounds(110, 200, 380, 40);
         create_an_account_Button.addActionListener(arg0 -> Create_an_account.ui());
 
