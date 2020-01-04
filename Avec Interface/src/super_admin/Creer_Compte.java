@@ -16,7 +16,7 @@ import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Create_an_account {
+public class Creer_Compte {
     public static void ui() {
         JFrame frame = new JFrame("Créer un nouveau compte");
         frame.setSize(600, 500);

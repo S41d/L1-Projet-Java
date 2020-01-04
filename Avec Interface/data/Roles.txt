@@ -1,4 +1,4 @@
-1 1 Username: Sophie$USER Password: aaaa$P Role: Medecin$R Date: 24-01-2001$DATE
+1 1 Username: Sophie$USER Password: aaaa$P Role: Medecin$R
 2 1 Username: Lilian$USER Password: gnegne$P Role: Technicien$R Date: 20-12-2000$DATE
 3 1 Username: Matthieu$USER Password: haha$P Role: Agent$R
 4 2 Username: Thomas$USER Password: wow$P Role: Agent$R Date: 20-10-2020$DATE

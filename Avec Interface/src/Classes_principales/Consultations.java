@@ -119,10 +119,10 @@ public class Consultations {
                     write_Appareil(nombre_appareil, ID, true);
 
                     String string_appareil;
-                    fileWriter.write(" Appareil: ");
+                    fileWriter.write(" $APPAREIL$ Appareil: ");
                     for (int i = 0; i < nombre_appareil; i++) {
                         System.out.println("L'Appareil?");
-                        string_appareil = scanner_appareil.nextLine() + "$A" + (i + 1) + ",\t";
+                        string_appareil = "$A" + (i + 1) + " " + scanner_appareil.nextLine() + "$\\A" + (i + 1) + ",\t";
                         fileWriter.write(string_appareil);
                     }
                     break;
@@ -142,7 +142,7 @@ public class Consultations {
             e.printStackTrace();
         }
     }// creer une nouvelle consultation dans Consultations.txt
-    // et Appareils.txt si le medecin decide de choisir des appareils aussi
+    // et Appareils.txt si le medecin decide de choisir des appareils aussi (pout la partie sans interface)
 
     public static void write_Appareil(int nombre, int ID, boolean boo) {
         File Appareil = new File("data/Appareils.txt");
@@ -210,7 +210,7 @@ public class Consultations {
                     fileWriter.println(string);
                 } else {
                     String appareils = string;
-                    appareils = appareils.substring(appareils.indexOf("Appareil:"));
+                    appareils = appareils.substring(appareils.indexOf("$APPAREIL$"));
                     fileWriter.write(id + " ID: " + ID + "$ID " + consultation);
                     fileWriter.println(" " + appareils);
                 }

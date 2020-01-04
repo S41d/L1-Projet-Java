@@ -6,12 +6,16 @@ import RoundedBorders.RoundedTextField;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.text.ParseException;
 
 public class Main {
+    public static void main(String[] args) {
+        new Main().ui();
+    }
+
     String username;
 
     public Main() {
@@ -37,32 +41,16 @@ public class Main {
         idField.setForeground(Color.LIGHT_GRAY);
         idField.setHorizontalAlignment(JTextField.CENTER);
         idField.setBounds(50, 30, 500, 40);
-        idField.addMouseListener(new MouseListener() {
+        idField.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 try {
                     Moteur_de_recherche.Class recherche = new Moteur_de_recherche.Class();
-                    recherche.ui();
+                    recherche.ui_agent();
                     frame.dispose();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-
-            @Override
-            public void mousePressed(MouseEvent mouseEvent) {
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent mouseEvent) {
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent mouseEvent) {
-            }
-
-            @Override
-            public void mouseExited(MouseEvent mouseEvent) {
             }
         });
 
@@ -76,7 +64,6 @@ public class Main {
             try {
                 if (Patient.check(ID)) {
                     frame.dispose();
-                    new Medecin.Main().ui();
                 } else {
                     new Dialogue.dialogue("Ce patient n'est pas encore dans la liste");
                 }

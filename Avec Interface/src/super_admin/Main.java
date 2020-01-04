@@ -71,11 +71,6 @@ public class Main {
             }
         });
 
-        JLabel label = new JLabel();
-        label.setForeground(Color.lightGray);
-        label.setBounds(0, 250, 600, 30);
-        Timer timer = new Timer(2000, arg0 -> label.setText(""));
-
         JButton login_button = new RoundedButton("Login"); // Logging in button
         login_button.setBounds(110, 150, 120, 40);
         login_button.setBackground(new Color(51, 208, 240));
@@ -92,40 +87,31 @@ public class Main {
 
                 while (scanner.hasNextLine()) {
                     String string = scanner.nextLine();
+                    String IDROLE = string.substring(2);
+                    int IDRole = Integer.parseInt(IDROLE.substring(0, IDROLE.indexOf(" ")));
                     String usernames = string.substring(string.indexOf("Username: "), string.indexOf("$USER"));
                     String passwords = string.substring(string.indexOf("Password: "), string.indexOf("$P"));
                     String roles = string.substring(string.indexOf("Role: "), string.indexOf("$R"));
 
                     if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Medecin")) {
-                        label.setHorizontalAlignment(SwingConstants.CENTER);
-                        label.setText("loggin in as medecin");
-                        timer.start();
                         frame.dispose();
-                        new Medecin.Main().ui();
+                        new Medecin.Main(IDRole).ui();
                         break;
                     } else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Agent")) {
-                        label.setHorizontalAlignment(SwingConstants.CENTER);
-                        label.setText("loggin in as agent");
-                        timer.start();
                         frame.dispose();
                         Agent.Main agent = new Agent.Main();
                         agent.ui();
                         break;
                     } else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Technicien")) {
-                        label.setHorizontalAlignment(SwingConstants.CENTER);
-                        label.setText("loggin in as IT");
-                        timer.start();
                         break;
-                    } else {
-                        label.setHorizontalAlignment(SwingConstants.CENTER);
-                        label.setText("exist pas");
                     }
                 }
                 scanner.close();
             } catch (FileNotFoundException e) {
                 new dialogue("File not Founde", Color.LIGHT_GRAY, Color.lightGray);
             } catch (StringIndexOutOfBoundsException i) {
-                new dialogue("Mot de pass ou Username incorrect", Color.LIGHT_GRAY, Color.lightGray);
+                i.printStackTrace();
+                new dialogue("Mot de pass ou Username incorrect", Color.LIGHT_GRAY, Color.darkGray);
             }
         }); // Logging in button
 
@@ -133,7 +119,7 @@ public class Main {
         create_an_account_Button.setBackground(Color.lightGray);
         create_an_account_Button.setForeground(Color.darkGray);
         create_an_account_Button.setBounds(110, 200, 380, 40);
-        create_an_account_Button.addActionListener(arg0 -> Create_an_account.ui());
+        create_an_account_Button.addActionListener(arg0 -> Creer_Compte.ui());
 
         JButton modifier_Button = new RoundedButton("Modifier");
         modifier_Button.setBounds(240, 150, 120, 40);
@@ -149,7 +135,6 @@ public class Main {
 
         frame.add(textField);
         frame.add(passwordField);
-        frame.add(label);
         frame.add(dummy);
         frame.add(create_an_account_Button);
         frame.add(modifier_Button);

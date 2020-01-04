@@ -41,13 +41,30 @@ public class Patient {
                 String Adresse = adresse.substring(adresse.indexOf(" "));
                 String DDN = ddn.substring(ddn.lastIndexOf(" "));
                 // pour que les details s'affichent pas avec les $ et tout
-                details = "ID : " + ID + " ,Nom :" + Nom + " ,Prenom :" + Prenom + " ,Adresse :" + Adresse + ", Date de naissance : " + DDN;
+                details = "ID: " + ID + " ,Nom:" + Nom + " ,Prenom:" + Prenom + " ,Adresse:" + Adresse + ", Date de naissance: " + DDN;
                 break;
             }
         }
         scanner.close();
         return details;
     }        //details du patient
+
+    public static String details(int ID) throws FileNotFoundException {
+        File Patients = new File("data/Patient.txt");
+        FileReader reader = new FileReader(Patients);
+        Scanner scanner = new Scanner(reader);
+        String details = "";
+
+        while (scanner.hasNextLine()) {
+            String ligne = scanner.nextLine();
+            if (Integer.parseInt(ligne.substring(0, ligne.indexOf(" "))) == (ID)) {
+                details = ligne;
+                break;
+            }
+        }
+        scanner.close();
+        return details;
+    }
 
     public static void nouveauPatient(String nom, String prenom, int Adresse, String Date) {
         File Patient = new File("data/Patient.txt");
