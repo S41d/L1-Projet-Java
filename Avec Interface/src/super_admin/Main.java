@@ -18,15 +18,15 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Login");
         frame.setSize(600, 320);
-        frame.getContentPane().setBackground(Color.WHITE);
+        frame.getContentPane().setBackground(Color.darkGray);
 
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();  // pour que ca focus pas directement sur les autres textefields
 
         JTextField textField = new RoundedTextField();
         textField.setText("Username");
-        textField.setBackground(Color.LIGHT_GRAY);
-        textField.setForeground(Color.DARK_GRAY);
+        textField.setBackground(new Color(79, 79, 79));
+        textField.setForeground(Color.lightGray);
         textField.setHorizontalAlignment(JTextField.CENTER);
         textField.setBounds(50, 30, 500, 40);
         textField.addFocusListener(new FocusListener() {
@@ -45,8 +45,8 @@ public class Main {
 
         JPasswordField passwordField = new RoundedPasswordField();
         passwordField.setText("Password");
-        passwordField.setBackground(Color.LIGHT_GRAY);
-        passwordField.setForeground(Color.DARK_GRAY);
+        passwordField.setBackground(new Color(79, 79, 79));
+        passwordField.setForeground(Color.lightGray);
         char Char = passwordField.getEchoChar();
         passwordField.setEchoChar((char) 0);
         passwordField.setHorizontalAlignment(JPasswordField.CENTER);
@@ -87,8 +87,10 @@ public class Main {
 
                 while (scanner.hasNextLine()) {
                     String string = scanner.nextLine();
-                    String IDROLE = string.substring(2);
+                    String IDROLE = string.substring(string.indexOf(" "));
+                    IDROLE = IDROLE.substring(1);
                     int IDRole = Integer.parseInt(IDROLE.substring(0, IDROLE.indexOf(" ")));
+
                     String usernames = string.substring(string.indexOf("Username: "), string.indexOf("$USER"));
                     String passwords = string.substring(string.indexOf("Password: "), string.indexOf("$P"));
                     String roles = string.substring(string.indexOf("Role: "), string.indexOf("$R"));
@@ -116,8 +118,8 @@ public class Main {
         }); // Logging in button
 
         JButton create_an_account_Button = new RoundedButton("Creer un nouveau compte"); // Creating a new account
-        create_an_account_Button.setBackground(Color.lightGray);
-        create_an_account_Button.setForeground(Color.darkGray);
+        create_an_account_Button.setBackground(new Color(79, 79, 79));
+        create_an_account_Button.setForeground(Color.lightGray);
         create_an_account_Button.setBounds(110, 200, 380, 40);
         create_an_account_Button.addActionListener(arg0 -> Creer_Compte.ui());
 

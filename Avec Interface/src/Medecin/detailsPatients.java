@@ -14,7 +14,8 @@ import java.util.Scanner;
 
 public class detailsPatients extends JFrame {
     detailsPatients(int ID) throws FileNotFoundException {
-        this.setSize(800, 800);
+        this.setSize(800, 630);
+        this.getContentPane().setBackground(Color.GRAY);
 
         JPanel infoPanel = new JPanel(new GridLayout(2, 4));
         infoPanel.setBounds(0, 0, 800, 100);
@@ -112,6 +113,8 @@ public class detailsPatients extends JFrame {
         }
 
         JTable table = new JTable();
+        table.setBackground(Color.lightGray);
+        table.setForeground(Color.darkGray);
         table.setModel(tableModel);
         table.setBounds(50, 150, 700, 400);
 

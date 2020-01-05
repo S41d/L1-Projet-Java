@@ -26,9 +26,9 @@ public class Main {
 
     public void ui() {
         System.out.print(IDMedecin);
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Medecin");
         frame.setSize(600, 300);
-        frame.getContentPane().setBackground(Color.BLACK);
+        frame.getContentPane().setBackground(new Color(46, 188, 207));
 
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();
@@ -36,8 +36,8 @@ public class Main {
         JTextField userField = new RoundedTextField();
         userField.setBounds(50, 30, 500, 40);
         userField.setText(userString);
-        userField.setBackground(new Color(24, 24, 24));
-        userField.setForeground(Color.LIGHT_GRAY);
+        userField.setBackground(new Color(226, 226, 226));
+        userField.setForeground(Color.darkGray);
         userField.setHorizontalAlignment(JTextField.CENTER);
         userField.addKeyListener(new KeyAdapter() {
             @Override
@@ -71,9 +71,5 @@ public class Main {
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new Main(1).ui();
     }
 }

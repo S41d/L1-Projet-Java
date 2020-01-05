@@ -122,7 +122,7 @@ public class Consultations {
                     fileWriter.write(" $APPAREIL$ Appareil: ");
                     for (int i = 0; i < nombre_appareil; i++) {
                         System.out.println("L'Appareil?");
-                        string_appareil = "$A" + (i + 1) + " " + scanner_appareil.nextLine() + "$\\A" + (i + 1) + ",\t";
+                        string_appareil = "$A" + (i + 1) + " " + scanner_appareil.nextLine() + "$A\\" + (i + 1) + ",\t";
                         fileWriter.write(string_appareil);
                     }
                     break;

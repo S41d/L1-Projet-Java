@@ -2,48 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dd9974d-0244-4671-8e84-0497f6b0438a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Medecin/Creer_Consultation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Medecin/detailsPatients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Medecin/Supprimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Creer_Patient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Creer_Patient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Creer_Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Creer_Patient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Agent/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Agent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Modifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent/Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent/Supprimer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Classes_principales/Consultations.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Classes_principales/Consultations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Classes_principales/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Classes_principales/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Dialogue/dialogue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dialogue/dialogue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Dialogue/yes_no_option.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dialogue/yes_no_option.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Medecin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Medecin/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Medecin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Medecin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Moteur_de_recherche/Class.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedCornerBorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedCornerBorder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedFormattedTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedFormattedTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedPasswordField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/RoundedBorders/RoundedTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/RoundedBorders/RoundedTextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Create_an_account.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/super_admin/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/super_admin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Modifier$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Modifier$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Modifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/super_admin/Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/super_admin/Supprimer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Appareils.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Appareils.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Consultations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Consultations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Roles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Roles.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classes_principales/Consultations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes_principales/Consultations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes_principales/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes_principales/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Medecin/Creer_Consultation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Medecin/Creer_Consultation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Medecin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Medecin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Medecin/detailsPatients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Medecin/detailsPatients.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Moteur_de_recherche/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur_de_recherche/Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/super_admin/Create_an_account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Creer_Compte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/super_admin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/super_admin/Main.java" afterDir="false" />
     </list>
     <list id="3a0341d7-1491-4337-8664-3a33e2fd7148" name="Default Changelistc" comment="" />
@@ -94,6 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="public" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -107,13 +83,26 @@
       <recent name="RoundedBorders" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (3)">
+  <component name="RunManager" selected="Application.Creer_Consultation">
     <configuration name="Class" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Moteur_de_recherche.Class" />
       <module name="Login Screen" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Moteur_de_recherche.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Creer_Consultation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Medecin.Creer_Consultation" />
+      <module name="Login Screen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Medecin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,31 +123,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Medecin.Main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Medecin.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Agent.Main" />
-      <module name="Login Screen" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Agent.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="super_admin.Main" />
       <module name="Login Screen" />
@@ -172,13 +136,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Supprimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Medecin.Supprimer" />
+      <module name="Login Screen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Medecin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Class" />
+        <item itemvalue="Application.Creer_Consultation" />
+        <item itemvalue="Application.Supprimer" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Class" />
       </list>
     </recent_temporary>
   </component>
@@ -242,6 +219,8 @@
       <workItem from="1578002764357" duration="5715000" />
       <workItem from="1578093767735" duration="3831000" />
       <workItem from="1578097611567" duration="9935000" />
+      <workItem from="1578167994764" duration="1431000" />
+      <workItem from="1578169438302" duration="9691000" />
     </task>
     <task id="LOCAL-00001" summary="ajouté les classes d'agent et de medecin dans la partie sans interface">
       <created>1576202350168</created>
@@ -321,11 +300,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="364" width="529" height="321" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577923974994" />
-    <state x="768" y="246" width="328" height="468" key="#com.intellij.ide.util.MemberChooser" timestamp="1578015591361">
+    <state x="768" y="246" width="328" height="468" key="#com.intellij.ide.util.MemberChooser" timestamp="1578169555931">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="614" y="197" width="328" height="468" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1577730059359" />
-    <state x="768" y="246" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578015591361" />
+    <state x="768" y="246" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578169555931" />
     <state x="775" y="401" width="307" height="222" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1577838102916">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -339,11 +318,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="693" y="289" width="524" height="508" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577499755151" />
-    <state x="400" y="0" width="1380" height="995" key="CommitChangelistDialog2" timestamp="1577850169913">
+    <state x="400" y="0" width="1380" height="995" key="CommitChangelistDialog2" timestamp="1578155290194">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="0" width="1025" height="864" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1577735117183" />
-    <state x="400" y="0" width="1380" height="995" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1577850169913" />
+    <state x="400" y="0" width="1380" height="995" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1578155290194" />
     <state x="80" y="80" width="1376" height="704" key="DiffContextDialog" timestamp="1577643052789">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -354,26 +333,26 @@
     </state>
     <state x="549" y="149" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1577730866342" />
     <state x="686" y="186" width="640" height="488" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1577923971669" />
-    <state width="1598" height="168" key="GridCell.Tab.0.bottom" timestamp="1578150316078">
+    <state width="1598" height="168" key="GridCell.Tab.0.bottom" timestamp="1578184018698">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1598" height="168" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578150316078" />
-    <state width="1598" height="168" key="GridCell.Tab.0.center" timestamp="1578150316078">
+    <state width="1598" height="168" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578184018698" />
+    <state width="1598" height="168" key="GridCell.Tab.0.center" timestamp="1578184018697">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1598" height="168" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578150316078" />
-    <state width="1598" height="168" key="GridCell.Tab.0.left" timestamp="1578150316077">
+    <state width="1598" height="168" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578184018697" />
+    <state width="1598" height="168" key="GridCell.Tab.0.left" timestamp="1578184018696">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1598" height="168" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578150316077" />
-    <state width="1598" height="168" key="GridCell.Tab.0.right" timestamp="1578150316078">
+    <state width="1598" height="168" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578184018696" />
+    <state width="1598" height="168" key="GridCell.Tab.0.right" timestamp="1578184018698">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1537" height="164" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577745991258" />
-    <state width="1598" height="168" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578150316078" />
+    <state width="1598" height="168" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578184018698" />
     <state x="439" y="131" key="NewModule_or_Project.wizard" timestamp="1575941194961">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -391,11 +370,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="608" y="349" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1576200648357" />
-    <state x="451" y="209" width="800" height="542" key="Vcs.Push.Dialog.v2" timestamp="1577850174566">
+    <state x="451" y="209" width="800" height="542" key="Vcs.Push.Dialog.v2" timestamp="1578155294215">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="361" y="167" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1577735125980" />
-    <state x="451" y="209" width="800" height="542" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1577850174566" />
+    <state x="451" y="209" width="800" height="542" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1578155294215" />
     <state x="93" y="93" width="1350" height="678" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1576002257990">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -409,10 +388,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="577" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1577730288431" />
-    <state x="693" y="301" width="524" height="475" key="extract.method.dialog" timestamp="1577067391456">
+    <state x="982" y="356" width="524" height="481" key="extract.method.dialog" timestamp="1578180513303">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="693" y="301" width="524" height="475" key="extract.method.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577067391456" />
+    <state x="982" y="356" width="524" height="481" key="extract.method.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578180513303" />
     <state x="632" y="120" width="673" height="840" key="find.popup" timestamp="1576494652589">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -425,10 +404,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="705" y="164" width="500" height="749" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577055203909" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1577640699602">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup" timestamp="1578168465286">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1577640699602" />
-    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1577499288201" />
+    <state x="539" y="226" width="840" height="848" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578168465286" />
   </component>
 </project>

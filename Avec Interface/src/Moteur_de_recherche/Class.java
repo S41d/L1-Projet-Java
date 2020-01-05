@@ -102,18 +102,18 @@ public class Class {
 
     public void ui_medecin() {
         JDialog frame = new JDialog();
-        frame.getContentPane().setBackground(Color.darkGray);
+        frame.getContentPane().setBackground(new Color(46, 188, 207));
         frame.setSize(600, 400);
 
         JTextArea textArea = new JTextArea();
-        textArea.setBackground(Color.DARK_GRAY);
-        textArea.setForeground(Color.LIGHT_GRAY);
+        textArea.setBackground(new Color(46, 188, 207));
+        textArea.setForeground(Color.darkGray);
         textArea.setBounds(50, 100, 500, 300);
 
         JTextField textField = new RoundedTextField();
         textField.setText("Entrez l'ID, le nom ou le prenom du patient");
-        textField.setBackground(new Color(79, 79, 79));
-        textField.setForeground(Color.LIGHT_GRAY);
+        textField.setBackground(new Color(226, 226, 226));
+        textField.setForeground(Color.darkGray);
         textField.setHorizontalAlignment(JTextField.CENTER);
         textField.setBounds(50, 30, 500, 40);
         textField.addFocusListener(new FocusListener() {
