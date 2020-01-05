@@ -1,5 +1,6 @@
 package Medecin;
 
+import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedTextField;
 
 import javax.swing.*;
@@ -25,7 +26,6 @@ public class Main {
     }
 
     public void ui() {
-        System.out.print(IDMedecin);
         JFrame frame = new JFrame("Medecin");
         frame.setSize(600, 300);
         frame.getContentPane().setBackground(new Color(46, 188, 207));
@@ -64,12 +64,36 @@ public class Main {
             }
         });
 
+        JButton details = new RoundedButton("Détails");
+        details.setBounds(50, 90, 150, 40);
+        details.addActionListener(actionEvent -> {
+            try {
+                new detailsPatients(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
 
+        JButton creer = new RoundedButton("Creer");
+        creer.setBounds(225, 90, 150, 40);
+        creer.addActionListener(actionEvent -> new Creer_Consultation().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))), IDMedecin));
+
+        JButton supprimer = new RoundedButton("Supprimer");
+        supprimer.setBounds(400, 90, 150, 40);
+        supprimer.addActionListener(actionEvent -> new Supprimer().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" ")))));
+
+        frame.add(supprimer);
+        frame.add(creer);
+        frame.add(details);
         frame.add(dummy);
         frame.add(userField);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
         frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new Main(1).ui();
     }
 }

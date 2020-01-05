@@ -88,8 +88,8 @@ public class detailsPatients extends JFrame {
 
                 if (IDPatient == ID) {
                     int IDConsultation = Integer.parseInt(ligneConsultation.substring(0, ligneConsultation.indexOf(" ")));
-                    String Consultation = "";
-                    String Appareil = "";
+                    String Consultation;
+                    String Appareil;
                     String Appareil_1 = "";
                     String Appareil_2 = "";
                     String Appareil_3 = "";

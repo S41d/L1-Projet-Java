@@ -6,3 +6,4 @@
 12 ID: 1$ID $APPAREIL$ Appareil_1: octroyé$A1 Appareil_2: octroyé$A2
 13 ID: 1$ID $APPAREIL$ Appareil_1: instance$A1 Appareil_2: instance$A2 Appareil_3: instance$A3
 14 ID: 2$ID $APPAREIL$ Appareil_1: instance$A1 Appareil_2: instance$A2 Appareil_3: instance$A3
+15 ID: 1$ID  $APPAREIL$  Appareil_2: instance$A2,

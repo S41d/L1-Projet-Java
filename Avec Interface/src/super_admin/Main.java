@@ -105,6 +105,7 @@ public class Main {
                         agent.ui();
                         break;
                     } else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Technicien")) {
+                        new Technicien.Main().ui();
                         break;
                     }
                 }

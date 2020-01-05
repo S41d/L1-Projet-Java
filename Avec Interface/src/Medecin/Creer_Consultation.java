@@ -164,11 +164,11 @@ public class Creer_Consultation {
         if (appareil_1.isSelected() || appareil_2.isSelected() || appareil_3.isSelected()) {
             writer.write(counter + " ID: " + ID + "$ID " + " $APPAREIL$ ");
             if (appareil_1.isSelected())
-                writer.write(" $A1 " + appareil_1.getText() + "$\\A1,");
+                writer.write(" Appareil_1: instance$A1,");
             if (appareil_2.isSelected())
-                writer.write(" $A2 " + appareil_2.getText() + "$A\\2,");
+                writer.write(" Appareil_2: instance$A2,");
             if (appareil_3.isSelected())
-                writer.write(" $A3 " + appareil_3.getText() + "$A\\3");
+                writer.write(" Appareil_3: instance$A3");
         } else {
             writer.write(counter + " ID: " + ID + "$ID");
         }
