@@ -111,10 +111,10 @@ public class Main {
                 }
                 scanner.close();
             } catch (FileNotFoundException e) {
-                new dialogue("File not Founde", Color.LIGHT_GRAY, Color.lightGray);
+                new dialogue("File not Founde");
             } catch (StringIndexOutOfBoundsException i) {
                 i.printStackTrace();
-                new dialogue("Mot de pass ou Username incorrect", Color.LIGHT_GRAY, Color.darkGray);
+                new dialogue("Mot de pass ou Username incorrect");
             }
         }); // Logging in button
 

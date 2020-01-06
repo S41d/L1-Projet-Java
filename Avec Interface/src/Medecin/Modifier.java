@@ -1,28 +1,39 @@
 package Medecin;
 
+import Classes_principales.Consultations;
 import Classes_principales.Patient;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class detailsPatients extends JFrame {
-    public detailsPatients(int ID) throws FileNotFoundException {
-        this.setSize(800, 630);
-        this.getContentPane().setBackground(Color.GRAY);
+public class Modifier {
+    public void ui(int ID) {
+        JFrame editframe = new JFrame();
+        editframe.setSize(800, 650);
+        editframe.getContentPane().setBackground(Color.GRAY);
 
         JPanel infoPanel = new JPanel(new GridLayout(2, 4));
         infoPanel.setBounds(0, 0, 800, 100);
         infoPanel.setBackground(Color.GRAY);
         infoPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
-        String patient = Patient.details(ID);
+        String patient = "";
+        try {
+            patient = Patient.details(ID);
+        } catch (
+                FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         String Nom = patient.substring(patient.indexOf("Nom:"), patient.indexOf("$N"));
         Nom = Nom.substring(Nom.indexOf(" "));
         String Prenom = patient.substring(patient.indexOf("Prenom:"), patient.indexOf("$Pn"));
@@ -72,7 +83,13 @@ public class detailsPatients extends JFrame {
         DefaultTableModel tableModel = new DefaultTableModel(lignes, column) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return false;
+                switch (column) {
+                    case 1:
+                        return true;
+                    default:
+                        return false;
+
+                }
             }
         };
 
@@ -95,7 +112,7 @@ public class detailsPatients extends JFrame {
                     String Appareil_3 = "";
                     if (ligneConsultation.contains("$APPAREIL$")) {
                         Consultation = ligneConsultation.substring(ligneConsultation.indexOf("$ID"), ligneConsultation.indexOf("$APPAREIL$")).substring(4);
-                        Appareil = getAppareil(IDConsultation);
+                        Appareil = detailsPatients.getAppareil(IDConsultation);
                         if (Appareil.contains("Appareil_1"))
                             Appareil_1 = Appareil.substring(Appareil.indexOf("Appareil_1"), Appareil.indexOf("$A1")).substring(12);
                         if (Appareil.contains("Appareil_2"))
@@ -108,6 +125,7 @@ public class detailsPatients extends JFrame {
                     tableModel.addRow(new Object[]{IDConsultation, Consultation, Appareil_1, Appareil_2, Appareil_3});
                 }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -132,34 +150,34 @@ public class detailsPatients extends JFrame {
         infoPanel.add(dateLabel);
         infoPanel.add(dateField);
 
-        this.setLocationRelativeTo(null);
-        this.add(infoPanel);
-        this.add(table);
-        this.add(header);
-        this.setLayout(null);
-        this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        new detailsPatients(1);
-    }
-
-    public static String getAppareil(int IDConsultation) throws FileNotFoundException {
-        File Appareils = new File("data/Appareils.txt");
-        FileInputStream inputStream1 = new FileInputStream(Appareils);
-        InputStreamReader reader1 = new InputStreamReader(inputStream1);
-        Scanner scanner_Appareil = new Scanner(reader1);
-
-        String Appareil = "";
-
-        while (scanner_Appareil.hasNextLine()) {
-            String ligneAppareil = scanner_Appareil.nextLine();
-            int IDAppareil = Integer.parseInt(ligneAppareil.substring(0, ligneAppareil.indexOf(" ")));
-            if (IDAppareil == IDConsultation) {
-                Appareil = ligneAppareil;
+        JButton editbtn = new JButton("Valider");
+        editbtn.setBounds(50, 570, 700, 30);
+        editbtn.addActionListener(actionEvent1 -> {
+            for (int row = 0; row < table.getRowCount(); row++) {
+                int id = (int) table.getValueAt(row, 0);
+                String Consultation = (String) table.getValueAt(row, 1);
+                Consultations.modifierConsultation(id, Consultation);
+                editframe.dispose();
             }
-        }
-        return Appareil;
+            new Dialogue.dialogue("Modifications enregistré");
+        });
+
+        editframe.add(editbtn);
+        editframe.add(infoPanel);
+        editframe.setLocationRelativeTo(null);
+        editframe.add(table);
+        editframe.add(header);
+        editframe.setLayout(null);
+        editframe.setVisible(true);
+        editframe.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new Modifier().ui(1);
     }
 }

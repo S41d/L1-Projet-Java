@@ -59,7 +59,7 @@ public class Main {
             public void mouseClicked(MouseEvent e) {
                 if (userField.getText().isEmpty() || userField.getText().equals("ID du patient?")) {
                     frame.dispose();
-                    new Moteur_de_recherche.Class().ui_medecin();
+                    new Moteur_de_recherche.Class().ui_medecin(IDMedecin);
                 }
             }
         });

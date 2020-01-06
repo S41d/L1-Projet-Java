@@ -62,7 +62,7 @@ public class medecin {
                     scanner.nextLine();
                     System.out.println("Nouveau consultation?");
                     String consultation = scanner.nextLine();
-                    Consultations.modifierConsultation(ID, ID_Consultation, consultation);
+                    Consultations.modifierConsultation(ID_Consultation, consultation);
                 } else {
                     System.out.println("Pas de Consultations");
                 }

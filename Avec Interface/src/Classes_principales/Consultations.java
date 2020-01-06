@@ -184,7 +184,7 @@ public class Consultations {
         }
     }                    //method pour ecrire dans Appareils.txt, utilisé dans creerConsultation
 
-    public static void modifierConsultation(int ID, int ID_Consultation, String consultation) {
+    public static void modifierConsultation(int ID_Consultation, String consultation) {
         File Consultations = new File("data/Consultations.txt");
         File Temporaire = new File("data/Temporaire_Consultations.txt");
         try (FileInputStream fis = new FileInputStream(Consultations);
@@ -204,15 +204,18 @@ public class Consultations {
             InputStreamReader reader = new InputStreamReader(inputStream);
             Scanner scanner = new Scanner(reader);
             while (scanner.hasNextLine()) {
-                String string = scanner.nextLine();
-                int id = Integer.parseInt(string.substring(0, string.indexOf(" ")));
+                String ligne = scanner.nextLine();
+                int id = Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")));
                 if (id != ID_Consultation) {
-                    fileWriter.println(string);
+                    fileWriter.println(ligne);
                 } else {
-                    String appareils = string;
-                    appareils = appareils.substring(appareils.indexOf("$APPAREIL$"));
-                    fileWriter.write(id + " ID: " + ID + "$ID " + consultation);
-                    fileWriter.println(" " + appareils);
+                    if (ligne.contains("$APPAREIL$")) {
+                        String appareils = ligne.substring(ligne.indexOf("$APPAREIL$"));
+                        String resteDeLigne = ligne.substring(0, ligne.indexOf("$ID")) + "$ID ";
+
+                        fileWriter.write(resteDeLigne + consultation);
+                        fileWriter.println(" " + appareils);
+                    }
                 }
             }
             fileWriter.close();
@@ -411,6 +414,53 @@ public class Consultations {
             fileWriter.close();
             scanner.close();
             Tempo.delete();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void modifierAppareil(int ID, String Appareil_1, String Appareil_2, String Appareil_3) {
+        try {
+            File Appareils = new File("data/Appareils.txt");
+            File Tempo = new File("data/AppareilsTempoTech.txt");
+
+            try (FileInputStream fis = new FileInputStream(Appareils);
+                 FileOutputStream fos = new FileOutputStream(Tempo)) {
+                int len;
+                byte[] buffer = new byte[4096];
+                while ((len = fis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, len);
+                }
+            } catch (IOException e) {
+                // ... handle IO exception
+            }
+
+            InputStream inputStream = new FileInputStream(Tempo);
+            InputStreamReader reader = new InputStreamReader(inputStream);
+            Scanner scanner = new Scanner(reader);
+            PrintWriter writer = new PrintWriter(Appareils);
+
+            while (scanner.hasNextLine()) {
+                String ligne = scanner.nextLine();
+                int id = Integer.parseInt(ligne.substring(0, ligne.indexOf(" ")));
+                if (id == ID) {
+                    String reste = ligne.substring(ligne.indexOf(" ID:"), ligne.indexOf("$APPAREIL$"));
+                    writer.write(id + reste + "$APPAREIL$");
+                    if (!Appareil_1.isEmpty())
+                        writer.write(" Appareil_1: " + Appareil_1 + "$A1");
+                    if (!Appareil_2.isEmpty())
+                        writer.write(" Appareil_2: " + Appareil_2 + "$A2");
+                    if (!Appareil_3.isEmpty())
+                        writer.write(" Appareil_3: " + Appareil_3 + "$A3");
+
+                    writer.println();
+                } else
+                    writer.println(ligne);
+
+            }
+            Tempo.delete();
+            writer.close();
+            scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
