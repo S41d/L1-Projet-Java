@@ -215,6 +215,8 @@ public class Consultations {
 
                         fileWriter.write(resteDeLigne + consultation);
                         fileWriter.println(" " + appareils);
+                    } else {
+                        fileWriter.println(ligne);
                     }
                 }
             }
@@ -280,9 +282,13 @@ public class Consultations {
                     int id = Integer.parseInt(string.substring(0, string.indexOf(" ")));
                     if (i == id) {
                         string = string.replace("$APPAREIL$", "");
-                        string = string.replace("$A", "");
                         string = string.replace("$ID", "");
-                        string = string.substring(0, string.lastIndexOf(','));
+                        if (string.contains("$A1"))
+                            string = string.replace("$A1", "").replace("$A\\1", "");
+                        if (string.contains("$A2"))
+                            string = string.replace("$A2", "").replace("$A\\2", "");
+                        if (string.contains("$A3"))
+                            string = string.replace("$A3", "").replace("$A\\3", "");
                         writer.println(string);
                     }
                 }

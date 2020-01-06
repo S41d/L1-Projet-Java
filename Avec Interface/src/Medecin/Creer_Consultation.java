@@ -98,7 +98,7 @@ public class Creer_Consultation {
             }
 
             if (appareil_1.isSelected() || appareil_2.isSelected() || appareil_3.isSelected()) {
-                writer.write(counter + " ID: " + ID_pat + "$ID " + consultationArea.getText() + " $APPAREIL$ ");
+                writer.write(counter + " ID: " + ID_pat + "$ID " + consultationArea.getText() + " $APPAREIL$ Appareil: ");
                 if (appareil_1.isSelected())
                     writer.write(" $A1 " + appareil_1.getText() + "$\\A1,");
                 if (appareil_2.isSelected())

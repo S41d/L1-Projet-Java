@@ -2,7 +2,8 @@
 4 ID: 3$ID Consultations $APPAREIL$ Appareil: $A1 Feauteille roulant$A\1,	$A2 dandan$A\2,
 5 ID: 4$ID Consultation de Thomas
 6 ID: 4$ID Consultation de Thomas avec des appareil $APPAREIL$ Appareil: $A1 Appareil de yes$A\1,	$A2 Appareil de non$A\2,	$A3 Appareil de maybe$A\3,
-12 ID: 1$ID it worked $APPAREIL$ Appareil: $A1 Apaaeraef$\A1,	$A2 aoeraq$A\2,
-13 ID: 1$ID Consultalmkedjfqlskdjfq   $APPAREIL$ Appareil: $A1 qdsf$A\1,	$A2 qdsf$A\2,	$A3qdsf$A\3,
+12 ID: 1$ID it worked  $APPAREIL$ Appareil: $A1 Apaaeraef$\A1,	$A2 aoeraq$A\2,
+13 ID: 1$ID Consultalmkedjfqlskdjfq  $APPAREIL$ Appareil: $A1 qdsf$A\1,	$A2 qdsf$A\2,	$A3qdsf$A\3,
 14 ID: 2$ID Consulation $APPAREIL$ Appareil: $A1 Appareil$\A1,	$A2 Appareil$\A2,	$A3 Appareil$\A3,
-15 ID: 1$ID Consultaions   $APPAREIL$  $A2 Appareil 2$A\2,
+15 ID: 1$ID Consultaions  $APPAREIL$ $A2 Appareil 2$A\2,
+16 ID: 1$ID Consultation sans appareil

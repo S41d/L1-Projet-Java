@@ -27,7 +27,7 @@ public class Main {
 
     public void ui() {
         JFrame frame = new JFrame("Medecin");
-        frame.setSize(600, 300);
+        frame.setSize(600, 360);
         frame.getContentPane().setBackground(new Color(46, 188, 207));
 
         JTextField dummy = new JTextField();
@@ -70,18 +70,63 @@ public class Main {
             try {
                 new detailsPatients(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))));
             } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                new Dialogue.dialogue("Mauvaise saisie", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
+            }
+        });
+
+        JButton modifier = new RoundedButton("Modifier");
+        modifier.setBounds(225, 90, 150, 40);
+        modifier.addActionListener(actionEvent -> {
+            try {
+                new Modifier().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))));
+            } catch (NumberFormatException e) {
+                new Dialogue.dialogue("Mauvaise saisie", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
+            }
+        });
+
+        JButton supprimer = new RoundedButton("Supprimer");
+        supprimer.setBounds(400, 90, 150, 40);
+        supprimer.addActionListener(actionEvent -> {
+            try {
+                new Supprimer().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))));
+            } catch (NumberFormatException e) {
+                new Dialogue.dialogue("Mauvaise saisie", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
             }
         });
 
         JButton creer = new RoundedButton("Creer");
-        creer.setBounds(225, 90, 150, 40);
-        creer.addActionListener(actionEvent -> new Creer_Consultation().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))), IDMedecin));
+        creer.setBounds(50, 140, 500, 40);
+        creer.addActionListener(actionEvent -> {
+            try {
+                new Creer_Consultation().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))), IDMedecin);
+            } catch (NumberFormatException e) {
+                new Dialogue.dialogue("Mauvaise saisie", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
+            }
+        });
 
-        JButton supprimer = new RoundedButton("Supprimer");
-        supprimer.setBounds(400, 90, 150, 40);
-        supprimer.addActionListener(actionEvent -> new Supprimer().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" ")))));
+        JButton exporter = new RoundedButton("Exporter des consultations");
+        exporter.setBounds(50, 190, 500, 40);
+        exporter.addActionListener(actionEvent -> {
+            try {
+                new exporterConsultation().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))));
+            } catch (NumberFormatException e) {
+                new Dialogue.dialogue("Mauvaise saisie", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
+            }
+        });
 
+        JButton ordonnance = new RoundedButton("Creer un ordonnance");
+        ordonnance.setBounds(50, 240, 500, 40);
+        ordonnance.addActionListener(actionEvent -> {
+            try {
+                new creerOrdonnanace().ui(Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" "))));
+            } catch (NumberFormatException e) {
+                new Dialogue.dialogue("Mauvaise saisie", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
+            }
+        });
+
+        frame.add(ordonnance);
+        frame.add(exporter);
+        frame.add(modifier);
         frame.add(supprimer);
         frame.add(creer);
         frame.add(details);

@@ -7,19 +7,22 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Modifier {
+public class exporterConsultation {
     public void ui(int ID) {
-        JFrame editframe = new JFrame();
-        editframe.setSize(800, 660);
-        editframe.getContentPane().setBackground(new Color(52, 225, 245));
+        JFrame frame = new JFrame("Medecin/Exporter Consultations");
+        frame.setSize(800, 720);
+        frame.getContentPane().setBackground(new Color(52, 225, 245));
 
         JPanel infoPanel = new JPanel(new GridLayout(2, 4));
         infoPanel.setBounds(0, 0, 800, 100);
@@ -87,13 +90,7 @@ public class Modifier {
         DefaultTableModel tableModel = new DefaultTableModel(lignes, column) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                switch (column) {
-                    case 1:
-                        return true;
-                    default:
-                        return false;
-
-                }
+                return column == 1;
             }
         };
 
@@ -138,6 +135,8 @@ public class Modifier {
         table.setBackground(new Color(46, 188, 207));
         table.setForeground(Color.darkGray);
         table.setModel(tableModel);
+        table.setRowSelectionAllowed(true);
+        table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         table.setBounds(50, 150, 700, 400);
 
         JTableHeader header = table.getTableHeader();
@@ -154,28 +153,52 @@ public class Modifier {
         infoPanel.add(dateLabel);
         infoPanel.add(dateField);
 
-        JButton editbtn = new JButton("Valider");
-        editbtn.setBounds(50, 570, 700, 30);
+        JTextField nomexporterField = new JTextField();
+        nomexporterField.setText("Nom du fichier exporté");
+        nomexporterField.setHorizontalAlignment(JTextField.CENTER);
+        nomexporterField.setBounds(50, 570, 700, 30);
+        nomexporterField.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (nomexporterField.getText().equals("Nom du fichier exporté"))
+                    nomexporterField.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (nomexporterField.getText().isEmpty())
+                    nomexporterField.setText("Nom du fichier exporté");
+            }
+        });
+
+        JButton editbtn = new JButton("Exporter");
+        editbtn.setBounds(50, 620, 700, 30);
         editbtn.setBackground(Color.white);
         editbtn.addActionListener(actionEvent1 -> {
             for (int row = 0; row < table.getRowCount(); row++) {
                 int id = (int) table.getValueAt(row, 0);
-                String Consultation = (String) table.getValueAt(row, 1);
-                Consultations.modifierConsultation(id, Consultation);
-                editframe.dispose();
+                ArrayList<Integer> list = new ArrayList<>();
+                int[] selectedRows = table.getSelectedRows();
+                for (int selectedRow : selectedRows) {
+                    int IDcon = (int) table.getValueAt(selectedRow, 0);
+                    list.add(IDcon);
+                }
+                Consultations.exporterConsultations(list, nomexporterField.getText());
+                frame.dispose();
             }
             new Dialogue.dialogue("Modifications enregistré");
         });
 
-        editframe.setResizable(false);
-        editframe.add(editbtn);
-        editframe.add(infoPanel);
-        editframe.setLocationRelativeTo(null);
-        editframe.add(table);
-        editframe.add(header);
-        editframe.setLayout(null);
-        editframe.setVisible(true);
-        editframe.addWindowListener(new WindowAdapter() {
+        frame.setResizable(false);
+        frame.add(editbtn);
+        frame.add(nomexporterField);
+        frame.add(infoPanel);
+        frame.setLocationRelativeTo(null);
+        frame.add(table);
+        frame.add(header);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
@@ -184,6 +207,6 @@ public class Modifier {
     }
 
     public static void main(String[] args) {
-        new Modifier().ui(1);
+        new exporterConsultation().ui(1);
     }
 }
