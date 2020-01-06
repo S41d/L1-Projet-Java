@@ -121,7 +121,9 @@ public class Main {
                 @Override
                 public boolean isCellEditable(int row, int column) {
                     switch (column) {
-                        case 2, 3, 4:
+                        case 2:
+                        case 3:
+                        case 4:
                             return true;
                         default:
                             return false;

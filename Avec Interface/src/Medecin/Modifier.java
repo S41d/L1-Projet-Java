@@ -182,8 +182,4 @@ public class Modifier {
             }
         });
     }
-
-    public static void main(String[] args) {
-        new Modifier().ui(1);
-    }
 }

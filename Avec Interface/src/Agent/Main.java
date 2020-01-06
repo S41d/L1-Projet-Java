@@ -30,15 +30,15 @@ public class Main {
     public void ui() {
         JFrame frame = new JFrame("Agent");
         frame.setSize(600, 300);
-        frame.getContentPane().setBackground(Color.darkGray);
+        frame.getContentPane().setBackground(new Color(72, 201, 176));
 
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();
 
         JTextField idField = new RoundedTextField();
         idField.setText(username);
-        idField.setBackground(new Color(79, 79, 79));
-        idField.setForeground(Color.LIGHT_GRAY);
+        idField.setBackground(new Color(69, 179, 157));
+        idField.setForeground(Color.darkGray);
         idField.setHorizontalAlignment(JTextField.CENTER);
         idField.setBounds(50, 30, 500, 40);
         idField.addMouseListener(new MouseAdapter() {
@@ -56,7 +56,8 @@ public class Main {
 
         JButton btnVerifier = new RoundedButton("Verifier");
         btnVerifier.setBounds(110, 90, 120, 40);
-        btnVerifier.setBackground(new Color(51, 208, 240));
+        btnVerifier.setBackground(new Color(41, 41, 41));
+        btnVerifier.setForeground(Color.lightGray);
         btnVerifier.addActionListener(actionEvent -> {
             String idFieldString = idField.getText();
             assert idFieldString != null;
@@ -74,20 +75,22 @@ public class Main {
 
         JButton btnModifier = new RoundedButton("Modifier");
         btnModifier.setBounds(240, 90, 120, 40);
-        btnModifier.setBackground(new Color(243, 144, 57));
+        btnModifier.setBackground(new Color(41, 41, 41));
+        btnModifier.setForeground(Color.lightGray);
         btnModifier.addActionListener(actionEvent -> Modifier.takeNum());
 
         JButton btnSupprimer = new RoundedButton("Supprimer");
         btnSupprimer.setBounds(370, 90, 120, 40);
-        btnSupprimer.setBackground(new Color(244, 72, 72));
+        btnSupprimer.setBackground(new Color(41, 41, 41));
+        btnSupprimer.setForeground(Color.lightGray);
         btnSupprimer.addActionListener(actionEvent -> {
             Supprimer.ui();
         });
 
         JButton btnCreer = new RoundedButton("Ajouter un nouveau patient");
         btnCreer.setBounds(110, 140, 380, 40);
-        btnCreer.setBackground(Color.darkGray);
-        btnCreer.setForeground(Color.LIGHT_GRAY);
+        btnCreer.setBackground(new Color(69, 179, 157));
+        btnCreer.setForeground(Color.darkGray);
         btnCreer.addActionListener(actionEvent -> {
             try {
                 Creer_Patient.ui();

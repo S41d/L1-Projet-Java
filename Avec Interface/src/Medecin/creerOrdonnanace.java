@@ -25,6 +25,7 @@ public class creerOrdonnanace {
         button.setBounds(50, 290, 500, 30);
         button.addActionListener(actionEvent -> {
             Consultations.write_Ordonnance(textArea.getText(), ID);
+            new Dialogue.dialogue("Ordonnance créée", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
         });
 
         frame.setResizable(false);

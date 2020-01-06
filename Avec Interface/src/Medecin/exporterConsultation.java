@@ -205,8 +205,4 @@ public class exporterConsultation {
             }
         });
     }
-
-    public static void main(String[] args) {
-        new exporterConsultation().ui(1);
-    }
 }

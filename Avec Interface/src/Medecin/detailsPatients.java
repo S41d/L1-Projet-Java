@@ -141,10 +141,6 @@ public class detailsPatients extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        new detailsPatients(1);
-    }
-
     public static String getAppareil(int IDConsultation) throws FileNotFoundException {
         File Appareils = new File("data/Appareils.txt");
         FileInputStream inputStream1 = new FileInputStream(Appareils);

@@ -114,7 +114,7 @@ public class Main {
             }
         });
 
-        JButton ordonnance = new RoundedButton("Creer un ordonnance");
+        JButton ordonnance = new RoundedButton("Creer une ordonnance");
         ordonnance.setBounds(50, 240, 500, 40);
         ordonnance.addActionListener(actionEvent -> {
             try {

@@ -243,7 +243,7 @@ public class Consultations {
                     prenom = string.substring(string.indexOf("Prenom:"), string.indexOf("$Pn"));
                     prenom = prenom.substring(prenom.indexOf(" "));
                     nom = string.substring(string.indexOf("Nom:"), string.indexOf("$N"));
-                    nom = nom.substring(nom.indexOf(" "));
+                    nom = nom.substring(nom.indexOf(" ")).substring(1);
                     exist = true;
                     break;
                 } else {

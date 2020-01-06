@@ -142,8 +142,4 @@ public class Supprimer {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        new Supprimer().ui(1);
-    }
 }

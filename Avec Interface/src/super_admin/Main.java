@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -17,7 +19,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Login");
-        frame.setSize(600, 320);
+        frame.setSize(600, 350);
         frame.getContentPane().setBackground(Color.darkGray);
 
         JTextField dummy = new JTextField();
@@ -136,6 +138,18 @@ public class Main {
         supprimer_Button.setForeground(Color.darkGray);
         supprimer_Button.addActionListener(e -> Supprimer.ui());
 
+        JLabel statistics = new JLabel("Statistique des appareils");
+        statistics.setForeground(Color.lightGray);
+        statistics.setHorizontalAlignment(JLabel.RIGHT);
+        statistics.setBounds(380, 260, 200, 20);
+        statistics.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new Statistique();
+            }
+        });
+
+        frame.add(statistics);
         frame.add(textField);
         frame.add(passwordField);
         frame.add(dummy);

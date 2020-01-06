@@ -18,6 +18,7 @@ public class Creer_Consultation {
         label.setBounds(50, 50, 500, 40);
 
         JTextArea consultationArea = new JTextArea();
+        consultationArea.requestFocusInWindow();
         consultationArea.setBackground(new Color(226, 226, 226));
         consultationArea.setBounds(50, 100, 500, 400);
 
