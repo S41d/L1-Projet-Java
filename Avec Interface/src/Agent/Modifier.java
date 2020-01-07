@@ -21,6 +21,7 @@ public class Modifier {
     public static void takeNum() {
         JFrame frame = new JFrame("ID");
         frame.setSize(300, 150);
+        frame.getContentPane().setBackground(new Color(72, 201, 176));
 
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();
@@ -28,8 +29,8 @@ public class Modifier {
         JTextField textField = new RoundedTextField();
         textField.setText("ID Global");
         textField.setHorizontalAlignment(JTextField.LEFT);
-        textField.setBackground(new Color(79, 79, 79));
-        textField.setForeground(Color.LIGHT_GRAY);
+        textField.setBackground(new Color(69, 179, 157));
+        textField.setForeground(Color.darkGray);
         textField.setBounds(30, 20, 240, 30);
         textField.addFocusListener(new FocusListener() {
             @Override
@@ -46,8 +47,8 @@ public class Modifier {
         });
 
         JButton btnOK = new RoundedButton("OK");
-        btnOK.setBackground(new Color(105, 205, 160));
-        btnOK.setForeground(Color.DARK_GRAY);
+        btnOK.setBackground(new Color(42, 126, 145));
+        btnOK.setForeground(Color.darkGray);
         btnOK.setBounds(70, 65, 75, 30);
         btnOK.addActionListener(actionEvent -> {
             try {
@@ -71,7 +72,6 @@ public class Modifier {
         btnAnnuler.setBounds(155, 65, 75, 30);
         btnAnnuler.addActionListener(actionEvent -> frame.dispose());
 
-        frame.getContentPane().setBackground(Color.darkGray);
         frame.add(btnAnnuler);
         frame.add(btnOK);
         frame.add(dummy);
@@ -117,54 +117,54 @@ public class Modifier {
 
         JFrame frame = new JFrame();
         frame.setSize(600, 400);
-        frame.getContentPane().setBackground(Color.darkGray);
+        frame.getContentPane().setBackground(new Color(72, 201, 176));
 
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();
 
         JLabel nom_lable = new JLabel("Nom:");
-        nom_lable.setForeground(Color.LIGHT_GRAY);
+        nom_lable.setForeground(Color.darkGray);
         nom_lable.setBounds(50, 30, 100, 40);
 
         JTextField nomField = new RoundedTextField();
         nomField.setText(NOM);
-        nomField.setBackground(new Color(79, 79, 79));
-        nomField.setForeground(Color.LIGHT_GRAY);
+        nomField.setBackground(new Color(69, 179, 157));
+        nomField.setForeground(Color.darkGray);
         nomField.setHorizontalAlignment(JTextField.CENTER);
         nomField.setBounds(150, 30, 400, 40);
 
         JLabel prenom_label = new JLabel("Prenom:");
-        prenom_label.setForeground(Color.LIGHT_GRAY);
+        prenom_label.setForeground(Color.darkGray);
         prenom_label.setBounds(50, 90, 100, 40);
 
         JTextField prenomField = new RoundedTextField();
         prenomField.setText(PRENOM);
-        prenomField.setBackground(new Color(79, 79, 79));
-        prenomField.setForeground(Color.LIGHT_GRAY);
+        prenomField.setBackground(new Color(69, 179, 157));
+        prenomField.setForeground(Color.darkGray);
         prenomField.setHorizontalAlignment(JTextField.CENTER);
         prenomField.setBounds(150, 90, 400, 40);
 
         JLabel adresse_label = new JLabel("Code Postale:");
-        adresse_label.setForeground(Color.LIGHT_GRAY);
+        adresse_label.setForeground(Color.darkGray);
         adresse_label.setBounds(50, 150, 100, 40);
 
         JTextField adresseField = new RoundedTextField();
         adresseField.setText(ADRESSE);
-        adresseField.setBackground(new Color(79, 79, 79));
-        adresseField.setForeground(Color.LIGHT_GRAY);
+        adresseField.setBackground(new Color(69, 179, 157));
+        adresseField.setForeground(Color.darkGray);
         adresseField.setHorizontalAlignment(JTextField.CENTER);
         adresseField.setBounds(150, 150, 400, 40);
 
         JLabel date_label = new JLabel("Date:");
-        date_label.setForeground(Color.LIGHT_GRAY);
+        date_label.setForeground(Color.darkGray);
         date_label.setBounds(50, 210, 100, 40);
 
         MaskFormatter dateFormatter = new MaskFormatter("##-##-####");
         JFormattedTextField dateField = new RoundedFormattedTextField();
         dateFormatter.install(dateField);
         dateField.setText(DATE);
-        dateField.setBackground(new Color(79, 79, 79));
-        dateField.setForeground(Color.LIGHT_GRAY);
+        dateField.setBackground(new Color(69, 179, 157));
+        dateField.setForeground(Color.darkGray);
         dateField.setHorizontalAlignment(JTextField.CENTER);
         dateField.setBounds(150, 210, 400, 40);
 

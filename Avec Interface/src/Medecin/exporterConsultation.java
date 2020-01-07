@@ -9,8 +9,6 @@ import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -113,7 +111,7 @@ public class exporterConsultation {
                     String Appareil_3 = "";
                     if (ligneConsultation.contains("$APPAREIL$")) {
                         Consultation = ligneConsultation.substring(ligneConsultation.indexOf("$ID"), ligneConsultation.indexOf("$APPAREIL$")).substring(4);
-                        Appareil = detailsPatients.getAppareil(IDConsultation);
+                        Appareil = Classes_principales.Consultations.getAppareilUI(IDConsultation);
                         if (Appareil.contains("Appareil_1"))
                             Appareil_1 = Appareil.substring(Appareil.indexOf("Appareil_1"), Appareil.indexOf("$A1")).substring(12);
                         if (Appareil.contains("Appareil_2"))
@@ -198,11 +196,6 @@ public class exporterConsultation {
         frame.add(header);
         frame.setLayout(null);
         frame.setVisible(true);
-        frame.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-            }
-        });
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 }

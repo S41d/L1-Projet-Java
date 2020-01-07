@@ -99,7 +99,7 @@ public class Main {
 
                     if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Medecin")) {
                         frame.dispose();
-                        new Medecin.Main(IDRole).ui();
+                        new Medecin.Main().ui();
                         break;
                     } else if (usernames.contains(username) && passwords.equals("Password: " + password) && roles.equals("Role: " + "Agent")) {
                         frame.dispose();
@@ -113,7 +113,7 @@ public class Main {
                 }
                 scanner.close();
             } catch (FileNotFoundException e) {
-                new dialogue("File not Founde");
+                new dialogue("File not Found");
             } catch (StringIndexOutOfBoundsException i) {
                 i.printStackTrace();
                 new dialogue("Mot de pass ou Username incorrect");

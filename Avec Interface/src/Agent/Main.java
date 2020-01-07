@@ -12,9 +12,6 @@ import java.io.IOException;
 import java.text.ParseException;
 
 public class Main {
-    public static void main(String[] args) {
-        new Main().ui();
-    }
 
     String username;
 
@@ -64,6 +61,7 @@ public class Main {
             int ID = Integer.parseInt(idFieldString.substring(0, idFieldString.indexOf(" ")));
             try {
                 if (Patient.check(ID)) {
+                    new Medecin.Main(idField.getText()).ui();
                     frame.dispose();
                 } else {
                     new Dialogue.dialogue("Ce patient n'est pas encore dans la liste");

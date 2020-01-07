@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Creer_Consultation {
-    public void ui(int ID_pat, int ID_med) {
+    public void ui(int ID_pat) {
         JFrame frame = new JFrame("Nouvelle consultation");
         frame.setSize(800, 600);
         frame.getContentPane().setBackground(new Color(46, 188, 207));
@@ -175,9 +175,5 @@ public class Creer_Consultation {
         }
         writer.close();
         Tempo.delete();
-    }
-
-    public static void main(String[] args) {
-        new Creer_Consultation().ui(1, 1);
     }
 }

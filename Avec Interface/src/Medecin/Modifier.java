@@ -7,8 +7,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,7 +20,7 @@ import java.util.Scanner;
 public class Modifier {
     public void ui(int ID) {
         JFrame editframe = new JFrame();
-        editframe.setSize(800, 660);
+        editframe.setSize(800, 700);
         editframe.getContentPane().setBackground(new Color(52, 225, 245));
 
         JPanel infoPanel = new JPanel(new GridLayout(2, 4));
@@ -87,13 +89,10 @@ public class Modifier {
         DefaultTableModel tableModel = new DefaultTableModel(lignes, column) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                switch (column) {
-                    case 1:
-                        return true;
-                    default:
-                        return false;
-
+                if (column == 1) {
+                    return true;
                 }
+                return false;
             }
         };
 
@@ -116,7 +115,7 @@ public class Modifier {
                     String Appareil_3 = "";
                     if (ligneConsultation.contains("$APPAREIL$")) {
                         Consultation = ligneConsultation.substring(ligneConsultation.indexOf("$ID"), ligneConsultation.indexOf("$APPAREIL$")).substring(4);
-                        Appareil = detailsPatients.getAppareil(IDConsultation);
+                        Appareil = Classes_principales.Consultations.getAppareilUI(IDConsultation);
                         if (Appareil.contains("Appareil_1"))
                             Appareil_1 = Appareil.substring(Appareil.indexOf("Appareil_1"), Appareil.indexOf("$A1")).substring(12);
                         if (Appareil.contains("Appareil_2"))
@@ -155,7 +154,7 @@ public class Modifier {
         infoPanel.add(dateField);
 
         JButton editbtn = new JButton("Valider");
-        editbtn.setBounds(50, 570, 700, 30);
+        editbtn.setBounds(50, 610, 700, 30);
         editbtn.setBackground(Color.white);
         editbtn.addActionListener(actionEvent1 -> {
             for (int row = 0; row < table.getRowCount(); row++) {
@@ -167,6 +166,68 @@ public class Modifier {
             new Dialogue.dialogue("Modifications enregistré");
         });
 
+        JTextField searchbar = new JTextField("Chercher une consultation");
+        searchbar.setBounds(50, 560, 700, 30);
+        searchbar.setHorizontalAlignment(JTextField.CENTER);
+        searchbar.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent focusEvent) {
+                if (searchbar.getText().equals("Chercher une consultation"))
+                    searchbar.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent focusEvent) {
+                if (searchbar.getText().isEmpty())
+                    searchbar.setText("Chercher une consultation");
+            }
+        });
+        searchbar.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                tableModel.setRowCount(0);
+                table.setModel(tableModel);
+                try {
+                    File Consultations = new File("data/Consultations.txt");
+                    FileInputStream inputStream = new FileInputStream(Consultations);
+                    InputStreamReader reader = new InputStreamReader(inputStream);
+                    Scanner scanner_Consultations = new Scanner(reader);
+
+                    while (scanner_Consultations.hasNextLine()) {
+                        String ligneConsultation = scanner_Consultations.nextLine();
+                        int IDPatient = Integer.parseInt(ligneConsultation.substring(ligneConsultation.indexOf("ID: "), ligneConsultation.indexOf("$ID")).substring(4));
+
+                        if (IDPatient == ID) {
+                            int IDConsultation = Integer.parseInt(ligneConsultation.substring(0, ligneConsultation.indexOf(" ")));
+                            String Consultation;
+                            String Appareil;
+                            String Appareil_1 = "";
+                            String Appareil_2 = "";
+                            String Appareil_3 = "";
+                            if (ligneConsultation.contains("$APPAREIL$")) {
+                                Consultation = ligneConsultation.substring(ligneConsultation.indexOf("$ID"), ligneConsultation.indexOf("$APPAREIL$")).substring(4);
+                                Appareil = Classes_principales.Consultations.getAppareilUI(IDConsultation);
+                                if (Appareil.contains("Appareil_1"))
+                                    Appareil_1 = Appareil.substring(Appareil.indexOf("Appareil_1"), Appareil.indexOf("$A1")).substring(12);
+                                if (Appareil.contains("Appareil_2"))
+                                    Appareil_2 = Appareil.substring(Appareil.indexOf("Appareil_2"), Appareil.indexOf("$A2")).substring(12);
+                                if (Appareil.contains("Appareil_3"))
+                                    Appareil_3 = Appareil.substring(Appareil.indexOf("Appareil_3"), Appareil.indexOf("$A3")).substring(12);
+                            } else {
+                                Consultation = ligneConsultation.substring(ligneConsultation.indexOf("$ID")).substring(4);
+                            }
+                            String searchid = Integer.toString(IDConsultation);
+                            if (Consultation.contains(searchbar.getText()) || searchid.contains(searchbar.getText()))
+                                tableModel.addRow(new Object[]{IDConsultation, Consultation, Appareil_1, Appareil_2, Appareil_3});
+                        }
+                    }
+                } catch (Exception i) {
+                    i.printStackTrace();
+                }
+            }
+        });
+
+        editframe.add(searchbar);
         editframe.setResizable(false);
         editframe.add(editbtn);
         editframe.add(infoPanel);
@@ -175,11 +236,6 @@ public class Modifier {
         editframe.add(header);
         editframe.setLayout(null);
         editframe.setVisible(true);
-        editframe.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-            }
-        });
+        editframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 }

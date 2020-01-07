@@ -22,6 +22,65 @@ public class Supprimer {
             }
         };
 
+        tablemodelcode(ID, tableModel);
+
+        JTable table = new JTable();
+        table.setBackground(new Color(52, 225, 245));
+        table.setForeground(Color.darkGray);
+        table.setModel(tableModel);
+        table.setBounds(0, 20, 700, 345);
+
+        JTableHeader header = table.getTableHeader();
+        header.setBounds(0, 0, 700, 20);
+        header.getColumnModel().getColumn(1).setPreferredWidth(400);
+        header.getColumnModel().getColumn(0).setPreferredWidth(40);
+
+        JButton supprimerbtn = new JButton("Supprimer");
+        supprimerbtn.setBackground(new Color(250, 63, 67));
+        supprimerbtn.setForeground(Color.lightGray);
+        supprimerbtn.setBounds(700, 0, 120, 365);
+        supprimerbtn.addActionListener(actionEvent -> {
+            try {
+                int id = (int) table.getValueAt(table.getSelectedRow(), 0);
+                Creer_Consultation.copy();
+                File consultations = new File("data/Consultations.txt");
+                File Tempo = new File("data/ConsultationsTempo.txt");
+                FileInputStream inputStream = new FileInputStream(Tempo);
+                InputStreamReader reader = new InputStreamReader(inputStream);
+                Scanner scanner = new Scanner(reader);
+                PrintWriter writer = new PrintWriter(consultations);
+
+                while (scanner.hasNextLine()) {
+                    String ligne = scanner.nextLine();
+                    if (Integer.parseInt(ligne.substring(0, ligne.indexOf(" "))) != id) {
+                        Classes_principales.Consultations.supprimerAppareil(id);
+                        writer.println(ligne);
+                    }
+                }
+                writer.close();
+                scanner.close();
+                Tempo.delete();
+
+                tableModel.setRowCount(0);
+                tablemodelcode(ID, tableModel);
+
+                table.setModel(tableModel);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        frame.add(supprimerbtn);
+        frame.add(header);
+        frame.add(table);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+
+    public void tablemodelcode(int ID, DefaultTableModel tableModel) {
         try {
             File Consultations = new File("data/Consultations.txt");
             FileInputStream inputStream = new FileInputStream(Consultations);
@@ -41,7 +100,7 @@ public class Supprimer {
                     String Appareil_3 = "";
                     if (ligneConsultation.contains("$APPAREIL$")) {
                         Consultation = ligneConsultation.substring(ligneConsultation.indexOf("$ID"), ligneConsultation.indexOf("$APPAREIL$")).substring(4);
-                        Appareil = detailsPatients.getAppareil(IDConsultation);
+                        Appareil = Classes_principales.Consultations.getAppareilUI(IDConsultation);
                         if (Appareil.contains("Appareil_1"))
                             Appareil_1 = Appareil.substring(Appareil.indexOf("Appareil_1"), Appareil.indexOf("$A1")).substring(12);
                         if (Appareil.contains("Appareil_2"))
@@ -55,90 +114,6 @@ public class Supprimer {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        JTable table = new JTable();
-        table.setBackground(Color.lightGray);
-        table.setForeground(Color.darkGray);
-        table.setModel(tableModel);
-        table.setBounds(0, 20, 700, 345);
-
-        JTableHeader header = table.getTableHeader();
-        header.setBounds(0, 0, 700, 20);
-        header.getColumnModel().getColumn(1).setPreferredWidth(400);
-        header.getColumnModel().getColumn(0).setPreferredWidth(40);
-
-        JButton supprimerbtn = new JButton("Supprimer");
-        supprimerbtn.setBackground(new Color(250, 63, 67));
-        supprimerbtn.setForeground(Color.lightGray);
-        supprimerbtn.setBounds(700, 0, 120, 365);
-        supprimerbtn.addActionListener(actionEvent -> {
-            try {
-                int id = (int) table.getValueAt(table.getSelectedRow(), 0);
-                Creer_Consultation.copy();
-                File Consultations = new File("data/Consultations.txt");
-                File Tempo = new File("data/ConsultationsTempo.txt");
-                FileInputStream inputStream = new FileInputStream(Tempo);
-                InputStreamReader reader = new InputStreamReader(inputStream);
-                Scanner scanner = new Scanner(reader);
-                PrintWriter writer = new PrintWriter(Consultations);
-
-                while (scanner.hasNextLine()) {
-                    String ligne = scanner.nextLine();
-                    if (Integer.parseInt(ligne.substring(0, ligne.indexOf(" "))) != id) {
-                        supprimerAppareil(id);
-                        writer.println(ligne);
-                    }
-                }
-                writer.close();
-                scanner.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-
-        });
-
-        frame.add(supprimerbtn);
-        frame.add(header);
-        frame.add(table);
-        frame.setLayout(null);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }
-
-    public static void supprimerAppareil(int ID) {
-        try {
-            File Appareils = new File("data/Appareils.txt");
-            File Tempo = new File("data/AppareilsTempo.txt");
-
-            try (FileInputStream fis = new FileInputStream(Appareils);
-                 FileOutputStream fos = new FileOutputStream(Tempo)) {
-                int len;
-                byte[] buffer = new byte[4096];
-                while ((len = fis.read(buffer)) > 0) {
-                    fos.write(buffer, 0, len);
-                }
-            } catch (IOException e) {
-                // ... handle IO exception
-            }
-
-
-            FileInputStream inputStream = new FileInputStream(Tempo);
-            InputStreamReader reader = new InputStreamReader(inputStream);
-            Scanner scanner = new Scanner(reader);
-            PrintWriter writer = new PrintWriter(Appareils);
-
-            while (scanner.hasNextLine()) {
-                String ligne = scanner.nextLine();
-                if (Integer.parseInt(ligne.substring(0, ligne.indexOf(" "))) != ID) {
-                    writer.println(ligne);
-                }
-            }
-            writer.close();
-            scanner.close();
-        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }

@@ -14,17 +14,21 @@ import java.util.Scanner;
 public class Class {
     public void ui_agent() {
         JDialog frame = new JDialog();
-        frame.getContentPane().setBackground(Color.darkGray);
+        frame.getContentPane().setBackground(new Color(72, 201, 176));
         frame.setSize(600, 400);
 
+        JPanel textAreaPanel = new JPanel(null);
+        textAreaPanel.setBounds(0, 100, 600, 300);
+        textAreaPanel.setBackground(new Color(69, 179, 157));
+
         JTextArea textArea = new JTextArea();
-        textArea.setBackground(Color.DARK_GRAY);
-        textArea.setForeground(Color.LIGHT_GRAY);
-        textArea.setBounds(50, 100, 500, 300);
+        textArea.setBackground(new Color(69, 179, 157));
+        textArea.setForeground(Color.darkGray);
+        textArea.setBounds(50, 10, 500, 300);
 
         JTextField textField = new RoundedTextField();
         textField.setText("Entrez l'ID, le nom ou le prenom du patient");
-        textField.setBackground(new Color(79, 79, 79));
+        textField.setBackground(new Color(41, 41, 41));
         textField.setForeground(Color.LIGHT_GRAY);
         textField.setHorizontalAlignment(JTextField.CENTER);
         textField.setBounds(50, 30, 500, 40);
@@ -86,8 +90,9 @@ public class Class {
             }
         });
 
+        textAreaPanel.add(textArea);
         frame.add(textField);
-        frame.add(textArea);
+        frame.add(textAreaPanel);
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
         frame.addWindowListener(new WindowAdapter() {
@@ -100,7 +105,7 @@ public class Class {
         frame.setVisible(true);
     }
 
-    public void ui_medecin(int ID) {
+    public void ui_medecin() {
         JDialog frame = new JDialog();
         frame.getContentPane().setBackground(new Color(46, 188, 207));
         frame.setSize(600, 400);
@@ -138,7 +143,7 @@ public class Class {
                         new Dialogue.dialogue("Mauvaise saisie");
                     } else {
                         frame.dispose();
-                        new Medecin.Main(textArea.getText(), 1).ui();
+                        new Medecin.Main(textArea.getText()).ui();
                     }
                 }
             }
@@ -180,7 +185,7 @@ public class Class {
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                new Medecin.Main(ID);
+                new Medecin.Main();
                 super.windowClosing(e);
             }
         });
@@ -190,13 +195,20 @@ public class Class {
     public void ui_technicien() {
         JDialog frame = new JDialog();
         frame.setSize(600, 400);
+        frame.getContentPane().setBackground(new Color(255, 240, 95));
+
+        JPanel panel = new JPanel();
+        panel.setBackground(new Color(178, 164, 75));
+        panel.setBounds(0, 100, 600, 300);
 
         JTextArea textArea = new JTextArea();
-        textArea.setBounds(50, 100, 500, 300);
+        textArea.setBackground(new Color(178, 164, 75));
+        textArea.setBounds(50, 10, 500, 290);
 
         JTextField textField = new RoundedTextField();
         textField.setText("Entrez l'ID, le nom ou le prenom du patient");
         textField.setHorizontalAlignment(JTextField.CENTER);
+        textField.setBackground(new Color(178, 164, 75));
         textField.setBounds(50, 30, 500, 40);
         textField.addFocusListener(new FocusListener() {
             @Override
@@ -259,8 +271,9 @@ public class Class {
             }
         });
 
+        frame.add(panel);
         frame.add(textField);
-        frame.add(textArea);
+        panel.add(textArea);
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
         frame.addWindowListener(new WindowAdapter() {

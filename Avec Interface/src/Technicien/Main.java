@@ -2,7 +2,6 @@ package Technicien;
 
 import Classes_principales.Consultations;
 import Classes_principales.Patient;
-import Medecin.detailsPatients;
 import RoundedBorders.RoundedButton;
 import RoundedBorders.RoundedTextField;
 
@@ -24,7 +23,7 @@ public class Main {
     String user;
 
     public Main() {
-        user = "";
+        user = "ID du patient";
     }
 
     public Main(String string) {
@@ -33,15 +32,18 @@ public class Main {
 
     public void ui() throws FileNotFoundException {
         JFrame frame = new JFrame();
-        frame.setSize(800, 200);
+        frame.setSize(600, 200);
+        frame.getContentPane().setBackground(new Color(255, 240, 95));
 
         JTextField userField = new RoundedTextField();
-        userField.setBounds(100, 20, 600, 40);
+        userField.setBackground(new Color(178, 164, 75));
+        userField.setBounds(100, 20, 400, 40);
+        userField.setHorizontalAlignment(JTextField.CENTER);
         userField.setText(user);
         userField.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (userField.getText().isEmpty()) {
+                if (userField.getText().isEmpty() || userField.getText().equals(user)) {
                     frame.dispose();
                     new Moteur_de_recherche.Class().ui_technicien();
                 }
@@ -49,18 +51,19 @@ public class Main {
         });
 
         JButton button = new RoundedButton("Voir la list des consultations");
-        button.setBounds(200, 80, 400, 40);
+        button.setBackground(new Color(178, 164, 75));
+        button.setBounds(100, 80, 300, 40);
         button.addActionListener(actionEvent -> {
 
             frame.dispose();
 
             JFrame editframe = new JFrame();
             editframe.setSize(800, 650);
-            editframe.getContentPane().setBackground(Color.GRAY);
+            editframe.getContentPane().setBackground(new Color(255, 240, 95));
 
             JPanel infoPanel = new JPanel(new GridLayout(2, 4));
             infoPanel.setBounds(0, 0, 800, 100);
-            infoPanel.setBackground(Color.GRAY);
+            infoPanel.setBackground(new Color(178, 164, 75));
             infoPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
             int ID = Integer.parseInt(userField.getText().substring(0, userField.getText().indexOf(" ")));
@@ -70,7 +73,7 @@ public class Main {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
+            assert patient != null;
             String Nom = patient.substring(patient.indexOf("Nom:"), patient.indexOf("$N"));
             Nom = Nom.substring(Nom.indexOf(" "));
             String Prenom = patient.substring(patient.indexOf("Prenom:"), patient.indexOf("$Pn"));
@@ -151,7 +154,7 @@ public class Main {
                         String Appareil_3 = "";
                         if (ligneConsultation.contains("$APPAREIL$")) {
                             Consultation = ligneConsultation.substring(ligneConsultation.indexOf("$ID"), ligneConsultation.indexOf("$APPAREIL$")).substring(4);
-                            Appareil = detailsPatients.getAppareil(IDConsultation);
+                            Appareil = Classes_principales.Consultations.getAppareilUI(IDConsultation);
                             if (Appareil.contains("Appareil_1"))
                                 Appareil_1 = Appareil.substring(Appareil.indexOf("Appareil_1"), Appareil.indexOf("$A1")).substring(12);
                             if (Appareil.contains("Appareil_2"))
@@ -168,7 +171,7 @@ public class Main {
             }
 
             JTable table = new JTable();
-            table.setBackground(Color.lightGray);
+            table.setBackground(new Color(178, 164, 75));
             table.setForeground(Color.darkGray);
             table.setModel(tableModel);
             table.setBounds(50, 150, 700, 400);
@@ -188,6 +191,7 @@ public class Main {
             infoPanel.add(dateField);
 
             JButton editbtn = new JButton("Valider");
+            editbtn.setBackground(Color.white);
             editbtn.setBounds(50, 570, 700, 30);
             editbtn.addActionListener(actionEvent1 -> {
                 for (int row = 0; row < table.getRowCount(); row++) {
@@ -224,13 +228,5 @@ public class Main {
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }
-
-    public static void main(String[] args) {
-        try {
-            new Main().ui();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 }

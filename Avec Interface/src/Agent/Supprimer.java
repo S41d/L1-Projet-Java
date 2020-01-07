@@ -16,13 +16,13 @@ public class Supprimer {
         frame.setSize(400, 180);
 
         JTextField numField = new RoundedTextField();
-        numField.setBackground(Color.LIGHT_GRAY);
+        numField.setBackground(new Color(69, 179, 157));
         numField.setForeground(Color.DARK_GRAY);
         numField.setBounds(130, 20, 230, 35);
 
         JLabel num_label = new JLabel("Numero ID :");
         num_label.setBounds(30, 20, 100, 35);
-        num_label.setForeground(Color.lightGray);
+        num_label.setForeground(Color.darkGray);
 
         JButton supprime_Button = new RoundedButton("Supprimer");
         supprime_Button.setBounds(60, 75, 125, 35);
@@ -53,7 +53,7 @@ public class Supprimer {
         btnAnnuler.addActionListener(actionEvent -> frame.dispose());
 
         frame.add(btnAnnuler);
-        frame.getContentPane().setBackground(Color.DARK_GRAY);
+        frame.getContentPane().setBackground(new Color(72, 201, 176));
         frame.setResizable(false);
         frame.add(num_label);
         frame.add(numField);

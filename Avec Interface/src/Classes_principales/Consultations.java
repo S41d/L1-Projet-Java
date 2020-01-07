@@ -77,7 +77,7 @@ public class Consultations {
             }
         }
         scanner_Consultations.close();
-        return tousLesConsultations;          //details des consultation avec les detail des appareils
+        return tousLesConsultations;          //details des consultation avec les detail des appareils (sans interface)
     }
 
     public static void creerConsultation(int ID, String consultation) {
@@ -183,6 +183,24 @@ public class Consultations {
             e.printStackTrace();
         }
     }                    //method pour ecrire dans Appareils.txt, utilisé dans creerConsultation
+
+    public static String getAppareilUI(int IDConsultation) throws FileNotFoundException {
+        File Appareils = new File("data/Appareils.txt");
+        FileInputStream inputStream1 = new FileInputStream(Appareils);
+        InputStreamReader reader1 = new InputStreamReader(inputStream1);
+        Scanner scanner_Appareil = new Scanner(reader1);
+
+        String Appareil = "";
+
+        while (scanner_Appareil.hasNextLine()) {
+            String ligneAppareil = scanner_Appareil.nextLine();
+            int IDAppareil = Integer.parseInt(ligneAppareil.substring(0, ligneAppareil.indexOf(" ")));
+            if (IDAppareil == IDConsultation) {
+                Appareil = ligneAppareil;
+            }
+        }
+        return Appareil;
+    }                   //method pour prendre les appareils
 
     public static void modifierConsultation(int ID_Consultation, String consultation) {
         File Consultations = new File("data/Consultations.txt");
@@ -467,6 +485,42 @@ public class Consultations {
             Tempo.delete();
             writer.close();
             scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void supprimerAppareil(int ID) {
+        try {
+            File Appareils = new File("data/Appareils.txt");
+            File Tempo = new File("data/AppareilsTempo.txt");
+
+            try (FileInputStream fis = new FileInputStream(Appareils);
+                 FileOutputStream fos = new FileOutputStream(Tempo)) {
+                int len;
+                byte[] buffer = new byte[4096];
+                while ((len = fis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, len);
+                }
+            } catch (IOException e) {
+                // ... handle IO exception
+            }
+
+
+            FileInputStream inputStream = new FileInputStream(Tempo);
+            InputStreamReader reader = new InputStreamReader(inputStream);
+            Scanner scanner = new Scanner(reader);
+            PrintWriter writer = new PrintWriter(Appareils);
+
+            while (scanner.hasNextLine()) {
+                String ligne = scanner.nextLine();
+                if (Integer.parseInt(ligne.substring(0, ligne.indexOf(" "))) != ID) {
+                    writer.println(ligne);
+                }
+            }
+            writer.close();
+            scanner.close();
+            Tempo.delete();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
