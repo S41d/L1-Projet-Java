@@ -16,7 +16,7 @@ public class Statistique {
         frame.setSize(400, 300);
         frame.getContentPane().setBackground(new Color(79, 79, 79));
 
-        JLabel label = new JLabel("Nombre de patients qui utilise:");
+        JLabel label = new JLabel("Nombre des patients qui utilisent:");
         label.setBounds(50, 30, 300, 40);
         label.setHorizontalAlignment(JLabel.CENTER);
 

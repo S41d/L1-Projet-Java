@@ -1,0 +1,3 @@
+12 ID: 1 it worked  Appareil:  Apaaeraef$\A1,	 aoeraq,
+16 ID: 1 Consultation  Appareil:   Appareil 1$\A1,
+17 ID: 1 Consultation avec 2 appareils  Appareil:   Appareil 1$\A1,  Appareil 2,

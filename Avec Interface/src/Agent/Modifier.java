@@ -179,6 +179,7 @@ public class Modifier {
             String finalDATE = dateField.getText();
             Patient.modifier(num, finalNOM, finalPRENOM, finalADRESSE, finalDATE);
             frame.dispose();
+            new Dialogue.dialogue("Modifications enregistrés", Color.darkGray, new Color(72, 201, 176), Color.lightGray, new Color(41, 41, 41));
         });
 
         JButton btnAnnuler = new RoundedButton("Annuler");

@@ -1,7 +1,5 @@
 package Medecin;
 
-import RoundedBorders.RoundedTextField;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -29,7 +27,7 @@ public class Main {
         JTextField dummy = new JTextField();
         dummy.requestFocusInWindow();
 
-        JTextField userField = new RoundedTextField();
+        JTextField userField = new JTextField();
         userField.setBounds(55, 30, 504, 40);
         userField.setText(userString);
         userField.setBackground(new Color(46, 188, 207));
@@ -141,9 +139,5 @@ public class Main {
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new Main().ui();
     }
 }

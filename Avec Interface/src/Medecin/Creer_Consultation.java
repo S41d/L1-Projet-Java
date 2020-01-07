@@ -48,7 +48,7 @@ public class Creer_Consultation {
                 if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
                     Creer(Appareil_1, Appareil_2, Appareil_3, ID_pat, consultationArea);
                     frame.dispose();
-                    new Dialogue.dialogue("Consultation créée");
+                    new Dialogue.dialogue("Consultation créée", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
                 }
             }
         });
@@ -59,7 +59,7 @@ public class Creer_Consultation {
         validerbtn.addActionListener(actionEvent -> {
             Creer(Appareil_1, Appareil_2, Appareil_3, ID_pat, consultationArea);
             frame.dispose();
-            new Dialogue.dialogue("Consultation créée");
+            new Dialogue.dialogue("Consultation créée", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
         });
         validerbtn.setBackground(Color.lightGray);
         checkBoxPanel.add(Appareil_1);

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bbed5e50-4c7a-4f28-a32b-9c5e0ebba30c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Agent/Creer_Patient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Agent/Creer_Patient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Agent/Creer_Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Agent/Creer_Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Agent/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Agent/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Agent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Agent/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Agent/Modifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Agent/Modifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Agent/Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Agent/Supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Classes_principales/Consultations.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Classes_principales/Consultations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Classes_principales/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Classes_principales/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Dialogue/yes_no_option.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Dialogue/yes_no_option.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Medecin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Medecin/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Medecin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Medecin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Moteur_de_recherche/Class$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Moteur_de_recherche/Class$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Moteur_de_recherche/Class$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Moteur_de_recherche/Class$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Moteur_de_recherche/Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Moteur_de_recherche/Class.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Roles/Technicien.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Roles/agent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Roles/medecin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedCornerBorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedCornerBorder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedFormattedTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedFormattedTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedPasswordField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/RoundedBorders/RoundedTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/super_admin/Supprimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/super_admin/Supprimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Agents.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Agents.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/AppareilTempo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/AppareilTempo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Appareils.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Appareils.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Consultations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Consultations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Patient.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Patient.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/Roles.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/Roles.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/temporaire.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/Creer_Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/Creer_Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/Modifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/Supprimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/Supprimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes_principales/Consultations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Classes_principales/Consultations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes_principales/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Classes_principales/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dialogue/yes_no_option.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dialogue/yes_no_option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Medecin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Medecin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moteur_de_recherche/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/Moteur_de_recherche/Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundedBorders/RoundedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoundedBorders/RoundedButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundedBorders/RoundedCornerBorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoundedBorders/RoundedCornerBorder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundedBorders/RoundedFormattedTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoundedBorders/RoundedFormattedTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundedBorders/RoundedPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoundedBorders/RoundedPasswordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoundedBorders/RoundedTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoundedBorders/RoundedTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sans_Interface/Technicien.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sans_Interface/Technicien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sans_Interface/agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sans_Interface/agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sans_Interface/medecin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sans_Interface/medecin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super_admin/Modifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/super_admin/Modifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super_admin/Supprimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/super_admin/Supprimer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1ViRZx6heGzrLyVAt1SASFM5MaU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bbed5e50-4c7a-4f28-a32b-9c5e0ebba30c" name="Default Changelist" comment="" />
+      <created>1577733987844</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577733987844</updated>
+    </task>
+    <servers />
+  </component>
+</project>

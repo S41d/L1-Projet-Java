@@ -1,8 +1,9 @@
-2 ID: 1$ID $APPAREIL$ Appareil_1: instance$A1
 3 ID: 2$ID
 4 ID: 3$ID $APPAREIL$ Apparei1_1: instance$A1 Appareil_2: instance$A2
 5 ID: 1$ID $APPAREIL$ Appareil_1: instance$A1 Appareil_2: instance$A2
 6 ID: 4$ID $APPAREIL$ Appareil_1: instance$A1 Appareil_2: instance$A2 Appareil_3: instance$A3
 12 ID: 1$ID $APPAREIL$ Appareil_1: octroyé$A1 Appareil_2: octroyé$A2
 14 ID: 2$ID $APPAREIL$ Appareil_1: instance$A1 Appareil_2: instance$A2 Appareil_3: instance$A3
-15 ID: 1$ID  $APPAREIL$  Appareil_1: instance$A1,
+15 ID: 1$ID  $APPAREIL$ Appareil_1: instance$A1 Appareil_2: instance$A2
+16 ID: 1$ID  $APPAREIL$ Appareil_1: instance$A1
+17 ID: 1$ID  $APPAREIL$ Appareil_1: octroyé$A1 Appareil_2: instance$A2

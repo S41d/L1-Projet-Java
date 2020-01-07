@@ -12,11 +12,11 @@ public class yes_no_option extends JFrame {
 
     public yes_no_option(String text) {
         this.setSize(350, 150);
-        this.getContentPane().setBackground(Color.darkGray);
+        this.getContentPane().setBackground(new Color(72, 201, 176));
 
         label = new JLabel(text);
         label.setHorizontalAlignment(JLabel.CENTER);
-        label.setForeground(Color.LIGHT_GRAY);
+        label.setForeground(Color.darkGray);
         label.setBounds(0, 15, 350, 30);
 
         YES = new RoundedButton("Oui");
@@ -27,8 +27,8 @@ public class yes_no_option extends JFrame {
 
         NO = new RoundedButton("Non");
         NO.setBounds(185, 60, 60, 30);
-        NO.setBackground(Color.LIGHT_GRAY);
-        NO.setForeground(Color.DARK_GRAY);
+        NO.setBackground(new Color(41, 41, 41));
+        NO.setForeground(Color.lightGray);
         NO.addActionListener(actionEvent -> this.dispose());
 
         this.add(label);

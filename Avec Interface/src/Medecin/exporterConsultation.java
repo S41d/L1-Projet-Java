@@ -184,7 +184,7 @@ public class exporterConsultation {
                 Consultations.exporterConsultations(list, nomexporterField.getText());
                 frame.dispose();
             }
-            new Dialogue.dialogue("Modifications enregistré");
+            new Dialogue.dialogue("Consultations exportés", Color.darkGray, Color.white, Color.darkGray, new Color(46, 188, 207));
         });
 
         frame.setResizable(false);

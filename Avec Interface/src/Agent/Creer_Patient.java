@@ -90,7 +90,7 @@ public class Creer_Patient {
         create_Button.setBackground(Color.lightGray);
         create_Button.addActionListener(arg0 -> {
             if (userField.getText().isEmpty() || prenomField.getText().isEmpty() || dateFeild.getText().equals("  -  -    ") || adresseField.getText().isEmpty()) {
-                new dialogue("Un ou plusieurs champs est vide");
+                new dialogue("Un ou plusieurs champs est vide", Color.darkGray, new Color(72, 201, 176), Color.lightGray, new Color(41, 41, 41));
             } else {
                 Patient.nouveauPatient(userField.getText(), prenomField.getText(), Integer.parseInt(adresseField.getText()), dateFeild.getText());
             }
